@@ -34,6 +34,11 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+import streamlit as st
+
+# Configuração para ocultar a sidebar
+st.set_page_config(initial_sidebar_state="collapsed")
+
 css = """
 <style>
 .centered-image {
