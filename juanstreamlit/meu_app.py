@@ -27,6 +27,13 @@ else:
 
 # Crie uma instância do cliente Realtime Database
 # Define o estilo CSS para centralizar a imagem
+st.markdown("""
+    <style>
+        [data-testid='stSidebar'] [aria-expanded='true'] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 css = """
 <style>
 .centered-image {
