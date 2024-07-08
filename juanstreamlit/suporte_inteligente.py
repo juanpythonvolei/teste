@@ -34,10 +34,7 @@ def ia(pergunta):
                 status = nota['status']
                 valor  = nota['Valor Total']
             infos = f'Numero nota:{numero_nota}. volumes:{volumes}. cliente:{cliente}. Produtos:{Produtos}. status:{status}. valor:{valor}. destino:{destino}. data de emissão:{data_De_emissao}\n'
-            if str(infos) in str(texto_nota):
-                pass
-            else:
-                texto_nota += str(infos)
+            texto_nota += str(infos)
     response = chat.send_message(f'{pergunta}:\n\n{texto_nota}\n')
     resposta = response.text
     st.write(f'{resposta}')
