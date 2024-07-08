@@ -1,12 +1,6 @@
 import streamlit as st
 import requests
 import re
-from googletrans import Translator
-import folium
-import tkinter as tk    
-from tkinter import ttk
-from tkinter.filedialog import askopenfilename
-import pandas as pd
 from pathlib import Path
 import os
 import tkcalendar 

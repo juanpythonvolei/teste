@@ -1,12 +1,6 @@
 import streamlit as st
 import requests
 import re
-from googletrans import Translator
-import folium
-import tkinter as tk    
-from tkinter import ttk
-from tkinter.filedialog import askopenfilename
-import pandas as pd
 from pathlib import Path
 import os
 import tkcalendar 
@@ -77,7 +71,6 @@ if seletor == 'rota da nota':
                                     lat_inicial = location["lat"]
                                     lon_inicial = location["lng"]
                         ponto_partida = (lat_inicial, lon_inicial)
-                        mapa = folium.Map(location=ponto_partida, zoom_start=15)
                         ponto_partida_dict = {
                             'destino': 'Itupeva, SP',
                             'distancia': 0,
