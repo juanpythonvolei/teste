@@ -15,4 +15,3 @@ streamlit
 tkcalendar
 xmltodict
 google-generativeai
-webbrowser
