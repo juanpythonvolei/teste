@@ -1,14 +1,7 @@
 import pathlib
-import textwrap
 import google.generativeai as genai
 from IPython.display import display
 from IPython.display import Markdown
-import openpyxl
-import pandas as pd
-from tkinter.filedialog import askopenfilename
-import tkinter as tk
-from tkinter import ttk
-import PyPDF2
 import requests
 import streamlit as st
 import os
