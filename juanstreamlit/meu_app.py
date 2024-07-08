@@ -24,7 +24,7 @@ if not firebase_admin._apps:
     })
 else:
     pass
-    api_user = os.environ.get()
+
 # Crie uma instância do cliente Realtime Database
 # Define o estilo CSS para centralizar a imagem
 css = """
