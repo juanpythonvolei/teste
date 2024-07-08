@@ -3,6 +3,7 @@ import firebase_admin
 from firebase_admin import credentials, firestore,db
 import requests
 import os
+st.set_page_config(initial_sidebar_state="collapsed")
 if not firebase_admin._apps:
     autenticacao  = {
     "type": "service_account",
@@ -37,7 +38,7 @@ st.markdown("""
 import streamlit as st
 
 # Configuração para ocultar a sidebar
-st.set_page_config(initial_sidebar_state="collapsed")
+
 
 css = """
 <style>
