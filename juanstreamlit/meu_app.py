@@ -4,6 +4,13 @@ from firebase_admin import credentials, firestore,db
 import requests
 import os
 st.set_page_config(initial_sidebar_state="collapsed")
+st.markdown("""
+    <style>
+        [data-testid='stSidebar'] [aria-expanded='true'] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 if not firebase_admin._apps:
     autenticacao  = {
     "type": "service_account",
@@ -28,14 +35,7 @@ else:
 
 # Crie uma instância do cliente Realtime Database
 # Define o estilo CSS para centralizar a imagem
-st.markdown("""
-    <style>
-        [data-testid='stSidebar'] [aria-expanded='true'] {
-            display: none;
-        }
-    </style>
-""", unsafe_allow_html=True)
-import streamlit as st
+
 
 # Configuração para ocultar a sidebar
 
