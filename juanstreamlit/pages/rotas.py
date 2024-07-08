@@ -53,6 +53,7 @@ if seletor == 'rota da nota':
                 for elemento in roteiro:
                     nota = roteiro[f'{elemento}']
                     if nota['Número da Nota'] == str(pesquisa_nota):
+                        numero = nota['Número da Nota']
                         volumes = nota['Volumes']
                         valor = nota['Valor Total']
                         Cliente  = nota['Cliente']
@@ -101,7 +102,7 @@ if seletor == 'rota da nota':
         destinos_info.append(localizacao)
         final = base_url2 + '/'.join(destinos_info)
         webbrowser.open(final)     
-        st.warning(f'Nota: {nota['Número da Nota']} volumes: {volumes} valor:{valor} cliente:{Cliente}')
+        st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
 elif seletor == "rota de todas as notas":
         lista_total = []
         destinos_info = []
