@@ -3,16 +3,13 @@ import requests
 import re
 from pathlib import Path
 import os
-import tkcalendar 
 from datetime import datetime
 import xmltodict
 import shutil
 import datetime
-
 # URL da API Directions
 import firebase_admin
 from firebase_admin import credentials, firestore,db
-from geopy.geocoders import Nominatim
 from time import sleep
 import pprint
 from st_circular_progress import CircularProgress
