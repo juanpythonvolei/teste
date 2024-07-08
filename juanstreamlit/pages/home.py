@@ -152,7 +152,7 @@ if uploaded_files:
                         'coordenadas_google': f'{lat_inicial},{lon_inicial}',
                         'cliente': ''
                     }
-    destinos_info.append(ponto_partida_dict["coordenadas_google"])
+    destinos_info.append(ponto_partida_dict)
     base_url2 = "https://www.google.com/maps/dir/"
     for item in lista_Destinos:
                                 valor = item
