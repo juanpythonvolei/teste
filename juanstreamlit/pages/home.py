@@ -128,21 +128,21 @@ if uploaded_files:
                                                 'status':'Entrega não completa'
                                             }
                                         lista_notas.append(dict_nota)
-                    address = "Itupeva,sp"
-                    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
-                    params = {
-                                "address": address,
-                                "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
-                            }
+    address = "Itupeva,sp"
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    params = {
+                "address": address,
+                "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                    }
 
-                    response = requests.get(base_url, params=params)
-                    data = response.json()
-                    if data["status"] == "OK":
+    response = requests.get(base_url, params=params)
+    data = response.json()
+    if data["status"] == "OK":
                                 location = data["results"][0]["geometry"]["location"]
                                 lat_inicial = location["lat"]
                                 lon_inicial = location["lng"]
-                    ponto_partida = (lat_inicial, lon_inicial)
-                    ponto_partida_dict = {
+    ponto_partida = (lat_inicial, lon_inicial)
+    ponto_partida_dict = {
                         'destino': 'Itupeva, SP',
                         'distancia': 0,
                         'Número da nota': '',
