@@ -36,12 +36,12 @@ if selected_page == 'Login':
     st.switch_page('meu_app.py')
 elif selected_page == 'Home':
     st.switch_page('pages/home.py')
-
+base_url2 = "https://www.google.com/maps/dir/"
 if seletor == 'rota da nota':
     pesquisa_nota = st.text_input(label='Pesquisar rota dessa nota')
     pesquisa = st.button('ver rotas')
     if pesquisa:
-        base_url2 = "https://www.google.com/maps/dir/"
+        
         lista = []
         destinos_info = []
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
