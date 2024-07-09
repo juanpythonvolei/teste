@@ -24,7 +24,13 @@ css = """
 }
 </style>
 """
-
+st.markdown("""
+    <style>
+       [aria-expanded='true'] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 # Insere o CSS no aplicativo
 st.markdown(css, unsafe_allow_html=True)
 
