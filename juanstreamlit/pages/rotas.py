@@ -80,7 +80,7 @@ if seletor == 'rota da nota':
                             'coordenadas_google': f'{lat_inicial},{lon_inicial}',
                             'cliente': ''
                         }
-                        destinos_info.append(ponto_partida_dict)
+                        destinos_info.append(ponto_partida_dict['coordenadas_google'])
                         destino = nota['Destino']
                         
                         address = f"{destino}"
