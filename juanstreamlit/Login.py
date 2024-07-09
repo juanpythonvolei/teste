@@ -3,8 +3,8 @@ import firebase_admin
 from firebase_admin import credentials, firestore,db
 import requests
 import os
-st.set_page_config(initial_sidebar_state="collapsed")
-st.set_page_config(page_title="Roterização e suporte")
+st.set_page_config(initial_sidebar_state="collapsed",page_title="Roterização e suporte")
+
 
 st.markdown("""
     <style>
