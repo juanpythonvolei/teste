@@ -3,7 +3,6 @@ import firebase_admin
 from firebase_admin import credentials, firestore,db
 import requests
 import os
-from streamlit_modal import Modal
 st.set_page_config(initial_sidebar_state="collapsed")
 import streamlit as st
 
@@ -86,7 +85,6 @@ if st.button('Entrar'):
     requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={key}",data=data)
     requisicao_dic = requisicao.json()
     if requisicao.ok:
-        modal = Modal(key="Meu Pop-up", title="Aviso")
         st.switch_page('pages/Home.py')
     else:
         mensagem_erro  = requisicao_dic['error']['message']
