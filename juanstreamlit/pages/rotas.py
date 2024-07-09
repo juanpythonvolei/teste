@@ -177,7 +177,7 @@ elif seletor == "rota de todas as notas":
                     "destination": destinos_info[-1],
                     "waypoints": waypoints,
                     "mode": "driving",  # Modo de transporte (pode ser "walking", "bicycling", etc.)
-                    "key": "SUA_CHAVE_DE_API_AQUI"
+                    "key":'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'
                 }
                 
                 # Fazer a solicitação à API Directions
