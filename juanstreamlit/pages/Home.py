@@ -154,18 +154,18 @@ if uploaded_files:
                                 location = data["results"][0]["geometry"]["location"]
                                 lat_inicial = location["lat"]
                                 lon_inicial = location["lng"]
-    ponto_partida = (lat_inicial, lon_inicial)
-    ponto_partida_dict = {
-                        'destino': 'Itupeva, SP',
-                        'distancia': 0,
-                        'Número da nota': '',
-                        'volumes': '',
-                        'Duração': '',
-                        'coordenadas': ponto_partida,
-                        'coordenadas_google': f'{lat_inicial},{lon_inicial}',
-                        'cliente': ''
-                    }
-    destinos_info.append(ponto_partida_dict)
+                                ponto_partida = (lat_inicial, lon_inicial)
+                                ponto_partida_dict = {
+                                                    'destino': 'Itupeva, SP',
+                                                    'distancia': 0,
+                                                    'Número da nota': '',
+                                                    'volumes': '',
+                                                    'Duração': '',
+                                                    'coordenadas': ponto_partida,
+                                                    'coordenadas_google': f'{lat_inicial},{lon_inicial}',
+                                                    'cliente': ''
+                                                }
+                                destinos_info.append(ponto_partida_dict)
     base_url2 = "https://www.google.com/maps/dir/"
     for item in lista_Destinos:
                                 valor = item
@@ -214,7 +214,10 @@ if uploaded_files:
     destinos_ordenados = sorted(destinos_info, key=lambda x: x['distancia'])
     for destino in destinos_ordenados:        # Criar o DataFrame com todos os dados das notas
                                 local=destino['coordenadas_google']
-                                lista_pontos.append(local)
+                                if local in lista_pontos:
+                                    pass
+                                else:
+                                    lista_pontos.append(local)
     final = base_url2 + '/'.join(lista_pontos)
     dict_nota['link'] = f'{final}'                    
                             
