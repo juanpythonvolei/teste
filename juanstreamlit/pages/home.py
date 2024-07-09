@@ -1,4 +1,4 @@
-Eimport streamlit as st
+import streamlit as st
 import requests
 import re
 from pathlib import Path
