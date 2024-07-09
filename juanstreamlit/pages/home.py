@@ -60,7 +60,7 @@ if uploaded_files:
                            lista_filtrada.append(documento)
                     else:
                         continue
-            except:
+        except:
                 st.warning('Algo deu errado, tente novamente')
     print(lista_filtrada)
     for documento in lista_filtrada:
