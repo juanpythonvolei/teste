@@ -169,12 +169,13 @@ elif seletor == "rota de todas as notas":
                                             localizacao = f'{lat_inicial},{lon_inicial}'
                                             destinos_info.append(localizacao)
                 final = base_url2 + '/'.join(destinos_info)
+                link = f'{final}'
 
 # Exemplo de link para o Bing
 
 
 # Exemplo de link para o Bing
-                st.write('<a href=f"{final}" target="_blank">Abrir o  Roteiro</a>', unsafe_allow_html=True)
+                st.write('<a href=link target="_blank">Abrir o  Roteiro</a>', unsafe_allow_html=True)
 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
