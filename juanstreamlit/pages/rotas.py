@@ -93,9 +93,9 @@ if seletor == 'rota da nota':
                         data = response.json()
                         if data["status"] == "OK":
                                     location = data["results"][0]["geometry"]["location"]
-                                    lat_inicial = location["lat"]
-                                    lon_inicial = location["lng"]
-                                    localizacao = f'{lat_inicial},{lon_inicial}'
+                                    lat_final = location["lat"]
+                                    lon_final = location["lng"]
+                                    localizacao = f'{lat_final},{lon_final}'
                                     destinos_info.append(localizacao)
         final = base_url2 + '/'.join(destinos_info)
         webbrowser.open(final)     
