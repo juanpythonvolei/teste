@@ -79,7 +79,7 @@ if seletor == 'rota da nota':
                             'coordenadas_google': f'{lat_inicial},{lon_inicial}',
                             'cliente': ''
                         }
-                        destinos_info = [ponto_partida_dict['coordenadas_google']]
+                        destinos_info = [ponto_partida_dict]
                         destino = nota['Destino']
                         
                         address = f"{destino}"
@@ -96,7 +96,7 @@ if seletor == 'rota da nota':
                                     lat_inicial = location["lat"]
                                     lon_inicial = location["lng"]
                                     localizacao = f'{lat_inicial},{lon_inicial}'
-        destinos_info.append(localizacao)
+                                    destinos_info.append(localizacao)
         final = base_url2 + '/'.join(destinos_info)
         webbrowser.open(final)     
         st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
