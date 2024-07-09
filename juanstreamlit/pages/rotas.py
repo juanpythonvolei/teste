@@ -167,7 +167,7 @@ elif seletor == "rota de todas as notas":
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
                                             localizacao = f'{lat_inicial},{lon_inicial}'
-                                            destinos_info.append(localizacao)
+                            destinos_info.append(localizacao)
                 
                 waypoints = destinos_info[1:-1]  # Exclui o ponto de partida e o destino final
 
@@ -195,6 +195,7 @@ elif seletor == "rota de todas as notas":
                 # Exibir o link para a rota completa
                 final_route_url = base_url2 + '/'.join(destinos_info)
                 st.markdown(f"Link para a rota completa: {final_route_url}")
+                st.map(destinos_info)
 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
