@@ -15,8 +15,6 @@ import pprint
 from st_circular_progress import CircularProgress
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
-page = st.sidebar.selectbox("Escolha uma página", ["Home", "Login", "Rotas e suporte"])
-st.sidebar.page_link("Minha Página", label="Minha Página")
 css = """
 <style>
 .centered-image {
@@ -216,7 +214,3 @@ if uploaded_files:
                         print('não confere')
     st.warning('Processo Concluído')
     st.write(f'''Total de notas:{len(lista_notas)}''')
-if page == 'Login':
-    st.switch_page('meu_app.py')
-elif page == 'Rotas e suporte':
-    st.switch_page('pages/rotas.py')
