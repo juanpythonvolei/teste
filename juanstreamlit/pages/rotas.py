@@ -167,7 +167,7 @@ elif seletor == "rota de todas as notas":
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
                                             localizacao = f'{lat_inicial},{lon_inicial}'
-                                            destinos_info.append(localizacao)
+                destinos_info.append(localizacao)
                 final = base_url2 + '/'.join(destinos_info)
                 webbrowser.open(final) 
 elif seletor == "suporte inteligente":
