@@ -135,18 +135,21 @@ elif seletor == "rota de todas as notas":
                                             location = data["results"][0]["geometry"]["location"]
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
-                            ponto_partida = (lat_inicial, lon_inicial)
-                            ponto_partida_dict = {
-                                    'destino': 'Itupeva, SP',
-                                    'distancia': 0,
-                                    'Número da nota': '',
-                                    'volumes': '',
-                                    'Duração': '',
-                                    'coordenadas': ponto_partida,
-                                    'coordenadas_google': f'{lat_inicial},{lon_inicial}',
-                                    'cliente': ''
-                                }
-                            destinos_info.append(ponto_partida_dict['coordenadas_google'])
+                                            ponto_partida = (lat_inicial, lon_inicial)
+                                            ponto_partida_dict = {
+                                                    'destino': 'Itupeva, SP',
+                                                    'distancia': 0,
+                                                    'Número da nota': '',
+                                                    'volumes': '',
+                                                    'Duração': '',
+                                                    'coordenadas': ponto_partida,
+                                                    'coordenadas_google': f'{lat_inicial},{lon_inicial}',
+                                                    'cliente': ''
+                                                }
+                                            if ponto_partida_dict['coordenadas_google'] in destinos_info:
+                                                pass
+                                            else:
+                                                destinos_info.append(ponto_partida_dict['coordenadas_google'])
                             destino = nota['Destino']
                                 
                             address = f"{destino}"
@@ -163,10 +166,10 @@ elif seletor == "rota de todas as notas":
                                             lat_final = location["lat"]
                                             lon_final = location["lng"]
                                             localizacao = f'{lat_final},{lon_final}'
-                            if localizacao in destinos_info:
-                                pass
-                            else:
-                                destinos_info.append(localizacao)
+                                            if localizacao in destinos_info:
+                                                pass
+                                            else:
+                                                destinos_info.append(localizacao)
             final_route_url = base_url2 + '/'.join(destinos_info)
             st.markdown(f"Link para a rota completa: {final_route_url}")
 
