@@ -42,6 +42,7 @@ if seletor == 'rota da nota':
     pesquisa = st.button('ver rotas')
     if pesquisa:
         lista = []
+        destinos_info = []
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['bancodedadosroteirooficial']
@@ -79,7 +80,7 @@ if seletor == 'rota da nota':
                             'coordenadas_google': f'{lat_inicial},{lon_inicial}',
                             'cliente': ''
                         }
-                        destinos_info = [ponto_partida_dict]
+                        destinos_info.append(ponto_partida_dict)
                         destino = nota['Destino']
                         
                         address = f"{destino}"
