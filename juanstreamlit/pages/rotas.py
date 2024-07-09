@@ -51,7 +51,7 @@ if seletor == 'rota da nota':
                 roteiro = dados[f'{item}']
                 for elemento in roteiro:
                     nota = roteiro[f'{elemento}']
-                    if nota['Número da Nota'] == str(pesquisa_nota):
+        if nota['Número da Nota'] == str(pesquisa_nota):
                         numero = nota['Número da Nota']
                         volumes = nota['Volumes']
                         valor = nota['Valor Total']
@@ -97,11 +97,11 @@ if seletor == 'rota da nota':
                                     location = data["results"][0]["geometry"]["location"]
                                     lat_final = location["lat"]
                                     lon_final = location["lng"]
-        localizacao = f'{lat_final},{lon_final}'
-        destinos_info.append(localizacao)
-        final = base_url2 + '/'.join(destinos_info)
-        st.markdown(final)     
-        st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
+            localizacao = f'{lat_final},{lon_final}'
+            destinos_info.append(localizacao)
+            final = base_url2 + '/'.join(destinos_info)
+            st.markdown(final)     
+            st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
 elif seletor == "rota de todas as notas":
         lista_total = []
         destinos_info = []
