@@ -28,14 +28,10 @@ st.markdown(css, unsafe_allow_html=True)
 
 # Exibe a imagem centralizada
 st.image('https://calscycle.ca/newsite/wp-content/uploads/2022/05/Thule.png', width=500)
-selected_page = st.sidebar.selectbox("Escolha uma página", ["Rotas e suporte", "Login", "Home"])
 seletor  = st.radio("Opções", ["rota da nota", "rota de todas as notas", "suporte inteligente"])
 
 
-if selected_page == 'Login':
-    st.switch_page('meu_app.py')
-elif selected_page == 'Home':
-    st.switch_page('pages/home.py')
+
 base_url2 = "https://www.google.com/maps/dir/"
 if seletor == 'rota da nota':
     pesquisa_nota = st.text_input(label='Pesquisar rota dessa nota')
