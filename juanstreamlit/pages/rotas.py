@@ -177,7 +177,8 @@ elif seletor == "rota de todas as notas":
                     "destination": destinos_info[-1],
                     "waypoints": destinos_info[1:-1],
                     "optimizeWaypoints": True,
-                    "travelMode": "DRIVING"
+                    "travelMode": "DRIVING",
+                    "key":'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'
                 }
                 
                 # Fazer a solicitação à API Directions
