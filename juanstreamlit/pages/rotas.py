@@ -175,7 +175,7 @@ elif seletor == "rota de todas as notas":
 
 
 # Exemplo de link para o Bing
-                st.experimental_open_in_browser(final)
+                st.markdown(final)
 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
