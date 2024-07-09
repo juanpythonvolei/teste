@@ -41,7 +41,7 @@ if seletor == 'rota da nota':
     pesquisa_nota = st.text_input(label='Pesquisar rota dessa nota')
     pesquisa = st.button('ver rotas')
     if pesquisa:
-        
+        webbrowser.open('https://portalhashtag.com/')
         lista = []
         destinos_info = []
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
