@@ -51,7 +51,7 @@ if seletor == 'rota da nota':
                 roteiro = dados[f'{item}']
                 for elemento in roteiro:
                     nota = roteiro[f'{elemento}']
-        if nota['Número da Nota'] == str(pesquisa_nota):
+                    if nota['Número da Nota'] == str(pesquisa_nota):
                         numero = nota['Número da Nota']
                         volumes = nota['Volumes']
                         valor = nota['Valor Total']
