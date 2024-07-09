@@ -164,9 +164,9 @@ elif seletor == "rota de todas as notas":
                             data = response.json()
                             if data["status"] == "OK":
                                             location = data["results"][0]["geometry"]["location"]
-                                            lat_inicial = location["lat"]
-                                            lon_inicial = location["lng"]
-                                            localizacao = f'{lat_inicial},{lon_inicial}'
+                                            lat_final = location["lat"]
+                                            lon_final = location["lng"]
+                                            localizacao = f'{lat_final},{lon_final}'
                             destinos_info.append(localizacao)
                 
                 waypoints = destinos_info[1:-1]  # Exclui o ponto de partida e o destino final
