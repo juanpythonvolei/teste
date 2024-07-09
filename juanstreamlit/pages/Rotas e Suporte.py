@@ -164,7 +164,7 @@ elif seletor == "rota de todas as notas":
                                             lon_final = location["lng"]
                                             localizacao = f'{lat_final},{lon_final}'
                             destinos_info.append(localizacao)
-                final_route_url = base_url2 + '/'.join(destinos_info)
+            final_route_url = base_url2 + '/'.join(destinos_info)
             st.markdown(f"Link para a rota completa: {final_route_url}")
 
 elif seletor == "suporte inteligente":
