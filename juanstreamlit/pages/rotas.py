@@ -173,11 +173,11 @@ elif seletor == "rota de todas as notas":
 
                 # Configurar o pedido de rota
                 request = {
-                    "origin": destinos_info[0],
+                    "origin": ponto_partida_dict['coordenadas_google'],
                     "destination": destinos_info[-1],
-                    "waypoints": waypoints,
-                    "mode": "driving",  # Modo de transporte (pode ser "walking", "bicycling", etc.)
-                    "key":'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'
+                    "waypoints": destinos_info[1:-1],
+                    "optimizeWaypoints": True,
+                    "travelMode": "DRIVING"
                 }
                 
                 # Fazer a solicitação à API Directions
