@@ -31,11 +31,23 @@ image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702
 seletor  = st.radio("Opções", ["rota da nota", "rota de todas as notas", "suporte inteligente"])
 
 
-
+lista_a = []
 base_url2 = "https://www.google.com/maps/dir/"
 if seletor == 'rota da nota':
-    pesquisa_nota = st.text_input(label='Pesquisar rota dessa nota')
-    pesquisa = st.button('ver rotas')
+     requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+        roteiro = requiscao.json()
+        dados = roteiro['bancodedadosroteirooficial']
+        for item in dados:
+                        roteiro = dados[f'{item}']
+                        for elemento in roteiro:
+                            nota = roteiro[f'{elemento}']
+                            numero = nota['Número da Nota']
+                            if numero in lista_a:
+                                pass
+                            else:
+                                lista_a.append(numero)
+        pesquisa_nota = st.selectbox('Pesquisar rota dessa nota',lista_a)
+        pesquisa = st.button('ver rotas')
     if pesquisa:
         webbrowser.open('https://portalhashtag.com/')
         lista = []
@@ -52,7 +64,6 @@ if seletor == 'rota da nota':
                         volumes = nota['Volumes']
                         valor = nota['Valor Total']
                         Cliente  = nota['Cliente']
-                        base_url2 = "https://www.google.com/maps/dir/"
         address = "Itupeva,sp"
         base_url = "https://maps.googleapis.com/maps/api/geocode/json"
         params = {
