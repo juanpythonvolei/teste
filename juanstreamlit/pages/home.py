@@ -211,7 +211,7 @@ if uploaded_files:
     else:
                         print('não confere')
     st.warning('Processo Concluído')
-    st.write(f'''Total de nota:{len(lista_notas)}''')
+    st.write(f'''Total de notas:{len(lista_notas)}''')
 if page == 'Login':
     st.switch_page('meu_app.py')
 elif page == 'Rotas e suporte':
