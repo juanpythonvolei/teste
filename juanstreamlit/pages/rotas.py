@@ -168,14 +168,33 @@ elif seletor == "rota de todas as notas":
                                             lon_inicial = location["lng"]
                                             localizacao = f'{lat_inicial},{lon_inicial}'
                                             destinos_info.append(localizacao)
-                final = base_url2 + '/'.join(destinos_info)
-                link = f'{final}'
+                
+                waypoints = destinos_info[1:-1]  # Exclui o ponto de partida e o destino final
 
-# Exemplo de link para o Bing
-
-
-# Exemplo de link para o Bing
-                st.markdown(final)
+                # Configurar o pedido de rota
+                request = {
+                    "origin": destinos_info[0],
+                    "destination": destinos_info[-1],
+                    "waypoints": waypoints,
+                    "mode": "driving",  # Modo de transporte (pode ser "walking", "bicycling", etc.)
+                    "key": "SUA_CHAVE_DE_API_AQUI"
+                }
+                
+                # Fazer a solicitação à API Directions
+                response = requests.get("https://maps.googleapis.com/maps/api/directions/json", params=request)
+                data = response.json()
+                
+                # Obter as coordenadas da rota
+                route_coordinates = []
+                for step in data["routes"][0]["legs"][0]["steps"]:
+                    route_coordinates.extend(step["polyline"]["points"])
+                
+                # Renderizar a rota no mapa (você pode usar st.map ou outra biblioteca de mapas)
+                # Exemplo: st.map(route_coordinates)
+                
+                # Exibir o link para a rota completa
+                final_route_url = base_url2 + '/'.join(destinos_info)
+                st.markdown(f"Link para a rota completa: {final_route_url}")
 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
