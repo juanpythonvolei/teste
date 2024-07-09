@@ -11,6 +11,19 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
+image = st.image('https://logodix.com/logo/1976611.jpg')
+
+css = """
+<style>
+.centered-image {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+"""
+
+# Insere o CSS no aplicativo
+st.markdown(css, unsafe_allow_html=True)
 if not firebase_admin._apps:
     autenticacao  = {
     "type": "service_account",
@@ -39,19 +52,7 @@ else:
 
 # Configuração para ocultar a sidebar
 
-image = st.image('https://logodix.com/logo/1976611.jpg')
 
-css = """
-<style>
-.centered-image {
-    display: block;
-    margin: 0 auto;
-}
-</style>
-"""
-
-# Insere o CSS no aplicativo
-st.markdown(css, unsafe_allow_html=True)
 key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
 # Exibe a imagem centralizada
 
