@@ -49,16 +49,19 @@ if uploaded_files:
    
     destinos_info = []
     for nota in uploaded_files:
-            xml_data = nota.read()
-            documento = xmltodict.parse(xml_data)
-            print(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10])
-            print(opcao_selecionada)
-            if str(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]) == str(opcao_selecionada):
-                nome = nota.name
-                if documento not in lista_filtrada:
-                       lista_filtrada.append(documento)
-                else:
-                    continue
+        try:
+                xml_data = nota.read()
+                documento = xmltodict.parse(xml_data)
+                print(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10])
+                print(opcao_selecionada)
+                if str(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]) == str(opcao_selecionada):
+                    nome = nota.name
+                    if documento not in lista_filtrada:
+                           lista_filtrada.append(documento)
+                    else:
+                        continue
+            except:
+                st.warning('Algo deu errado, tente novamente')
     print(lista_filtrada)
     for documento in lista_filtrada:
                     st.write("Você carregou a nota:", documento['nfeProc']['NFe']['infNFe']['ide']['nNF'])
