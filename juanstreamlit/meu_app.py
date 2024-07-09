@@ -4,6 +4,17 @@ from firebase_admin import credentials, firestore,db
 import requests
 import os
 st.set_page_config(initial_sidebar_state="collapsed")
+import streamlit as st
+
+st.markdown("""
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #FFA421;
+        color: white; /* Cor do texto na barra lateral */
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 st.markdown(
     """
     <style>
