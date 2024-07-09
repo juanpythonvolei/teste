@@ -98,10 +98,10 @@ if seletor == 'rota da nota':
                                     lat_final = location["lat"]
                                     lon_final = location["lng"]
                                     localizacao = f'{lat_final},{lon_final}'
-                        destinos_info.append(localizacao)
-                        final = base_url2 + '/'.join(destinos_info)
-                        webbrowser.open(final)     
-                        st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
+        destinos_info.append(localizacao)
+        final = base_url2 + '/'.join(destinos_info)
+        webbrowser.open(final)     
+        st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
 elif seletor == "rota de todas as notas":
         lista_total = []
         destinos_info = []
