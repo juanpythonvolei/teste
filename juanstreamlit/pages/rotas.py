@@ -169,7 +169,7 @@ elif seletor == "rota de todas as notas":
                                             localizacao = f'{lat_inicial},{lon_inicial}'
                 destinos_info.append(localizacao)
                 final = base_url2 + '/'.join(destinos_info)
-                webbrowser.open(final) 
+                st.markdown(final) 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
        botao_ia = st.button('ok')
