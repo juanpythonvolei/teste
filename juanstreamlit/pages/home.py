@@ -1,4 +1,4 @@
-import streamlit as st
+Eimport streamlit as st
 import requests
 import re
 from pathlib import Path
@@ -14,11 +14,7 @@ from time import sleep
 import pprint
 from st_circular_progress import CircularProgress
 datas = []
-/* styles.css */
-.sidebar {
-    display: none;
-}
-
+st.set_page_config(initial_sidebar_state="collapsed")
 ref = db.reference('bancodedadosroteirooficial')
 page = st.sidebar.selectbox("Escolha uma página", ["Home", "Login", "Rotas e suporte"])
 css = """
