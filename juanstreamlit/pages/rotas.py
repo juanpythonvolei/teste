@@ -183,7 +183,7 @@ elif seletor == "rota de todas as notas":
                 route_coordinates = []
                 for step in data["routes"][0]["legs"][0]["steps"]:
                     route_coordinates.extend(step["polyline"]["points"])
-                final_route_url = base_url2 + '/'.join(route_coordinates)
+                final_route_url = base_url2 + '/'.join(destinos_info)
                 st.markdown(f"Link para a rota completa: {final_route_url}")
 
 elif seletor == "suporte inteligente":
