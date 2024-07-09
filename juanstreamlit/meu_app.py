@@ -4,6 +4,16 @@ from firebase_admin import credentials, firestore,db
 import requests
 import os
 st.set_page_config(initial_sidebar_state="collapsed")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #000000;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.markdown("""
     <style>
        [aria-expanded='true'] {
