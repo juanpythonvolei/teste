@@ -15,6 +15,13 @@ import pprint
 from st_circular_progress import CircularProgress
 datas = []
 st.set_page_config(initial_sidebar_state="collapsed")
+st.markdown("""
+    <style>
+       [aria-expanded='true'] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
 ref = db.reference('bancodedadosroteirooficial')
 page = st.sidebar.selectbox("Escolha uma página", ["Home", "Login", "Rotas e suporte"])
 css = """
