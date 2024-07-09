@@ -73,7 +73,50 @@ if uploaded_files:
     for documento in lista_filtrada:
                     st.write("Você carregou a nota:", documento['nfeProc']['NFe']['infNFe']['ide']['nNF'])
                     try:
-                                        
+                        try:
+                                            
+                                                lista_datas.append(nota)
+                                                dict_nota_fiscal = documento['nfeProc']['NFe']['infNFe']
+                                                numero_da_nota = dict_nota_fiscal['ide']['nNF']
+                                                cliente = dict_nota_fiscal['dest']['xNome']
+                                                valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
+                                                destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]}-{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}-{dict_nota_fiscal["dest"]["enderDest"]["UF"]},{dict_nota_fiscal["dest"]["enderDest"]["CEP"]}'
+                                                data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
+                                                lista_produtos = []
+                                                lista_Destinos.append(destino)
+                                                descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
+                                                valor_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
+                                                item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
+                                                lista_produtos.append(item_nota)
+    
+                                                    
+    
+                                                dict_nota = {
+                                                    'Produtos': lista_produtos,
+                                                    'Número da Nota': numero_da_nota,
+                                                    'Cliente': cliente,
+                                                    'Valor Total': valor_total,
+                                                    'Destino': destino,
+                                                    'Volumes':len(lista_produtos),
+                                                    'Data de Emissão':data_emit,
+                                                    'status':'Entrega não completa'
+                                                }
+                                                lista_notas.append(dict_nota)
+                        except:
+                                            lista_produtos = []
+                                            if isinstance(documento['nfeProc']['NFe']['infNFe']['det'], list):
+                                                # Iterar sobre os elementos 'det'
+                                                for item in documento['nfeProc']['NFe']['infNFe']['det']:
+                                                    descricao_produto = item['prod']['cProd']
+                                                    valor_prod = item['prod']['vProd']
+                                                    elemento = f'Item:{descricao_produto}  valor:{valor_prod}'
+                                                    lista_produtos.append(elemento)
+                                            else:
+                    # Acessar diretamente o campo 'cProd'
+                                                descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
+                                                valor_prod = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
+                                                elemento = f'Item:{descricao_produto}  Valor:{valor_prod}'
+                                                lista_produtos.append(elemento)
                                             lista_datas.append(nota)
                                             dict_nota_fiscal = documento['nfeProc']['NFe']['infNFe']
                                             numero_da_nota = dict_nota_fiscal['ide']['nNF']
@@ -81,63 +124,23 @@ if uploaded_files:
                                             valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
                                             destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]}-{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}-{dict_nota_fiscal["dest"]["enderDest"]["UF"]},{dict_nota_fiscal["dest"]["enderDest"]["CEP"]}'
                                             data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
-                                            lista_produtos = []
                                             lista_Destinos.append(destino)
-                                            descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
-                                            valor_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
-                                            item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
-                                            lista_produtos.append(item_nota)
-
-                                                
-
+    
+                                                    
+    
                                             dict_nota = {
-                                                'Produtos': lista_produtos,
-                                                'Número da Nota': numero_da_nota,
-                                                'Cliente': cliente,
-                                                'Valor Total': valor_total,
-                                                'Destino': destino,
-                                                'Volumes':len(lista_produtos),
-                                                'Data de Emissão':data_emit,
-                                                'status':'Entrega não completa'
-                                            }
+                                                    'Produtos': lista_produtos,
+                                                    'Número da Nota': numero_da_nota,
+                                                    'Cliente': cliente,
+                                                    'Valor Total': valor_total,
+                                                    'Destino': destino,
+                                                    'Volumes':len(lista_produtos),
+                                                    'Data de Emissão':data_emit,
+                                                    'status':'Entrega não completa'
+                                                }
                                             lista_notas.append(dict_nota)
                     except:
-                                        lista_produtos = []
-                                        if isinstance(documento['nfeProc']['NFe']['infNFe']['det'], list):
-                                            # Iterar sobre os elementos 'det'
-                                            for item in documento['nfeProc']['NFe']['infNFe']['det']:
-                                                descricao_produto = item['prod']['cProd']
-                                                valor_prod = item['prod']['vProd']
-                                                elemento = f'Item:{descricao_produto}  valor:{valor_prod}'
-                                                lista_produtos.append(elemento)
-                                        else:
-                # Acessar diretamente o campo 'cProd'
-                                            descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
-                                            valor_prod = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
-                                            elemento = f'Item:{descricao_produto}  Valor:{valor_prod}'
-                                            lista_produtos.append(elemento)
-                                        lista_datas.append(nota)
-                                        dict_nota_fiscal = documento['nfeProc']['NFe']['infNFe']
-                                        numero_da_nota = dict_nota_fiscal['ide']['nNF']
-                                        cliente = dict_nota_fiscal['dest']['xNome']
-                                        valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
-                                        destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]}-{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}-{dict_nota_fiscal["dest"]["enderDest"]["UF"]},{dict_nota_fiscal["dest"]["enderDest"]["CEP"]}'
-                                        data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
-                                        lista_Destinos.append(destino)
-
-                                                
-
-                                        dict_nota = {
-                                                'Produtos': lista_produtos,
-                                                'Número da Nota': numero_da_nota,
-                                                'Cliente': cliente,
-                                                'Valor Total': valor_total,
-                                                'Destino': destino,
-                                                'Volumes':len(lista_produtos),
-                                                'Data de Emissão':data_emit,
-                                                'status':'Entrega não completa'
-                                            }
-                                        lista_notas.append(dict_nota)
+                        st.warning('Ops...Parece que algo deu errado')
     address = "Itupeva,sp"
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
