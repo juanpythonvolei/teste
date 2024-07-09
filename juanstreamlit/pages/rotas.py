@@ -195,7 +195,6 @@ elif seletor == "rota de todas as notas":
                 # Exibir o link para a rota completa
                 final_route_url = base_url2 + '/'.join(destinos_info)
                 st.markdown(f"Link para a rota completa: {final_route_url}")
-                st.map(destinos_info)
 
 elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
