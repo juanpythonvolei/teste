@@ -69,7 +69,7 @@ if uploaded_files:
                                             numero_da_nota = dict_nota_fiscal['ide']['nNF']
                                             cliente = dict_nota_fiscal['dest']['xNome']
                                             valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
-                                            destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xlgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}'
+                                            destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xlgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]},{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}'
                                             data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
                                             lista_produtos = []
                                             lista_Destinos.append(destino)
@@ -111,7 +111,7 @@ if uploaded_files:
                                         numero_da_nota = dict_nota_fiscal['ide']['nNF']
                                         cliente = dict_nota_fiscal['dest']['xNome']
                                         valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
-                                        destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}'
+                                        destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xlgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]},{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}'
                                         data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
                                         lista_Destinos.append(destino)
 
