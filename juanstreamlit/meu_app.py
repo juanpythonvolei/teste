@@ -6,12 +6,12 @@ import os
 st.set_page_config(initial_sidebar_state="collapsed")
 st.markdown("""
     <style>
-        [data-testid='stSidebar'] [aria-expanded='true'] {
+       [aria-expanded='true'] {
             display: none;
         }
     </style>
 """, unsafe_allow_html=True)
-image = st.image('https://logodix.com/logo/1976611.jpg')
+image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 
 css = """
 <style>
