@@ -174,7 +174,7 @@ if uploaded_files:
                                     else:
                                         url = 'https://maps.googleapis.com/maps/api/directions/json'
                                         params = {
-                                                    'origin': f'Itupeva,sp',  # Origem
+                                                    'origin': f'Rua Louveira, Jardim Samabaia,101.Itupeva,sp',  # Origem
                                                     'destination': f'{str(address2)}',  # Destino
                                                     'key': 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Sua chave de API do Google Maps
                                                 }
