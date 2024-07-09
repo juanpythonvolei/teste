@@ -27,7 +27,7 @@ css = """
 st.markdown(css, unsafe_allow_html=True)
 
 # Exibe a imagem centralizada
-st.image('https://calscycle.ca/newsite/wp-content/uploads/2022/05/Thule.png', width=500)
+image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 seletor  = st.radio("Opções", ["rota da nota", "rota de todas as notas", "suporte inteligente"])
 
 
