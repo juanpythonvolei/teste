@@ -53,7 +53,7 @@ css = """
 st.markdown(css, unsafe_allow_html=True)
 key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
 # Exibe a imagem centralizada
-st.image('https://calscycle.ca/newsite/wp-content/uploads/2022/05/Thule.png')
+st.image('https://logodix.com/logo/1976611.jpg')
 
 login = st.text_input(label='Digite seu usuário')
 
