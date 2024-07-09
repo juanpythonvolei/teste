@@ -34,7 +34,7 @@ seletor  = st.radio("Opções", ["rota da nota", "rota de todas as notas", "supo
 lista_a = []
 base_url2 = "https://www.google.com/maps/dir/"
 if seletor == 'rota da nota':
-     requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+        requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['bancodedadosroteirooficial']
         for item in dados:
