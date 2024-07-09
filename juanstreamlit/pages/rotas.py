@@ -97,7 +97,7 @@ if seletor == 'rota da nota':
                                     location = data["results"][0]["geometry"]["location"]
                                     lat_final = location["lat"]
                                     lon_final = location["lng"]
-                                    localizacao = f'{lat_final},{lon_final}'
+        localizacao = f'{lat_final},{lon_final}'
         destinos_info.append(localizacao)
         final = base_url2 + '/'.join(destinos_info)
         st.markdown(final)     
