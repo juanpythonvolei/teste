@@ -15,6 +15,14 @@ import pprint
 from st_circular_progress import CircularProgress
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
+st.markdown("""
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #FFA421;
+        color: white; /* Cor do texto na barra lateral */
+    }
+    </style>
+""", unsafe_allow_html=True)
 css = """
 <style>
 .centered-image {
