@@ -47,7 +47,7 @@ if seletor == 'rota da nota':
                             else:
                                 lista_a.append(numero)
         pesquisa_nota = st.selectbox('Pesquisar rota dessa nota',lista_a)
-        pesquisa = st.button('ver rotas')
+        pesquisa = st.button('Ver Rota')
         if pesquisa:
             webbrowser.open('https://portalhashtag.com/')
             lista = []
