@@ -77,7 +77,7 @@ else:
 key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
 # Exibe a imagem centralizada
 
-login = st.text_input(label='Digite seu usuário')
+login = st.text_input(label='Digite seu E-mail')
 
 senha = st.text_input(label='Digite sua senha',type="password")
 if st.button('Entrar'):
