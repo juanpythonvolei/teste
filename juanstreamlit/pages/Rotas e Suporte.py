@@ -164,21 +164,6 @@ elif seletor == "rota de todas as notas":
                                             lon_final = location["lng"]
                                             localizacao = f'{lat_final},{lon_final}'
                             destinos_info.append(localizacao)
-                
-                waypoints = destinos_info[1:-1]  # Exclui o ponto de partida e o destino final
-                request = {
-                    "origin": ponto_partida_dict['coordenadas_google'],
-                    "destination": destinos_info[-1],
-                    "waypoints": destinos_info[1:-1],
-                    "optimizeWaypoints": True,
-                    "travelMode": "DRIVING",
-                    "key":'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'
-                }
-                response = requests.get("https://maps.googleapis.com/maps/api/directions/json", params=request)
-                data = response.json()
-                route_coordinates = []
-                for step in data["routes"][0]["legs"][0]["steps"]:
-                    route_coordinates.extend(step["polyline"]["points"])
                 final_route_url = base_url2 + '/'.join(destinos_info)
             st.markdown(f"Link para a rota completa: {final_route_url}")
 
