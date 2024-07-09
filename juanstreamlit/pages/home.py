@@ -14,6 +14,11 @@ from time import sleep
 import pprint
 from st_circular_progress import CircularProgress
 datas = []
+/* styles.css */
+.sidebar {
+    display: none;
+}
+
 ref = db.reference('bancodedadosroteirooficial')
 page = st.sidebar.selectbox("Escolha uma página", ["Home", "Login", "Rotas e suporte"])
 css = """
