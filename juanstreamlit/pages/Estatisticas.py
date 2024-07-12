@@ -43,25 +43,19 @@ if botao:
                 if nota['Data de Emissão'] == opcao_selecionada:
                     for item in nota:
                         numero_nota = nota['Número da Nota']
-                        lista_notas.append(numero_nota)
                         destino = nota['Destino']
-                        texto_nota.append(destino)
                         data_De_emissao = nota['Data de Emissão']
                         volumes = nota['Volumes']
-                        lista_volumes.append(volumes)
                         cliente = nota['Cliente']
-                        lista_clientes.append(cliente)
                         Produtos = nota['Produtos'][0]
-                        lista_produtos.append(Produtos)
                         status = nota['status']
                         valor  = nota['Valor Total']
-                        Lista_valores.append(valor)
-    texto_nota =  list(set(texto_nota))
-    lista_produtos =  list(set(lista_produtos))
-    lista_clientes =  list(set(lista_clientes))
-    Lista_valores =  list(set(Lista_valores))
-    lista_notas =  list(set(lista_notas))
-    lista_volumes =  list(set(lista_volumes))
+                    texto_nota.append(destino)
+                    lista_produtos.append(Produtos)
+                    lista_clientes.append(cliente)
+                    Lista_valores.append(valor)
+                    lista_notas.append(numero_nota)
+                    lista_volumes.append(volumes)
     data = {'Destino': texto_nota,
             'Valor da nota': Lista_valores,
             'Volumes':lista_volumes,
