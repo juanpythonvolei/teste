@@ -78,9 +78,7 @@ if botao:
             'Valor da nota': lista_valores,
             'Volumes':lista_volumes,
             'Cliente':lista_clientes,
-            'Nota':lista_notas,
-            'Data':data_De_emissao,
-            'Status':status}
+            'Nota':lista_notas}
     df = pd.DataFrame(data)
 
     # Exibindo a tabela no Streamlit
