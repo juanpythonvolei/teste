@@ -75,7 +75,7 @@ if botao:
                         else:
                             lista_valores.append(valor)
     data = {'Destino': texto_nota,
-            'Valor da nota': Lista_valores,
+            'Valor da nota': lista_valores,
             'Volumes':lista_volumes,
             'Cliente':lista_clientes,
             'Nota':lista_notas,
