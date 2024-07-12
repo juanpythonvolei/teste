@@ -33,7 +33,7 @@ if botao:
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
-    lista_valores = []
+    Lista_valores = []
     lista_notas = []
     lista_volumes = []
     for item in dados:
@@ -43,43 +43,32 @@ if botao:
                 if nota['Data de Emissão'] == opcao_selecionada:
                     for item in nota:
                         numero_nota = nota['Número da Nota']
-                        if numero_nota in lista_notas:
-                            pass
-                        else:
-                            lista_notas.append(numero_nota)
+                        lista_notas.append(numero_nota)
                         destino = nota['Destino']
-                        if destino in texto_nota:
-                            pass
-                        else:    
-                            texto_nota.append(destino)
+                        texto_nota.append(destino)
                         data_De_emissao = nota['Data de Emissão']
                         volumes = nota['Volumes']
-                        if volumes in lista_volumes:
-                            pass
-                        else:
-                            lista_volumes.append(volumes)
+                        lista_volumes.append(volumes)
                         cliente = nota['Cliente']
-                        if cliente in lista_clientes:
-                            pass
-                        else:
-                            lista_clientes.append(cliente)
+                        lista_clientes.append(cliente)
                         Produtos = nota['Produtos'][0]
-                        if Produtos in lista_produtos:
-                            pass
-                        else:
-                            lista_produtos.append(Produtos)
+                        lista_produtos.append(Produtos)
                         status = nota['status']
                         valor  = nota['Valor Total']
-                        if valor in lista_valores:
-                            pass
-                        else:
-                            lista_valores.append(valor)
+                        Lista_valores.append(valor)
+    texto_nota =  list(set(texto_nota))
+    lista_produtos =  list(set(lista_produtos))
+    lista_clientes =  list(set(lista_clientes))
+    Lista_valores =  list(set(Lista_valores))
+    lista_notas =  list(set(lista_notas))
+    lista_volumes =  list(set(lista_volumes))
     data = {'Destino': texto_nota,
-            'Valor da nota': lista_valores,
+            'Valor da nota': Lista_valores,
             'Volumes':lista_volumes,
             'Cliente':lista_clientes,
             'Nota':lista_notas,
-           'Produtos':lista_produtos}
+            'Data':data_De_emissao,
+            'Status':status}
     df = pd.DataFrame(data)
 
     # Exibindo a tabela no Streamlit
