@@ -33,7 +33,7 @@ if botao:
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
-    Lista_valores = []
+    lista_valores = []
     lista_notas = []
     lista_volumes = []
     for item in dados:
@@ -70,10 +70,10 @@ if botao:
                             lista_produtos.append(Produtos)
                         status = nota['status']
                         valor  = nota['Valor Total']
-                        if valor in Lista_valores:
+                        if valor in lista_valores:
                             pass
                         else:
-                            Lista_valores.append(valor)
+                            lista_valores.append(valor)
     data = {'Destino': texto_nota,
             'Valor da nota': Lista_valores,
             'Volumes':lista_volumes,
