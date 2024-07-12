@@ -50,12 +50,12 @@ if botao:
                         Produtos = nota['Produtos'][0]
                         status = nota['status']
                         valor  = nota['Valor Total']
-                    texto_nota.append(destino)
-                    lista_produtos.append(Produtos)
-                    lista_clientes.append(cliente)
-                    Lista_valores.append(valor)
-                    lista_notas.append(numero_nota)
-                    lista_volumes.append(volumes)
+                texto_nota.append(destino)
+                lista_produtos.append(Produtos)
+                lista_clientes.append(cliente)
+                Lista_valores.append(valor)
+                lista_notas.append(numero_nota)
+                lista_volumes.append(volumes)
     data = {'Destino': texto_nota,
             'Valor da nota': Lista_valores,
             'Volumes':lista_volumes,
