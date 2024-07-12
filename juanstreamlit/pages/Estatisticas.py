@@ -15,6 +15,7 @@ st.markdown(css, unsafe_allow_html=True)
 
 # Exibe a imagem centralizada
 st.image('https://calscycle.ca/newsite/wp-content/uploads/2022/05/Thule.png', width=500)
+botao = st.button("Carregar Dados")
 
 lista_total = []
 destinos_info = []
@@ -27,9 +28,42 @@ for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
-data = {'Nome': ['Alice', 'Bob', 'Carol'],
-        'Idade': [25, 30, 22]}
-df = pd.DataFrame(data)
 
-# Exibindo a tabela no Streamlit
-st.table(df)
+if botao:
+    texto_nota = []
+    lista_produtos = []
+    lista_clientes = []
+    Lista_valores = []
+    lista_notas = []
+    lista_volumes = []
+    for item in dados:
+            roteiro = dados[f'{item}']
+            for elemento in roteiro:
+                nota = roteiro[f'{elemento}']
+                if nota['Data de Emissão'] == opcao_selecionada:
+                    for item in nota:
+                        numero_nota = nota['Número da Nota']
+                        lista_notas.append(numero_nota)
+                        destino = nota['Destino']
+                        texto_nota.append(destino)
+                        data_De_emissao = nota['Data de Emissão']
+                        volumes = nota['Volumes']
+                        lista_volumes.append(volumes)
+                        cliente = nota['Cliente']
+                        lista_clientes.append(cliente)
+                        Produtos = nota['Produtos'][0]
+                        lista_produtos.append(Produtos)
+                        status = nota['status']
+                        valor  = nota['Valor Total']
+                        Lista_valores.append(valor)
+    data = {'Destino': texto_nota,
+            'Valor da nota': Lista_valores,
+            'Volumes':lista_volumes,
+            'Cliente':lista_clientes,
+            'Nota':lista_notas,
+            'Data':data_De_emissao,
+            'Status':status}
+    df = pd.DataFrame(data)
+
+    # Exibindo a tabela no Streamlit
+    st.table(df)
