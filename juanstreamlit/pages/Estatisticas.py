@@ -43,19 +43,37 @@ if botao:
                 if nota['Data de Emissão'] == opcao_selecionada:
                     for item in nota:
                         numero_nota = nota['Número da Nota']
-                        lista_notas.append(numero_nota)
+                        if numero_nota in lista_notas:
+                            pass
+                        else:
+                            lista_notas.append(numero_nota)
                         destino = nota['Destino']
-                        texto_nota.append(destino)
+                        if destino in texto_nota:
+                            pass
+                        else:    
+                            texto_nota.append(destino)
                         data_De_emissao = nota['Data de Emissão']
                         volumes = nota['Volumes']
-                        lista_volumes.append(volumes)
+                        if volumes in lista_volumes:
+                            pass
+                        else:
+                            lista_volumes.append(volumes)
                         cliente = nota['Cliente']
-                        lista_clientes.append(cliente)
+                        if cliente in lista_clientes:
+                            pass
+                        else:
+                            lista_clientes.append(cliente)
                         Produtos = nota['Produtos'][0]
-                        lista_produtos.append(Produtos)
+                        if Produtos in lista_produtos:
+                            pass
+                        else:
+                            lista_produtos.append(Produtos)
                         status = nota['status']
                         valor  = nota['Valor Total']
-                        Lista_valores.append(valor)
+                        if valor in Lista_valores:
+                            pass
+                        else:
+                            Lista_valores.append(valor)
     data = {'Destino': texto_nota,
             'Valor da nota': Lista_valores,
             'Volumes':lista_volumes,
