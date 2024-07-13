@@ -16,11 +16,13 @@ opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
 for item in dados:
             lista_conferida = []
+            lista_notas = []
             roteiro = dados[item]
             for elemento in roteiro:
                         nota = roteiro[elemento]
                         volumes = nota['Volumes']
                         numero_nota = nota['Número da Nota']
+                        lista_notas.append(numero_nota)
                         valor = nota['Valor Total']
                         cliente = nota['Cliente']
                         data = nota['Data de Emissão']
@@ -34,13 +36,14 @@ for nota, estado in checkbox_states.items():
         if estado:
             status = 'Feito'
             lista_conferida.append(status)
+            if 
         else:
             try:
                         status = 'Feito'
                         lista_conferida.remove(status)
             except:
                         pass
-col1, col2, col3 = st.columns(3)
+col1 = st.columns(1)
       
       # Estilização CSS embutida
 css_style = """
@@ -58,8 +61,5 @@ css_style = """
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
-with col2:
-          st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
-with col3:
-          st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
+
 # Exibe as notas com checkboxes
