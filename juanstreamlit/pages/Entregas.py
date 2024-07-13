@@ -93,7 +93,7 @@ for item in dados:
                                         nota = roteiro[f'{elemento}']
                                         data_emit = nota['Data de Emissão']
                                         
-                                        if data_emit == str(opcao_selecionada_data):
+                            if data_emit == str(opcao_selecionada_data):
                                           numero_nota = nota['Número da Nota']
                                           lista.append(numero_nota)
                                           status = nota['status']
