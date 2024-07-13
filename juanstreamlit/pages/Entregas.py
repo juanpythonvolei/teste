@@ -55,7 +55,7 @@ for nota, estado in checkbox_states.items():
                         lista_conferida.remove(status)
             except:
                         pass
-col1 = st.columns(1)
+col1, col2, col3 = st.columns(3)
       
       # Estilização CSS embutida
 css_style = """
@@ -70,8 +70,12 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
-st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-col1:
+    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
+with col2:
+          st.markdown(f'<div class="my-square">Total Destinos}</div>', unsafe_allow_html=True)
+with col3:
+          st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
 
 # Exibe as notas com checkboxes
