@@ -118,7 +118,7 @@ elif selected == 'Dados do Tranporte':
                                                             
                                                             if data["status"] == "OK":
                                                                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
-                                                                distancia =  data["rows"][0]["elements"][0]["distance"]
+                                                                distancia =  data["rows"][0]["elements"][0]["distance"]["text"]
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
                                                                 Total_percorrido += distancia
                                                                
