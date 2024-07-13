@@ -23,6 +23,5 @@ if total:
                         valor = nota['Valor Total']
                         cliente = nota['Cliente']
                         data = nota['Data de Emissão']
-                        if data == opcao_selecionada:
-                                opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
+                        opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
             
