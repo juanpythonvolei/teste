@@ -160,9 +160,7 @@ col1, col2, col3 = st.columns(3)
 # Estilização CSS embutida
 css_style = """
     .my-square {
-        width: 200px;
-        height: 200px;
-        background-color: blue;
+        background-color:#0275b1;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -174,9 +172,9 @@ css_style = """
 # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
-    st.markdown('<div class="my-square">Quadrado 1</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Valor Total:{valor_total}</div>', unsafe_allow_html=True)
 with col2:
-    st.markdown('<div class="my-square">Quadrado 2</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_indo)}</div>', unsafe_allow_html=True)
 with col3:
     st.markdown('<div class="my-square">Quadrado 3</div>', unsafe_allow_html=True)
     
