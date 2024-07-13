@@ -140,7 +140,7 @@ elif selected == 'Dados do Tranporte':
         lat_destino, lon_destino = map(float, destino.split(","))
         dist = euclidean_distance(lat_inicial, lon_inicial, lat_destino, lon_destino)
         lista_viagem.append(dist)
-    distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={'|'.join(destinos_info)}&key=SUA_CHAVE_DE_API_AQUI"
+    distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={'|'.join(destinos_info)}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
 
     # Fazendo a requisição
     response = requests.get(distance_matrix_url)
