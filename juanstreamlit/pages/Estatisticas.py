@@ -75,11 +75,11 @@ if selected == "Dados Gerais":
       # Aplicando o estilo e inserindo os quadrados
     st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
     with col1:
-          st.markdown(f'<div class="my-square">Total Notas:{len(lista_notas)}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_notas)))}</div>', unsafe_allow_html=True)
     with col2:
-          st.markdown(f'<div class="my-square">Total Destinos:{len(texto_nota)}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
     with col3:
-          st.markdown(f'<div class="my-square">Total itens:{len(lista_produtos)}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total itens:{len(list(set(lista_produtos)))}</div>', unsafe_allow_html=True)
     
 elif selected == 'Dados do Tranporte':
     valor_total = 0
