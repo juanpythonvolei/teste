@@ -70,4 +70,5 @@ if col1.button('Dados Gerais'):
     # Exibindo a tabela no Streamlit
     st.table(df)
 elif col2.button('Dados da rota'):
+    pass
     
