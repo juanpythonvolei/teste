@@ -54,7 +54,7 @@ for nota, estado in checkbox_states.items():
                                       for elemento in roteiro:
                                           nota = roteiro[elemento] 
                                           data = nota['Data de Emissão']
-                                          if data == opcao_selecionada:
+                                          if data == opcao_selecionada_data:
                                             status = nota['status']
                                             link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
                                             dados = '{"status": "Entrega realizada"}'
