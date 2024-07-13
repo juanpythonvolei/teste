@@ -38,7 +38,8 @@ try:
                                           if 'ok' not in lista_alerta:
                                             lista_alerta.append('ok')
                                           else:
-                                            for item in lista_alerta:
+                                            pass
+                                          for item in lista_alerta:
                                               st.warning('Entrega Completa')
 except:
   pass
