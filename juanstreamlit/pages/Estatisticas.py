@@ -83,6 +83,14 @@ elif selected == 'Dados do Tranporte':
                                             location = data["results"][0]["geometry"]["location"]
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
+    lista_total = []
+    destinos_info = []
+    requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+    roteiro = requiscao.json()
+    dados = roteiro['bancodedadosroteirooficial']
+    base_url2 = "https://www.google.com/maps/dir/"
+
+        
     
     
 
