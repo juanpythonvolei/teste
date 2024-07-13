@@ -21,10 +21,11 @@ for item in dados:
                         for elemento in roteiro:
                                     nota = roteiro[elemento]
                                     status = nota['status']
+                                    data = nota['Data de Emissão']   
                                     if status == "Entrega realizada":
                                                 st.warning('Entrega Já Realizada')
                                     else:
-                                                data = nota['Data de Emissão']
+                                               
                                                 if data == opcao_selecionada_data:
                                                             volumes = nota['Volumes']
                                                             numero_nota = nota['Número da Nota']
