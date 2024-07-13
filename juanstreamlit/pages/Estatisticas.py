@@ -119,37 +119,36 @@ elif selected == 'Dados do Tranporte':
 
                                                                
 
-
-for i in range(len(destinos_info)):
-        destino_info = destinos_info[i]
-        lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
-        
-        # Constrói a URL da matriz de distância
-        distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_incial},{lon_inicial}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
-        
-        # Faz a requisição
-        response = requests.get(distance_matrix_url)
-        data = response.json()
-        
-        if data["status"] == "OK":
-            distance = data["rows"][0]["elements"][0]["distance"]["text"]
-            lista_viagem.append(distance)
-            duration = data["rows"][0]["elements"][0]["duration"]["text"]
-            lista_duracao.append(duration)
-            
-            # Agora você pode usar 'distance' e 'duration' conforme necessário
-    
-            # Atualiza a origem para o próximo destino
-        origem_atual = (lat_final, lon_final)
-
-            
-data = {'Destino': lista_total,
-            'Distância':lista_viagem,
-            'Duração':lista_duracao}
-df = pd.DataFrame(data)
-
-    # Exibindo a tabela no Streamlit
-st.table(df)
+  for i in range(len(destinos_info)):
+          destino_info = destinos_info[i]
+          lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
+          
+          # Constrói a URL da matriz de distância
+          distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_incial},{lon_inicial}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+          
+          # Faz a requisição
+          response = requests.get(distance_matrix_url)
+          data = response.json()
+          
+          if data["status"] == "OK":
+              distance = data["rows"][0]["elements"][0]["distance"]["text"]
+              lista_viagem.append(distance)
+              duration = data["rows"][0]["elements"][0]["duration"]["text"]
+              lista_duracao.append(duration)
+              
+              # Agora você pode usar 'distance' e 'duration' conforme necessário
+      
+              # Atualiza a origem para o próximo destino
+          origem_atual = (lat_final, lon_final)
+  
+              
+  data = {'Destino': lista_total,
+              'Distância':lista_viagem,
+              'Duração':lista_duracao}
+  df = pd.DataFrame(data)
+  
+      # Exibindo a tabela no Streamlit
+  st.table(df)
 
 
 
