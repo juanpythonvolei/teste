@@ -118,7 +118,7 @@ elif selected == 'Dados do Tranporte':
                                                         
 
                                                                
-  try:
+    try:
       for i in range(len(destinos_info)):
               destino_info = destinos_info[i]
               lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
@@ -178,8 +178,8 @@ elif selected == 'Dados do Tranporte':
           st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
       with col3:
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
-except:
-    st.warning('O conjungo de dados não tem informações informáveis')
+  except:
+      st.warning('O conjungo de dados não tem informações informáveis')
         
     
 
