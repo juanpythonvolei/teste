@@ -20,16 +20,18 @@ for item in dados:
                         roteiro = dados[item]
                         for elemento in roteiro:
                                     nota = roteiro[elemento]
-                                    status = nota['status']
-                                    volumes = nota['Volumes']
-                                    numero_nota = nota['Número da Nota']
-                                    lista_notas.append(numero_nota)
-                                    valor = nota['Valor Total']
-                                    cliente = nota['Cliente']
-                                                            
-                                                            
-                                                                # Usa o dicionário para controlar o estado da checkbox
-                                    checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+                                    data_emit = nota['Data de Emissão']
+                                    if data_emit == opcao_selecionada:
+                                      status = nota['status']
+                                      volumes = nota['Volumes']
+                                      numero_nota = nota['Número da Nota']
+                                      lista_notas.append(numero_nota)
+                                      valor = nota['Valor Total']
+                                      cliente = nota['Cliente']
+                                                              
+                                                              
+                                                                  # Usa o dicionário para controlar o estado da checkbox
+                                      checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
 
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
