@@ -22,5 +22,5 @@ if total:
                         numero_nota = nota['Número da Nota']
                         valor = nota['Valor Total']
                         cliente = nota['Cliente']
-                opcao_selecionada = st.checkbox("Marque esta opção",key=f'{numero_nota}')
+                        opcao_selecionada = st.checkbox("Marque esta opção",key=f'{numero_nota}')
             
