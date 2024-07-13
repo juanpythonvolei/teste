@@ -1,6 +1,13 @@
 import streamlit as st
 import requests
-
+st.markdown("""
+    <style>
+       [aria-expanded='true'] {
+            display: none;
+        }
+    </style>
+""", unsafe_allow_html=True)
+image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 login = st.text_input(label='Digite seu usuário')
 
 senha = st.text_input(label='Digite sua senha',type="password")
