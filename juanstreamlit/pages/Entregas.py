@@ -13,25 +13,27 @@ lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
 
-
-for item in dados:
-                        lista_conferida = []
-                        lista_notas = []
-                        roteiro = dados[item]
-                        for elemento in roteiro:
-                                    nota = roteiro[elemento]
-                                    data_emit = nota['Data de Emissão']
-                                    if data_emit == str(opcao_selecionada_data):
-                                      status = nota['status']
-                                      volumes = nota['Volumes']
-                                      numero_nota = nota['Número da Nota']
-                                      lista_notas.append(numero_nota)
-                                      valor = nota['Valor Total']
-                                      cliente = nota['Cliente']
-                                                              
-                                                              
-                                                                  # Usa o dicionário para controlar o estado da checkbox
-                                      checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+try:
+  for item in dados:
+                          lista_conferida = []
+                          lista_notas = []
+                          roteiro = dados[item]
+                          for elemento in roteiro:
+                                      nota = roteiro[elemento]
+                                      data_emit = nota['Data de Emissão']
+                                      if data_emit == str(opcao_selecionada_data):
+                                        status = nota['status']
+                                        volumes = nota['Volumes']
+                                        numero_nota = nota['Número da Nota']
+                                        lista_notas.append(numero_nota)
+                                        valor = nota['Valor Total']
+                                        cliente = nota['Cliente']
+                                                                
+                                                                
+                                                                    # Usa o dicionário para controlar o estado da checkbox
+                                        checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+except:
+  pass
 
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
