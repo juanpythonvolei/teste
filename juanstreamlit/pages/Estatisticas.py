@@ -77,6 +77,7 @@ elif selected == 'Dados do Tranporte':
                                             location = data["results"][0]["geometry"]["location"]
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
+                                            origem_atual = (lat_inicial, lon_inicial)
     lista_total = []
     destinos_info = []
     requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
@@ -125,7 +126,7 @@ elif selected == 'Dados do Tranporte':
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
 
                                                                
-origem_atual = (lat_inicial, lon_inicial)
+
 
 for i in range(len(destinos_info)):
     destino_info = destinos_info[i]
