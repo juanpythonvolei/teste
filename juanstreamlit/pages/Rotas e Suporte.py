@@ -14,6 +14,7 @@ import pprint
 from st_circular_progress import CircularProgress
 import webbrowser
 from suporte_inteligente import ia
+from streamlit_option_menu import option_menu
 css = """
 <style>
 .centered-image {
