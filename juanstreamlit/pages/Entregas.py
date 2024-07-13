@@ -40,7 +40,7 @@ try:
                                           else:
                                             lista_alerta.append('ok')
   if len(lista_alerta) > 0:
-    for item in lista_alerta:
+    for i in range(len(lista_alerta)):
             st.warning('Entrega Completa')
 except:
   pass
