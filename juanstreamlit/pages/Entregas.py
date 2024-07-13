@@ -9,9 +9,7 @@ lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 botao = st.button('Iniciar Nova Rota')
 checkbox_states = {}
-if botao:
-  
-  try:
+try:
     
     for item in dados:
                             lista_alerta = []
@@ -43,7 +41,7 @@ if botao:
       
       # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
   
-  for nota, estado in checkbox_states.items():
+for nota, estado in checkbox_states.items():
           if estado:
               status = 'Feito'
               lista_conferida.append(status)
@@ -71,10 +69,10 @@ if botao:
                           lista_conferida.remove(status)
               except:
                           pass
-  col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
         
         # Estilização CSS embutida
-  css_style = """
+css_style = """
             .my-square {
                 background-color:#0275b1;
                 border-radius: 10px;
@@ -86,12 +84,12 @@ if botao:
         """
         
         # Aplicando o estilo e inserindo os quadrados
-  st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-  with col1:
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+with col1:
             st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
-  with col2:
+with col2:
             st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
-  with col3:
+with col3:
             st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
   
   # Exibe as notas com checkboxes
