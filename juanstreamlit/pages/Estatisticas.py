@@ -58,6 +58,30 @@ if selected == "Dados Gerais":
 
     # Exibindo a tabela no Streamlit
     st.table(df)
+    col1, col2, col3 = st.columns(3)
+      
+      # Estilização CSS embutida
+      css_style = """
+          .my-square {
+              background-color:#0275b1;
+              border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+          }
+      """
+      
+      # Aplicando o estilo e inserindo os quadrados
+      st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+      with col1:
+          st.markdown(f'<div class="my-square">Total Notas:{len(lista_notas)}</div>', unsafe_allow_html=True)
+      with col2:
+          st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
+      with col3:
+          st.markdown(f'<div class="my-square">Total itens:{len(lista_produtos)}</div>', unsafe_allow_html=True)
+    except:
+        st.warning('O conjunto de dados não tem informações informáveis')
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
@@ -114,7 +138,8 @@ elif selected == 'Dados do Tranporte':
                                                         if localizacao in destinos_info:
                                                             pass
                                                         else:
-                                                            destinos_info.append(localizacao)    
+                                                            destinos_info.append(localizacao)
+                                                          
                                                         
 
                                                                
