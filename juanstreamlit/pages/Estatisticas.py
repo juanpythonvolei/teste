@@ -173,7 +173,7 @@ css_style = """
 # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
-    st.markdown(f'<div class="my-square">Valor Total:{valor_total}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Total Gasto:{valor_total}</div>', unsafe_allow_html=True)
 with col2:
     st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
 with col3:
