@@ -178,7 +178,7 @@ with col1:
 with col2:
     st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
 with col3:
-    st.markdown(f'<div class="my-square">Km Total:{ditancia_total}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Km:{ditancia_total}</div>', unsafe_allow_html=True)
     
     
 
