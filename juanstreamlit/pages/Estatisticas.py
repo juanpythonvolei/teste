@@ -61,7 +61,7 @@ if selected == "Dados Gerais":
     col1, col2, col3 = st.columns(3)
       
       # Estilização CSS embutida
-      css_style = """
+    css_style = """
           .my-square {
               background-color:#0275b1;
               border-radius: 10px;
