@@ -89,7 +89,10 @@ elif selected == 'Dados do Tranporte':
     roteiro = requiscao.json()
     dados = roteiro['bancodedadosroteirooficial']
     base_url2 = "https://www.google.com/maps/dir/"
-
+    for item in dados:
+                    roteiro = dados[f'{item}']
+                    for elemento in roteiro:
+                        
         
     
     
