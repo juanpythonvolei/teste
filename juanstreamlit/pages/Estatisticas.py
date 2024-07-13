@@ -92,6 +92,7 @@ elif selected == 'Dados do Tranporte':
     for item in dados:
                     roteiro = dados[f'{item}']
                     for elemento in roteiro:
+                        nota = roteiro[f'{elemento}']
                         destino = nota['Destino']
                             
                         address = f"{destino}"
