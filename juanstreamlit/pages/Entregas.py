@@ -7,13 +7,13 @@ import requests
 checkbox_states = {}
 
 # Exibe a seleção da data
-lista_total = [item for item in dados]
+
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 dados = roteiro['bancodedadosroteirooficial'][f'{opcao_selecionada_data}']
-
+lista_total = [item for item in dados]
 for item in dados:
                         lista_conferida = []
                         lista_notas = []
