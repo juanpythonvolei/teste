@@ -21,7 +21,7 @@ for item in dados:
                         for elemento in roteiro:
                                     nota = roteiro[elemento]
                                     data_emit = nota['Data de Emissão']
-                                    if data_emit == opcao_selecionada:
+                                    if data_emit == str(opcao_selecionada_data):
                                       status = nota['status']
                                       volumes = nota['Volumes']
                                       numero_nota = nota['Número da Nota']
