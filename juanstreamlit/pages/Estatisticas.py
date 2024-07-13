@@ -60,6 +60,7 @@ if selected == "Dados Gerais":
     st.table(df)
 elif selected == 'Dados do Tranporte':
     valor_total = 0
+    ditancia_total = 0
     lista_duracao = []
     lista_viagem = []
     valor = []
@@ -131,6 +132,7 @@ elif selected == 'Dados do Tranporte':
     for destino in destinos_info:
         lat_destino, lon_destino = map(float, destino.split(","))
         dist = euclidean_distance(lat_inicial, lon_inicial, lat_destino, lon_destino)
+        ditancia_total += float(dist)
         lista_viagem.append(dist)
     distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={'|'.join(destinos_info)}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
 
@@ -176,7 +178,7 @@ with col1:
 with col2:
     st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
 with col3:
-    st.markdown('<div class="my-square">Quadrado 3</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Km Total:{ditancia_total}</div>', unsafe_allow_html=True)
     
     
 
