@@ -5,10 +5,3 @@ secondaryBackgroundColor="#080250"
 textColor="#0275b1"
 font="monospace"
 
-[css]
-.my-square {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-    border-radius: 10px; /* Define o raio dos cantos arredondados */
-}
