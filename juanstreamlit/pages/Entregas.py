@@ -50,9 +50,9 @@ for nota, estado in checkbox_states.items():
                           roteiro = requisicao.json()
                           dados = roteiro['bancodedadosroteirooficial']
                           for item in dados:
-                                      roteiro = dados[item]
+                                      roteiro = dados[f'{item}']
                                       for elemento in roteiro:
-                                          nota = roteiro[elemento] 
+                                          nota = roteiro[f'{elemento}'] 
                                           data = nota['Data de Emissão']
                                           if data == opcao_selecionada_data:
                                             status = nota['status']
