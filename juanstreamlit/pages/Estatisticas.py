@@ -29,10 +29,9 @@ for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
-botao  = st.button('Dados Gerais')
-selected = option_menu("Menu Principal", ["Home", "Configurações"], icons=["house", "gear"], default_index=1)
+selected = option_menu("Menu Principal", ["Dados Gerais", "Dados do Tranporte"], icons=["house", "gear"], default_index=1)
 # Adicionando botões em cada coluna
-if botao:
+if selected == "Dados Gerais":
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
