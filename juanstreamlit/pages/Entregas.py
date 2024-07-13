@@ -15,7 +15,7 @@ opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 col1, col2, col3 = st.columns(1)
       
       # Estilização CSS embutida
-    css_style = """
+css_style = """
           .my-square {
               background-color:#0275b1;
               border-radius: 10px;
@@ -27,8 +27,8 @@ col1, col2, col3 = st.columns(1)
       """
       
       # Aplicando o estilo e inserindo os quadrados
-    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-    with col1:
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_conferida)))}</div>', unsafe_allow_html=True)
 # Exibe as notas com checkboxes
 
