@@ -39,8 +39,9 @@ try:
                                             pass
                                           else:
                                             lista_alerta.append('ok')
-  for item in lista_alerta:
-                                              st.warning('Entrega Completa')
+  if len(lista_alerta) > 0:
+    for item in lista_alerta:
+            st.warning('Entrega Completa')
 except:
   pass
 
