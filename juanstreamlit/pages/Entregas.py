@@ -29,11 +29,11 @@ css_style = """
       # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
-          st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_notas)))}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_conferida)))}</div>', unsafe_allow_html=True)
 with col2:
-          st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
 with col3:
-          st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
 # Exibe as notas com checkboxes
 
 for item in dados:
