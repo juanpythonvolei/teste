@@ -150,7 +150,7 @@ elif selected == 'Dados do Tranporte':
 
 css_style = """
     .my-square {
-        width: 200px;
+        width: 150px;
         height: 200px;
         background-color: #00f9cf;
         border-radius: 10px;
@@ -165,7 +165,7 @@ css_style = """
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 # Criando o quadrado com texto
-st.markdown('<div class="my-square">Texto no Quadrado</div>', unsafe_allow_html=True)                             
+st.markdown(f'<div class="my-square">{adress}</div>', unsafe_allow_html=True)                             
         
     
     
