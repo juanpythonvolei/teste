@@ -28,10 +28,10 @@ for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
-col1, col2 = st.beta_columns(2)
+botao  = st.button('Dados Gerais')
 
 # Adicionando botões em cada coluna
-if col1.button('Dados Gerais'):
+if botao:
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
@@ -69,6 +69,5 @@ if col1.button('Dados Gerais'):
 
     # Exibindo a tabela no Streamlit
     st.table(df)
-elif col2.button('Dados da rota'):
-    pass
+
     
