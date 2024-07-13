@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 from streamlit_option_menu import option_menu
+import math
 css = """
 <style>
 .centered-image {
@@ -72,6 +73,7 @@ if selected == "Dados Gerais":
 elif selected == 'Dados do Tranporte':
     lista_duracao = []
     lista_viagem = []
+    valor = []f
     address = "Itupeva,sp"
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
@@ -129,8 +131,15 @@ elif selected == 'Dados do Tranporte':
                                                             if data["status"] == "OK":
                                                                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
-                                                                lista_viagem.append(distance)
                                                                 lista_duracao.append(duration)
+    def euclidean_distance(x1, y1, x2, y2):
+        return ((x2 - x1)**2 + (y2 - y1)**2) ** 0.5
+
+# Calcular a distância entre o local de origem e cada destino
+    for destino in destinos_info:
+        lat_destino, lon_destino = map(float, destino.split(","))
+        dist = euclidean_distance(lat_inicial, lon_inicial, lat_destino, lon_destino)
+        lista_viagem.append(dist)                                                           
     data = {'Destino': lista_total,
             'Distância':lista_viagem,
             'Duração':lista_duracao}
