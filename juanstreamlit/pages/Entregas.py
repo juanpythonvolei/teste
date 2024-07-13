@@ -12,12 +12,12 @@ checkbox_states = {}
 # Exibe a seleção da data
 lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-botao = st.button('Iniciar Nova Entrega')
+
 # Exibe as notas com checkboxes
-if botao:
-    for item in dados:
-        roteiro = dados[item]
-        for elemento in roteiro:
+
+for item in dados:
+roteiro = dados[item]
+for elemento in roteiro:
             nota = roteiro[elemento]
             volumes = nota['Volumes']
             numero_nota = nota['Número da Nota']
@@ -29,7 +29,7 @@ if botao:
                 checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
-    st.write("Notas selecionadas:")
-    for nota, estado in checkbox_states.items():
+st.write("Notas selecionadas:")
+for nota, estado in checkbox_states.items():
         if estado:
             st.write(f"Nota {nota} marcada")
