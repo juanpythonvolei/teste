@@ -70,6 +70,8 @@ if selected == "Dados Gerais":
     # Exibindo a tabela no Streamlit
     st.table(df)
 elif selected == 'Dados do Tranporte':
+    lista_duracao = []
+    lista_viagem = []
     address = "Itupeva,sp"
                             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
                             params = {
@@ -94,6 +96,10 @@ elif selected == 'Dados do Tranporte':
                     for elemento in roteiro:
                         nota = roteiro[f'{elemento}']
                         destino = nota['Destino']
+                        if destino in lista_total:
+                            pass
+                        else:
+                            lista_total.append(destino)
                             
                         address = f"{destino}"
                         base_url = "https://maps.googleapis.com/maps/api/geocode/json"
@@ -108,6 +114,29 @@ elif selected == 'Dados do Tranporte':
                                                     location = data["results"][0]["geometry"]["location"]
                                                     lat_final = location["lat"]
                                                     lon_final = location["lng"]
+                                                    localizacao = f'{lat_final},{lon_final}'
+                                                    if localizacao in destinos_info:
+                                                        pass
+                                                    else:
+                                                        destinos_info.append(localizacao)    
+                                                        distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+                                                
+                                                        # Fazendo a requisição
+                                                        response = requests.get(distance_matrix_url)
+                                                        data = response.json()
+                                                        
+                                                        if data["status"] == "OK":
+                                                            distance = data["rows"][0]["elements"][0]["distance"]["text"]
+                                                            duration = data["rows"][0]["elements"][0]["duration"]["text"]
+                                                            lista_viagem.append(distance)
+                                                            lista_duracao.append(duration)
+     data = {'Destino': lista_total,
+            'Distância':lista_viagem.
+            'Duração':lista_duracao}
+    df = pd.DataFrame(data)
+
+    # Exibindo a tabela no Streamlit
+    st.table(df)
                                     
         
     
