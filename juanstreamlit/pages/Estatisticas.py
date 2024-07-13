@@ -15,7 +15,7 @@ st.markdown(css, unsafe_allow_html=True)
 
 # Exibe a imagem centralizada
 st.image('https://calscycle.ca/newsite/wp-content/uploads/2022/05/Thule.png', width=500)
-botao = st.button("Carregar Dados")
+
 
 lista_total = []
 destinos_info = []
@@ -28,8 +28,10 @@ for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
+col1, col2 = st.beta_columns(2)
 
-if botao:
+# Adicionando botões em cada coluna
+if col1.button('Dados Gerais'):
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
@@ -67,3 +69,5 @@ if botao:
 
     # Exibindo a tabela no Streamlit
     st.table(df)
+elif col2.button('Dados da rota'):
+    
