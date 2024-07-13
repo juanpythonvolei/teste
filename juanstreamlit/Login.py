@@ -90,18 +90,4 @@ if st.button('Entrar'):
         mensagem_erro  = requisicao_dic['error']['message']
         st.write(mensagem_erro)
 elif st.button('Criar conta'):
-    data = {"email":login,"password":senha,"returnSecureToken":True}
-    requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={key}",data=data)
-    requisicao_dic = requisicao.json()
-    if requisicao.ok:
-            refresh_token = requisicao_dic['refreshToken']
-            local_id = requisicao_dic['localId']
-            id_token = requisicao_dic['idToken']
-            link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/{local_id}.json'
-            data =f'{{"Nome":"{login}","Senha":"{senha}"}}'
-            requisicao_usuario = requests.patch(link,data=data)
-            st.switch_page('pages/Home.py')
-
-    else:
-            mensagem_erro  = requisicao_dic['error']['message']
-            st.write(mensagem_erro)
+    st.switch_page('pages/Criar_Conta.py')
