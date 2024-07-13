@@ -165,7 +165,7 @@ css_style = """
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 # Criando o quadrado com texto
-st.markdown(f'<div class="my-square">{adress}</div>', unsafe_allow_html=True)                             
+st.markdown('<div class="my-square">f'{adress}'</div>', unsafe_allow_html=True)                             
         
     
     
