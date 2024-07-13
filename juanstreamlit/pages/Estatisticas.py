@@ -133,7 +133,7 @@ elif selected == 'Dados do Tranporte':
             if data["status"] == "OK":
                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
                 lista_viagem.append(distance)
-                distancia_total += float(distance)
+                distancia_total += distance
                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
                 lista_duracao.append(duration)
                 
