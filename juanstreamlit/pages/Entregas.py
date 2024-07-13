@@ -74,7 +74,7 @@ st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
 with col2:
-          st.markdown(f'<div class="my-square">Total Destinos}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
 with col3:
           st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
 
