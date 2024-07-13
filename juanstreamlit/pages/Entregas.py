@@ -1,19 +1,14 @@
 import streamlit as st
 import requests
-
+requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+roteiro = requisicao.json()
+dados = roteiro['bancodedadosroteirooficial']
+  # Exibe a seleção da data
+lista_total = [item for item in dados]
 # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 botao = st.button('Iniciar Nova Rota')
 if botao:
-  # Cria um dicionário para armazenar o estado das checkboxes
-  checkbox_states = {}
-  requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
-  roteiro = requisicao.json()
-  dados = roteiro['bancodedadosroteirooficial']
-  # Exibe a seleção da data
-  lista_total = [item for item in dados]
-  
-  
   
   try:
     
