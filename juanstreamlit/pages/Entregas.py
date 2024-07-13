@@ -39,8 +39,6 @@ try:
                                             pass
                                           else:
                                             lista_alerta.append('ok')
-                                          for item in list(set(lista_alerta)):
-                                              st.warning('Entrega Completa')
   for item in list(set(lista_alerta)):
                                               st.warning('Entrega Completa')
 except:
