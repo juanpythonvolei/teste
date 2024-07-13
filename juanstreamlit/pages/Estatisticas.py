@@ -26,6 +26,7 @@ if selected == "Dados Gerais":
     Lista_valores = []
     lista_notas = []
     lista_volumes = []
+    
     for item in dados:
             roteiro = dados[f'{item}']
             for elemento in roteiro:
@@ -58,6 +59,7 @@ if selected == "Dados Gerais":
     # Exibindo a tabela no Streamlit
     st.table(df)
 elif selected == 'Dados do Tranporte':
+    valor_total = 0
     lista_duracao = []
     lista_viagem = []
     valor = []
@@ -86,6 +88,8 @@ elif selected == 'Dados do Tranporte':
                         nota = roteiro[f'{elemento}']
                         if nota['Data de Emissão'] == opcao_selecionada:
                             destino = nota['Destino']
+                            valor  = nota['Valor Total']
+                            valor_total += float(valor)
                             if destino in lista_total:
                                 pass
                             else:
@@ -165,7 +169,7 @@ css_style = """
 
 # Aplicando o estilo e inserindo o texto dinâmico
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-st.markdown(f'<div class="my-square">Total de Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="my-square">Total de Destinos:{len(destinos_info)}. Valor total Entregue:{valor_total}</div>', unsafe_allow_html=True)
     
     
 
