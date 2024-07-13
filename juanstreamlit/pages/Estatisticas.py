@@ -13,7 +13,7 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"
-Total_percorrido =         
+Total_percorrido = 0        
 for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
