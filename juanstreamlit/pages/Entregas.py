@@ -13,8 +13,8 @@ checkbox_states = {}
 lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
-try:
-            for item in dados:
+
+for item in dados:
                         lista_conferida = []
                         lista_notas = []
                         roteiro = dados[item]
@@ -35,8 +35,7 @@ try:
                                                             
                                                                 # Usa o dicionário para controlar o estado da checkbox
                                                             checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
-except:
-            pass
+
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
 st.write("Notas selecionadas:")
