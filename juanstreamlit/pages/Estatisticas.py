@@ -73,15 +73,14 @@ if selected == "Dados Gerais":
       """
       
       # Aplicando o estilo e inserindo os quadrados
-      st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-      with col1:
+    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+    with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(lista_notas)}</div>', unsafe_allow_html=True)
-      with col2:
+    with col2:
           st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
-      with col3:
+    with col3:
           st.markdown(f'<div class="my-square">Total itens:{len(lista_produtos)}</div>', unsafe_allow_html=True)
-    except:
-        st.warning('O conjunto de dados não tem informações informáveis')
+    
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
