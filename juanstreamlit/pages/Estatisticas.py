@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import pandas as pd
+from streamlit_option_menu import option_menu
 css = """
 <style>
 .centered-image {
@@ -29,7 +30,7 @@ for item in dados:
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
 botao  = st.button('Dados Gerais')
-
+selected = option_menu("Menu Principal", ["Home", "Configurações"], icons=["house", "gear"], default_index=1)
 # Adicionando botões em cada coluna
 if botao:
     texto_nota = []
