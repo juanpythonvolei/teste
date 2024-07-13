@@ -18,6 +18,7 @@ if total:
                 roteiro = dados[f'{item}']
                 for elemento in roteiro:
                         nota = roteiro[f'{elemento}']
+                        if nota['Data de Emissão'] == opcao_selecionada
                         volumes = nota['Volumes']
                         numero_nota = nota['Número da Nota']
                         valor = nota['Valor Total']
