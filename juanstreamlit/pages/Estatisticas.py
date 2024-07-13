@@ -131,9 +131,9 @@ elif selected == 'Dados do Tranporte':
             data = response.json()
             
             if data["status"] == "OK":
-                distance = data["rows"][0]["elements"][0]["distance"]["text"]
-                lista_viagem.append(distance)
-                distance_value = (distance.split()[0])
+                distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
+                distance_value = float(distance_text.split()[0]) 
+                lista_viagem.append(distance_text)
                 distancia_total += distance_value 
                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
                 lista_duracao.append(duration)
