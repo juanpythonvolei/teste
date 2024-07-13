@@ -29,7 +29,7 @@ st.markdown(css, unsafe_allow_html=True)
 
 # Exibe a imagem centralizada
 image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
-seletor  = st.radio("Opções", ["rota da nota", "rota de todas as notas", "suporte inteligente"])
+seletor  = option_menu("Menu Principal", ["Dados Gerais", "Dados do Tranporte"], icons=["database", "truck"], default_index=1)
 
 
 lista_a = []
