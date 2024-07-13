@@ -14,10 +14,11 @@ opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
 
 try:
+  lista_alerta = []
+  lista_conferida = []
+  lista_notas = []
   for item in dados:
-                          lista_alerta = []
-                          lista_conferida = []
-                          lista_notas = []
+                          
                           roteiro = dados[item]
                           for elemento in roteiro:
                                       nota = roteiro[elemento]
