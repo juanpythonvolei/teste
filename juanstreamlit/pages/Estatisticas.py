@@ -148,11 +148,14 @@ elif selected == 'Dados do Tranporte':
     st.table(df)
 
 
+nome_destino = "Minha Cidade Favorita"
+
+# Estilização CSS embutida
 css_style = """
     .my-square {
-        width: 150px;
+        width: 200px;
         height: 200px;
-        background-color: #00f9cf;
+        background-color: blue;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -161,12 +164,9 @@ css_style = """
     }
 """
 
-# Aplicando o estilo
+# Aplicando o estilo e inserindo o texto dinâmico
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-
-# Criando o quadrado com texto
-st.markdown('<div class="my-square">f"{adress}"</div>', unsafe_allow_html=True)                             
-        
+st.markdown(f'<div class="my-square">{nome_destino}</div>', unsafe_allow_html=True)
     
     
 
