@@ -26,6 +26,7 @@ if selected == "Dados Gerais":
     Lista_valores = []
     lista_notas = []
     lista_volumes = []
+    valor_total = 0
     
     for item in dados:
             roteiro = dados[f'{item}']
@@ -41,6 +42,7 @@ if selected == "Dados Gerais":
                         Produtos = nota['Produtos'][0]
                         status = nota['status']
                         valor  = nota['Valor Total']
+                    valor_total += float(valor)
                     texto_nota.append(destino)
                     lista_produtos.append(Produtos)
                     lista_clientes.append(cliente)
@@ -79,7 +81,7 @@ if selected == "Dados Gerais":
     with col2:
           st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
     with col3:
-          st.markdown(f'<div class="my-square">Total itens:{len(list(set(lista_produtos)))}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
     
 elif selected == 'Dados do Tranporte':
     valor_total = 0
