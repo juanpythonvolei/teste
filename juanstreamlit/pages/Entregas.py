@@ -34,7 +34,6 @@ for nota, estado in checkbox_states.items():
         if estado:
             status = 'Feito'
             lista_conferida.append(status)
-            st.write(f"Notas Entregues: {len(lista_conferida)}")
         else:
             try:
                         status = 'Feito'
