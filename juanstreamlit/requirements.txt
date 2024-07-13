@@ -17,4 +17,5 @@ xmltodict
 google-generativeai
 pandas
 streamlit-option-menu
+geopy
 
