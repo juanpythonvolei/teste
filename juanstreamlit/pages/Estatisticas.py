@@ -69,5 +69,7 @@ if selected == "Dados Gerais":
 
     # Exibindo a tabela no Streamlit
     st.table(df)
+elif selected == 'Dados do Tranporte':
+    
 
     
