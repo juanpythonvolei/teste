@@ -158,7 +158,7 @@ elif selected == 'Dados do Tranporte':
 css_style = """
     .my-square {
 
-        background-color:#00f9cf;
+        background-color:#0275b1;
         border-radius: 10px;
         display: flex;
         justify-content: center;
