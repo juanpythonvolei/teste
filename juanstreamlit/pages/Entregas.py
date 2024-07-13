@@ -2,9 +2,6 @@ import streamlit as st
 import requests
 
 # Carrega os dados do banco de dados
-requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
-roteiro = requisicao.json()
-dados = roteiro['bancodedadosroteirooficial']
 
 # Cria um dicionário para armazenar o estado das checkboxes
 checkbox_states = {}
@@ -13,6 +10,9 @@ checkbox_states = {}
 lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 
+requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+roteiro = requisicao.json()
+dados = roteiro['bancodedadosroteirooficial'][f'{opcao_selecionada_data}']
 
 for item in dados:
                         lista_conferida = []
@@ -21,24 +21,15 @@ for item in dados:
                         for elemento in roteiro:
                                     nota = roteiro[elemento]
                                     status = nota['status']
-                                    try:
-                                      data = nota['Data de Emissão']   
-                                    except:
-                                      pass
-                                    if status == "Entrega realizada":
-                                                st.warning('Entrega Já Realizada')
-                                    else:
-                                               
-                                                if str(data) == str(opcao_selecionada_data):
-                                                            volumes = nota['Volumes']
-                                                            numero_nota = nota['Número da Nota']
-                                                            lista_notas.append(numero_nota)
-                                                            valor = nota['Valor Total']
-                                                            cliente = nota['Cliente']
+                                    volumes = nota['Volumes']
+                                    numero_nota = nota['Número da Nota']
+                                    lista_notas.append(numero_nota)
+                                    valor = nota['Valor Total']
+                                    cliente = nota['Cliente']
                                                             
                                                             
                                                                 # Usa o dicionário para controlar o estado da checkbox
-                                                            checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+                                    checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
 
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
