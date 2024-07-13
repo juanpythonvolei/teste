@@ -92,7 +92,22 @@ elif selected == 'Dados do Tranporte':
     for item in dados:
                     roteiro = dados[f'{item}']
                     for elemento in roteiro:
-                        
+                        destino = nota['Destino']
+                            
+                        address = f"{destino}"
+                        base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+                        params = {
+                                                    "address": address,
+                                                    "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                                                }
+                
+                        response = requests.get(base_url, params=params)
+                        data = response.json()
+                        if data["status"] == "OK":
+                                                    location = data["results"][0]["geometry"]["location"]
+                                                    lat_final = location["lat"]
+                                                    lon_final = location["lng"]
+                                    
         
     
     
