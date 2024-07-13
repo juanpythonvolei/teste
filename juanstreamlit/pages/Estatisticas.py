@@ -120,7 +120,7 @@ elif selected == 'Dados do Tranporte':
                                                                
 
 
-for i in range(len(destinos_info)):
+  for i in range(len(destinos_info)):
     destino_info = destinos_info[i]
     lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
     
