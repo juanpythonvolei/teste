@@ -14,6 +14,7 @@ for item in dados:
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 total = st.button("Iniciar Nova Entrega")
 if total:
+        lista_feita = []
         for item in dados:
                 roteiro = dados[f'{item}']
                 for elemento in roteiro:
@@ -25,4 +26,9 @@ if total:
                         data = nota['Data de Emissão']
                         if data == opcao_selecionada_data:
                                 opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
+                                if opcao_selecionada:
+                                        estado = 'feito'
+                                        lista_feita.append(estado)
+                                else:
+                                        lista_Feita.delete(estado)
             
