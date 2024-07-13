@@ -15,9 +15,9 @@ try:
     lista_notas = []
     for item in dados:
                             
-                            roteiro = dados[item]
+                            roteiro = dados[f'{item}']
                             for elemento in roteiro:
-                                        nota = roteiro[elemento]
+                                        nota = roteiro[f'{elemento}']
                                         data_emit = nota['Data de Emissão']
                                         if data_emit == str(opcao_selecionada_data):
                                           status = nota['status']
