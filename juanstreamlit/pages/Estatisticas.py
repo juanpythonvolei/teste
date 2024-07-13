@@ -148,7 +148,7 @@ for i in range(len(destinos_info)):
         # Agora você pode usar 'distance' e 'duration' conforme necessário
 
         # Atualiza a origem para o próximo destino
-      origem_atual = (lat_final, lon_final)
+    origem_atual = (lat_final, lon_final)
 
             
     data = {'Destino': lista_total,
