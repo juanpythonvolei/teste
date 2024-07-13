@@ -97,14 +97,14 @@ for item in dados:
                                           numero_nota = nota.append(numero_nota)
                                           status = nota['status']
                                           lista.append(numero_nota)
-                              if status == 'Entrega não completa':
+                            if status == 'Entrega não completa':
                                             with col1:
                                                         st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
                                             with col2:
                                                         st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
                                             with col3:
                                                         st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
-                              else:
+                            else:
                                             with col1:
                                                         st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
                                             with col2:
