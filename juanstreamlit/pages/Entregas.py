@@ -30,5 +30,5 @@ if total:
                                         estado = 'feito'
                                         lista_feita.append(estado)
                                 else:
-                                        lista_Feita.delete(estado)
+                                        lista_Feita.remove(estado)
             
