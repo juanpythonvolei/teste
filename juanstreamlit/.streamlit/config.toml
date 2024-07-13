@@ -5,3 +5,11 @@ secondaryBackgroundColor="#080250"
 textColor="#0275b1"
 font="monospace"
 
+[theme]
+primaryColor = "#FF5733"
+secondaryBackgroundColor = "#F0F0F0"
+
+[css]
+.my-square = "background-color: #EFEFEF; border: 2px solid #333; padding: 10px;"
+
+
