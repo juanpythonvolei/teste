@@ -3,20 +3,8 @@ import requests
 import pandas as pd
 from streamlit_option_menu import option_menu
 import math
-css = """
-<style>
-.centered-image {
-    display: block;
-    margin: 0 auto;
-}
-</style>
-"""
 
-# Insere o CSS no aplicativo
-st.markdown(css, unsafe_allow_html=True)
 
-# Exibe a imagem centralizada
-image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 
 
 lista_total = []
