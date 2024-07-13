@@ -73,7 +73,7 @@ if selected == "Dados Gerais":
 elif selected == 'Dados do Tranporte':
     lista_duracao = []
     lista_viagem = []
-    valor = []f
+    valor = []
     address = "Itupeva,sp"
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
