@@ -13,14 +13,14 @@ for item in dados:
                 lista_total.append(item)
 opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
 total = st.button("Iniciar Nova Entrega")
-opcao_selecionada = st.checkbox("Marque esta opção")
 if total:
         for item in dados:
-            roteiro = dados[f'{item}']
-            for elemento in roteiro:
+        roteiro = dados[f'{item}']
+        for elemento in roteiro:
                 nota = roteiro[f'{elemento}']
                 volumes = nota['Volumes']
                 numero_nota = nota['Número da Nota']
                 valor = nota['Valor Total']
                 cliente = nota['Cliente']
+        opcao_selecionada = st.checkbox("Marque esta opção")
             
