@@ -3,7 +3,7 @@ import requests
 import pandas as pd
 from streamlit_option_menu import option_menu
 import math
-
+from geopy.distance import geodesic
 
 
 
@@ -125,25 +125,31 @@ elif selected == 'Dados do Tranporte':
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
 
                                                                
-    def euclidean_distance(x1, y1, x2, y2):
-        return ((x2 - x1)**2 + (y2 - y1)**2) ** 0.5
+origem_atual = (lat_inicial, lon_inicial)
 
-# Calcular a distância entre o local de origem e cada destino
-    for destino in destinos_info:
-        lat_destino, lon_destino = map(float, destino.split(","))
-        dist = euclidean_distance(lat_inicial, lon_inicial, lat_destino, lon_destino)
-        ditancia_total += float(dist)
-        lista_viagem.append(dist)
-    distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={'|'.join(destinos_info)}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
-
-    # Fazendo a requisição
+for i in range(len(destinos_info)):
+    destino_info = destinos_info[i]
+    lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
+    
+    # Constrói a URL da matriz de distância
+    distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origem_atual[0]},{origem_atual[1]}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+    
+    # Faz a requisição
     response = requests.get(distance_matrix_url)
     data = response.json()
     
     if data["status"] == "OK":
-        for i, destination in enumerate(data["destination_addresses"]):
-            duration = data["rows"][0]["elements"][i]["duration"]["text"]
-            lista_duracao.append(duration)
+        distance = data["rows"][0]["elements"][0]["distance"]["text"]
+        lista_viagem.append(distance)
+        duration = data["rows"][0]["elements"][0]["duration"]["text"]
+        lista_duracao.append(duration)
+        
+        # Agora você pode usar 'distance' e 'duration' conforme necessário
+        print(f"Distância para o destino {i+1}: {distance}, Tempo estimado: {duration}")
+        
+    # Atualiza a origem para o próximo destino
+      origem_atual = (lat_final, lon_final)
+
             
     data = {'Destino': lista_total,
             'Distância':lista_viagem,
