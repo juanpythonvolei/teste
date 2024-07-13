@@ -37,6 +37,8 @@ try:
                                         else:
 
                                           st.warning('Entrega Completa')
+  except:
+    pass
 
 
     
