@@ -12,7 +12,7 @@ checkbox_states = {}
 # Exibe a seleção da data
 lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-col1 = st.columns(1)
+col1, col2, col3 = st.columns(3)
       
       # Estilização CSS embutida
 css_style = """
@@ -29,7 +29,11 @@ css_style = """
       # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 with col1:
-      st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_conferida)))}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_notas)))}</div>', unsafe_allow_html=True)
+with col2:
+          st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
+with col3:
+          st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
 # Exibe as notas com checkboxes
 
 for item in dados:
