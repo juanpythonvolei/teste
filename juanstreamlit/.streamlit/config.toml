@@ -6,4 +6,9 @@ textColor="#0275b1"
 font="monospace"
 
 [css]
-.my-square = "background-color: #EFEFEF; border: 2px solid #333; padding: 10px;"
+.my-square {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 10px; /* Define o raio dos cantos arredondados */
+}
