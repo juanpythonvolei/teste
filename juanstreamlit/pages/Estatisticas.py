@@ -146,7 +146,9 @@ elif selected == 'Dados do Tranporte':
 
     # Exibindo a tabela no Streamlit
     st.table(df)
-                                    
+
+
+st.markdown('<div class="my-square">Quadrado Estilizado</div>', unsafe_allow_html=True)                                    
         
     
     
