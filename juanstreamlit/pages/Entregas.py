@@ -10,11 +10,11 @@ opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 botao = st.button('Iniciar Nova Rota')
 checkbox_states = {}
 try:
-    
+    lista_alerta = []
+    lista_conferida = []
+    lista_notas = []
     for item in dados:
-                            lista_alerta = []
-                            lista_conferida = []
-                            lista_notas = []
+                            
                             roteiro = dados[item]
                             for elemento in roteiro:
                                         nota = roteiro[elemento]
@@ -45,8 +45,6 @@ for nota, estado in checkbox_states.items():
           if estado:
               status = 'Feito'
               lista_conferida.append(status)
-              st.write(len(lista_conferida))  
-              st.write(len(lista_notas))   
               if len(lista_conferida) == len(lista_notas):
                           requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
                           roteiro = requisicao.json()
