@@ -131,7 +131,7 @@ elif selected == 'Dados do Tranporte':
                                                             lista_viagem.append(distance)
                                                             lista_duracao.append(duration)
      data = {'Destino': lista_total,
-            'Distância':lista_viagem.
+            'Distância':lista_viagem,
             'Duração':lista_duracao}
     df = pd.DataFrame(data)
 
