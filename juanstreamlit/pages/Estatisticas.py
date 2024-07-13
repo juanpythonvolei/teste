@@ -73,15 +73,15 @@ elif selected == 'Dados do Tranporte':
     lista_duracao = []
     lista_viagem = []
     address = "Itupeva,sp"
-                            base_url = "https://maps.googleapis.com/maps/api/geocode/json"
-                            params = {
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    params = {
                                             "address": address,
                                             "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
                                         }
 
-                            response = requests.get(base_url, params=params)
-                            data = response.json()
-                            if data["status"] == "OK":
+    response = requests.get(base_url, params=params)
+    data = response.json()
+    if data["status"] == "OK":
                                             location = data["results"][0]["geometry"]["location"]
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
