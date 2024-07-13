@@ -9,7 +9,7 @@ lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 botao = st.button('Iniciar Nova Rota')
 if botao:
-  
+  checkbox_states = {}
   try:
     
     for item in dados:
