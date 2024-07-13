@@ -20,15 +20,17 @@ for item in dados:
             roteiro = dados[item]
             for elemento in roteiro:
                         nota = roteiro[elemento]
-                        volumes = nota['Volumes']
-                        numero_nota = nota['Número da Nota']
-                        lista_notas.append(numero_nota)
-                        valor = nota['Valor Total']
-                        cliente = nota['Cliente']
                         data = nota['Data de Emissão']
                         if data == opcao_selecionada_data:
-                            # Usa o dicionário para controlar o estado da checkbox
-                            checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+                                    volumes = nota['Volumes']
+                                    numero_nota = nota['Número da Nota']
+                                    lista_notas.append(numero_nota)
+                                    valor = nota['Valor Total']
+                                    cliente = nota['Cliente']
+                                    
+                                    
+                                        # Usa o dicionário para controlar o estado da checkbox
+                                    checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
     
     # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
 st.write("Notas selecionadas:")
