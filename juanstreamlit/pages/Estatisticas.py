@@ -148,7 +148,18 @@ elif selected == 'Dados do Tranporte':
     st.table(df)
 
 
-st.markdown('<div class="my-square">Quadrado Estilizado</div>', unsafe_allow_html=True)                                    
+st.markdown("""
+    <style>
+        .my-square {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border-radius: 10px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+st.markdown('<div class="my-square"></div>', unsafe_allow_html=True)                                 
         
     
     
