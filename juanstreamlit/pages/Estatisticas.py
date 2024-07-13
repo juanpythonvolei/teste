@@ -148,18 +148,24 @@ elif selected == 'Dados do Tranporte':
     st.table(df)
 
 
-st.markdown("""
-    <style>
-        .my-square {
-            width: 200px;
-            height: 200px;
-            background-color: blue;
-            border-radius: 10px;
-        }
-    </style>
-""", unsafe_allow_html=True)
+css_style = """
+    .my-square {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+"""
 
-st.markdown('<div class="my-square"></div>', unsafe_allow_html=True)                                 
+# Aplicando o estilo
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+
+# Criando o quadrado com texto
+st.markdown('<div class="my-square">Texto no Quadrado</div>', unsafe_allow_html=True)                             
         
     
     
