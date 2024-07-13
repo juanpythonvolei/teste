@@ -30,6 +30,9 @@ if total:
                                         estado = 'feito'
                                         lista_feita.append(estado)
                                 else:
-                                        estado = 'feito'
-                                        lista_feita.remove(estado)
+                                        try:
+                                                estado = 'feito'
+                                                lista_feita.remove(estado)
+                                        except:
+                                                pass
             
