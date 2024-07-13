@@ -77,7 +77,7 @@ if selected == "Dados Gerais":
     with col1:
           st.markdown(f'<div class="my-square">Total Notas:{len(lista_notas)}</div>', unsafe_allow_html=True)
     with col2:
-          st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Total Destinos:{len(texto_nota)}</div>', unsafe_allow_html=True)
     with col3:
           st.markdown(f'<div class="my-square">Total itens:{len(lista_produtos)}</div>', unsafe_allow_html=True)
     
