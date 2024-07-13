@@ -152,7 +152,7 @@ css_style = """
     .my-square {
         width: 200px;
         height: 200px;
-        background-color: blue;
+        background-color: #00f9cf;
         border-radius: 10px;
         display: flex;
         justify-content: center;
