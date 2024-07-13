@@ -48,15 +48,15 @@ for nota, estado in checkbox_states.items():
               if len(lista_conferida) == len(lista_notas):
                           requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
                           roteiro = requisicao.json()
-                          dados = roteiro['bancodedadosroteirooficial']
+                          dados = roteiro['bancodedadosroteirooficial'][f'{opcao_selecionada_data}']
                           for item in dados:
                                       roteiro = dados[item]
                                       for elemento in roteiro:
                                           nota = roteiro[elemento]        
                                           status = nota['status']
                                           link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
-                                          data = '{"status": "Entrega realizada"}'
-                                          requests.patch(link, data=data)
+                                          dados = '{"status": "Entrega realizada"}'
+                                          requests.patch(link, data=dados)
                                                
                           st.warning('Entrega realizada com Sucesso')
               else:
