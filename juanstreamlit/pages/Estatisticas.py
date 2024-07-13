@@ -143,13 +143,13 @@ elif selected == 'Dados do Tranporte':
         origem_atual = (lat_final, lon_final)
 
             
-    data = {'Destino': lista_total,
+  data = {'Destino': lista_total,
             'Distância':lista_viagem,
             'Duração':lista_duracao}
-    df = pd.DataFrame(data)
+  df = pd.DataFrame(data)
 
     # Exibindo a tabela no Streamlit
-    st.table(df)
+  st.table(df)
 
 
 
