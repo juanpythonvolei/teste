@@ -16,6 +16,7 @@ opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 # Exibe as notas com checkboxes
 
 for item in dados:
+            lista_conferida = []
             roteiro = dados[item]
             for elemento in roteiro:
                         nota = roteiro[elemento]
@@ -32,4 +33,12 @@ for item in dados:
 st.write("Notas selecionadas:")
 for nota, estado in checkbox_states.items():
         if estado:
-            st.write(f"Nota {nota} marcada")
+            status = 'Feito'
+            lista_conferida.append(status)
+            st.write(f"Notas Entregues: {len(lista_conferida)}")
+        else:
+            try:
+                        status = 'Feito'
+                        lista_conferida.remove(status)
+            except:
+                        pass
