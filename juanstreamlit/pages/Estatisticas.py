@@ -153,9 +153,9 @@ elif selected == 'Dados do Tranporte':
 # Estilização CSS embutida
 css_style = """
     .my-square {
-        width: 150px;
-        height: 400px;
-        background-color: blue;
+        width: 400px;
+        height: 150px;
+        background-color:#00f9cf;
         border-radius: 10px;
         display: flex;
         justify-content: center;
