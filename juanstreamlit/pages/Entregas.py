@@ -26,7 +26,7 @@ for item in dados:
                                                 st.warning('Entrega Já Realizada')
                                     else:
                                                
-                                                if str(data) == opcao_selecionada_data:
+                                                if str(data) == str(opcao_selecionada_data):
                                                             volumes = nota['Volumes']
                                                             numero_nota = nota['Número da Nota']
                                                             lista_notas.append(numero_nota)
