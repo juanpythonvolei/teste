@@ -120,7 +120,7 @@ elif selected == 'Dados do Tranporte':
                                                                
 
 
-  for i in range(len(destinos_info)):
+for i in range(len(destinos_info)):
         destino_info = destinos_info[i]
         lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
         
@@ -143,13 +143,13 @@ elif selected == 'Dados do Tranporte':
         origem_atual = (lat_final, lon_final)
 
             
-  data = {'Destino': lista_total,
+data = {'Destino': lista_total,
             'Distância':lista_viagem,
             'Duração':lista_duracao}
-  df = pd.DataFrame(data)
+df = pd.DataFrame(data)
 
     # Exibindo a tabela no Streamlit
-  st.table(df)
+st.table(df)
 
 
 
