@@ -11,7 +11,7 @@ base_url2 = "https://www.google.com/maps/dir/"
 for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
-opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
+opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
 total = st.button("Iniciar Nova Entrega")
 if total:
         for item in dados:
@@ -23,5 +23,6 @@ if total:
                         valor = nota['Valor Total']
                         cliente = nota['Cliente']
                         data = nota['Data de Emissão']
-                        opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
+                        if data == opcao_selecionada_data:
+                                opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
             
