@@ -23,7 +23,7 @@ try:
                                       data_emit = nota['Data de Emissão']
                                       if data_emit == str(opcao_selecionada_data):
                                         status = nota['status']
-                                        if status == 'Entrega não completa'
+                                        if status == 'Entrega não completa':
                                           volumes = nota['Volumes']
                                           numero_nota = nota['Número da Nota']
                                           lista_notas.append(numero_nota)
