@@ -94,7 +94,8 @@ for item in dados:
                                         data_emit = nota['Data de Emissão']
                                         
                                         if data_emit == str(opcao_selecionada_data):
-                                          numero_nota = lista.append(numero_nota)
+                                          numero_nota = nota['Data de Emissão']
+                                          lista.append(numero_nota)
                                           status = nota['status']
                                           lista.append(numero_nota)
                             if status == 'Entrega não completa':
