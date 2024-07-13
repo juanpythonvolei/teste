@@ -178,8 +178,8 @@ elif selected == 'Dados do Tranporte':
           st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
       with col3:
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
-  except:
-      st.warning('O conjungo de dados não tem informações informáveis')
+    except:
+        st.warning('O conjungo de dados não tem informações informáveis')
         
     
 
