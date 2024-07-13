@@ -35,10 +35,10 @@ try:
                                                                     # Usa o dicionário para controlar o estado da checkbox
                                           checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
                                         else:
-                                          if 'ok' not in lista_alerta:
-                                            lista_alerta.append('ok')
-                                          else:
+                                          if 'ok' in lista_alerta:
                                             pass
+                                          else:
+                                            lista_alerta.append('ok')
                                           for item in lista_alerta:
                                               st.warning('Entrega Completa')
 except:
