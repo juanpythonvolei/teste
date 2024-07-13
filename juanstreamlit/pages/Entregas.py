@@ -5,15 +5,15 @@ import requests
 
 # Cria um dicionário para armazenar o estado das checkboxes
 checkbox_states = {}
-
-# Exibe a seleção da data
-
-opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
-dados = roteiro['bancodedadosroteirooficial'][f'{opcao_selecionada_data}']
+dados = roteiro['bancodedadosroteirooficial']
+# Exibe a seleção da data
 lista_total = [item for item in dados]
+opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
+
+
+
 for item in dados:
                         lista_conferida = []
                         lista_notas = []
