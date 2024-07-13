@@ -12,8 +12,7 @@ destinos_info = []
 requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
-base_url2 = "https://www.google.com/maps/dir/"
-Total_percorrido = 0        
+base_url2 = "https://www.google.com/maps/dir/"   
 for item in dados:
                 roteiro = dados[f'{item}']
                 lista_total.append(item)
@@ -118,9 +117,8 @@ elif selected == 'Dados do Tranporte':
                                                             
                                                             if data["status"] == "OK":
                                                                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
-                                                                distancia =  data["rows"][0]["elements"][0]["distance"]["text"]
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
-                                                                Total_percorrido += distancia
+
                                                                
     def euclidean_distance(x1, y1, x2, y2):
         return ((x2 - x1)**2 + (y2 - y1)**2) ** 0.5
@@ -155,8 +153,8 @@ elif selected == 'Dados do Tranporte':
 # Estilização CSS embutida
 css_style = """
     .my-square {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 400px;
         background-color: blue;
         border-radius: 10px;
         display: flex;
@@ -168,7 +166,7 @@ css_style = """
 
 # Aplicando o estilo e inserindo o texto dinâmico
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-st.markdown(f'<div class="my-square">{Total_percorrido}</div>', unsafe_allow_html=True)
+st.markdown(f'<div class="my-square">Total de Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
     
     
 
