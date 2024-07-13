@@ -124,7 +124,7 @@ elif selected == 'Dados do Tranporte':
             lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
             
             # Constrói a URL da matriz de distância
-            distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_incial},{lon_inicial}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+            distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origem_atual[0]},{origem_atual[1]}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
             
             # Faz a requisição
             response = requests.get(distance_matrix_url)
