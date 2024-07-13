@@ -131,7 +131,7 @@ elif selected == 'Dados do Tranporte':
                                                             if data["status"] == "OK":
                                                                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
                                                                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
-                                                                lista_duracao.append(duration)
+                                                               
     def euclidean_distance(x1, y1, x2, y2):
         return ((x2 - x1)**2 + (y2 - y1)**2) ** 0.5
 
@@ -139,7 +139,18 @@ elif selected == 'Dados do Tranporte':
     for destino in destinos_info:
         lat_destino, lon_destino = map(float, destino.split(","))
         dist = euclidean_distance(lat_inicial, lon_inicial, lat_destino, lon_destino)
-        lista_viagem.append(dist)                                                           
+        lista_viagem.append(dist)
+    distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={lat_inicial},{lon_inicial}&destinations={'|'.join(destinos_info)}&key=SUA_CHAVE_DE_API_AQUI"
+
+    # Fazendo a requisição
+    response = requests.get(distance_matrix_url)
+    data = response.json()
+    
+    if data["status"] == "OK":
+        for i, destination in enumerate(data["destination_addresses"]):
+            duration = data["rows"][0]["elements"][i]["duration"]["text"]
+            lista_duracao.append(duration)
+            
     data = {'Destino': lista_total,
             'Distância':lista_viagem,
             'Duração':lista_duracao}
