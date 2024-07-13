@@ -60,7 +60,7 @@ if selected == "Dados Gerais":
     st.table(df)
 elif selected == 'Dados do Tranporte':
     valor_total = 0
-    ditancia_total = 0
+    distancia_total = 0
     lista_duracao = []
     lista_viagem = []
     valor = []
@@ -133,6 +133,7 @@ elif selected == 'Dados do Tranporte':
             if data["status"] == "OK":
                 distance = data["rows"][0]["elements"][0]["distance"]["text"]
                 lista_viagem.append(distance)
+                distancia_total += float(distance)
                 duration = data["rows"][0]["elements"][0]["duration"]["text"]
                 lista_duracao.append(duration)
                 
@@ -175,7 +176,7 @@ with col1:
 with col2:
     st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
 with col3:
-    st.markdown(f'<div class="my-square">Km:{ditancia_total}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
     
     
 
