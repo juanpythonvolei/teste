@@ -12,7 +12,7 @@ checkbox_states = {}
 # Exibe a seleção da data
 lista_total = [item for item in dados]
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-col1, col2, col3 = st.columns(1)
+col1 = st.columns(1)
       
       # Estilização CSS embutida
 css_style = """
