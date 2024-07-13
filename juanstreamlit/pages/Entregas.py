@@ -27,8 +27,9 @@ if total:
                         if data == opcao_selecionada_data:
                                 opcao_selecionada = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}",key=f'{numero_nota}')
                                 if opcao_selecionada:
-                                       
-                                        lista_feita.append('feito')
+                                        estado = 'feito'
+                                        lista_feita.append(estado)
                                 else:
-                                        lista_feita.remove('feito')
+                                        estado = 'feito'
+                                        lista_feita.remove(estado)
             
