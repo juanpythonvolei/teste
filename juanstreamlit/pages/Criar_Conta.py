@@ -26,4 +26,4 @@ if botao:
                 mensagem_erro  = requisicao_dic['error']['message']
                 st.write(mensagem_erro)
 elif botao_voltar:
-        st.switch_page("Login")
+        st.switch_page("Login.py")
