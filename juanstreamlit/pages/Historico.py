@@ -23,7 +23,7 @@ if opcao_selecionada:
                     numero_nota = nota['Número da Nota']
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
-            historico = f'Data: {data}\n Volumes:{volumes}\n Numero: {numero_nota}\n Valor: {valor}\n Cliente: {cliente}'
+                    historico = f'Data: {data}\n Volumes:{volumes}\n Numero: {numero_nota}\n Valor: {valor}\n Cliente: {cliente}'
             texto_historico.append(historico)
 
 for item in texto_historico:
