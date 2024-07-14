@@ -16,28 +16,6 @@ from st_circular_progress import CircularProgress
 from streamlit_option_menu import option_menu
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
-st.markdown("""
-    <style>
-    .sidebar .sidebar-content {
-        background-color: #FFA421;
-        color: white; /* Cor do texto na barra lateral */
-    }
-    </style>
-""", unsafe_allow_html=True)
-css = """
-<style>
-.centered-image {
-    display: block;
-    margin: 0 auto;
-}
-</style>
-"""
-
-# Insere o CSS no aplicativo
-st.markdown(css, unsafe_allow_html=True)
-
-# Exibe a imagem centralizada
-image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 selected = option_menu("Menu Principal", ["Processar Notas", "Excluir Conjuntos de Notas"], default_index=1)
 if selected == 'Processar Notas':
     start_date = datetime.date(2000, 1, 1)
