@@ -38,8 +38,8 @@ if opcao_selecionada:
                                                                     
                                                                     # Aplicando o estilo e inserindo os quadrados
 
-              st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-              st.markdown(f'<div class="my-square">{item}</div>', unsafe_allow_html=True)
+                st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+                st.markdown(f'<div class="my-square">{item}</div>', unsafe_allow_html=True)
 
 
 
