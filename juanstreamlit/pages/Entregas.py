@@ -74,6 +74,8 @@ for nota, estado in checkbox_states.items():
                           pass
 try:
   col1, _ = st.columns(3)
+except:
+  pass
         
         # Estilização CSS embutida
 
