@@ -86,9 +86,9 @@ css_style = """
         # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 lista= []
-for item in dados:
+for a in dados:
                             
-                            roteiro = dados[f'{item}']
+                            roteiro = dados[f'{a}']
                             for elemento in roteiro:
                                         nota = roteiro[f'{elemento}']
                                         data_emit = nota['Data de Emissão']
