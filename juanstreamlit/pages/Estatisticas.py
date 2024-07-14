@@ -53,8 +53,7 @@ if selected == "Dados Gerais":
               'Valor da nota': lista_valores,
               'Volumes':lista_volumes,
               'Cliente':lista_clientes,
-              'Nota':lista_notas,
-              'Status':status}
+              'Nota':lista_notas}
       df = pd.DataFrame(a)
     except:
       pass
