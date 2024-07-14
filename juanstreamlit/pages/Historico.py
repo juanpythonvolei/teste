@@ -84,7 +84,7 @@ try:
                     except:
                               st.warnig('Roteiro não está disponível')
 except:
-           st.warnig('Sem Roteiros Disponíveis')
+           st.warning('Sem Roteiros Disponíveis')
           
     
      
