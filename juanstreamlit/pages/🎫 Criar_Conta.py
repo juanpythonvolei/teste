@@ -27,7 +27,7 @@ if botao:
                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/{local_id}.json'
                 data =f'{{"Nome":"{login}","Senha":"{senha}"}}'
                 requisicao_usuario = requests.patch(link,data=data)
-                st.switch_page('pages/home.py')
+                st.switch_page('pages/🌐 Processamento.py')
 
     else:
                 mensagem_erro  = requisicao_dic['error']['message']
