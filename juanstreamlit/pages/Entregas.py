@@ -72,7 +72,7 @@ for nota, estado in checkbox_states.items():
                           lista_conferida.remove(status)
               except:
                           pass
-col1, col2, col3 = st.columns(3)
+col1 = st.columns(1)
         
         # Estilização CSS embutida
 css_style = """
@@ -91,7 +91,6 @@ st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 try:
   lista = []
-  total_valor = 0
   for a in dados:
                               
                               roteiro = dados[f'{a}']
@@ -101,8 +100,6 @@ try:
                                           if str(data_emit) == str(opcao_selecionada_data):
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
-                                            valor = nota['Valor Total']
-                                            total_valor += valor
                                             status = nota['status']
 
                               
@@ -112,17 +109,10 @@ except:
 if  status == 'Entrega não completa':
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
-                                              with col2:
-                                                          st.markdown(f'<div class="my-square">Valor:</div>', unsafe_allow_html=True)
-                                              with col3:
-                                                          st.markdown(f'<div class="my-square">Situação:</div>', unsafe_allow_html=True)
+              
 else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
-                                              with col2:
-                                                          st.markdown(f'<div class="my-square">Valor: {total_valor}</div>', unsafe_allow_html=True)
-                                              with col3:
-                                                          st.markdown(f'<div class="my-square">Situação: </div>', unsafe_allow_html=True)
-                                              
+                                             
                                               
     # Exibe as notas com checkboxes
