@@ -13,74 +13,77 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"   
-for item in dados:
-                roteiro = dados[f'{item}']
-                lista_total.append(item)
-opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
-selected = option_menu("Menu Principal", ["Dados Gerais", "Dados do Tranporte"], icons=["database", "truck"], default_index=1)
-# Adicionando botões em cada coluna
-if selected == "Dados Gerais":
-    texto_nota = []
-    lista_produtos = []
-    lista_clientes = []
-    lista_valores = []
-    lista_notas = []
-    lista_volumes = []
-    valor_total = 0
-    
-    for item in dados:
-            roteiro = dados[f'{item}']
-            for elemento in roteiro:
-                nota = roteiro[f'{elemento}']
-                if nota['Data de Emissão'] == opcao_selecionada:
-                    for item in nota:
-                        numero_nota = nota['Número da Nota']
-                        destino = nota['Destino']
-                        volumes = nota['Volumes']
-                        cliente = nota['Cliente']
-                        Produtos = nota['Produtos'][0]
-                        status = nota['status']['status']
-                        valor  = nota['Valor Total']
-                    valor_total += float(valor)
-                    texto_nota.append(destino)
-                    lista_produtos.append(Produtos)
-                    lista_clientes.append(cliente)
-                    lista_valores.append(valor)
-                    lista_notas.append(numero_nota)
-                    lista_volumes.append(volumes)
-    try:
-      a = {'Destino': texto_nota,
-              'Valor da nota': lista_valores,
-              'Volumes':lista_volumes,
-              'Cliente':lista_clientes,
-              'Nota':lista_notas}
-      df = pd.DataFrame(a)
-    except:
-      pass
-    # Exibindo a tabela no Streamlit
-    st.table(df)
-    col1, col2, col3 = st.columns(3)
+try:
+  for item in dados:
+                  roteiro = dados[f'{item}']
+                  lista_total.append(item)
+  opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
+  selected = option_menu("Menu Principal", ["Dados Gerais", "Dados do Tranporte"], icons=["database", "truck"], default_index=1)
+  # Adicionando botões em cada coluna
+  if selected == "Dados Gerais":
+      texto_nota = []
+      lista_produtos = []
+      lista_clientes = []
+      lista_valores = []
+      lista_notas = []
+      lista_volumes = []
+      valor_total = 0
       
-      # Estilização CSS embutida
-    css_style = """
-          .my-square {
-              background-color:#0275b1;
-              border-radius: 10px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: white;
-          }
-      """
-      
-      # Aplicando o estilo e inserindo os quadrados
-    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-    with col1:
-          st.markdown(f'<div class="my-square">{status}</div>', unsafe_allow_html=True)
-    with col2:
-          st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
-    with col3:
-          st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
+      for item in dados:
+              roteiro = dados[f'{item}']
+              for elemento in roteiro:
+                  nota = roteiro[f'{elemento}']
+                  if nota['Data de Emissão'] == opcao_selecionada:
+                      for item in nota:
+                          numero_nota = nota['Número da Nota']
+                          destino = nota['Destino']
+                          volumes = nota['Volumes']
+                          cliente = nota['Cliente']
+                          Produtos = nota['Produtos'][0]
+                          status = nota['status']['status']
+                          valor  = nota['Valor Total']
+                      valor_total += float(valor)
+                      texto_nota.append(destino)
+                      lista_produtos.append(Produtos)
+                      lista_clientes.append(cliente)
+                      lista_valores.append(valor)
+                      lista_notas.append(numero_nota)
+                      lista_volumes.append(volumes)
+      try:
+        a = {'Destino': texto_nota,
+                'Valor da nota': lista_valores,
+                'Volumes':lista_volumes,
+                'Cliente':lista_clientes,
+                'Nota':lista_notas}
+        df = pd.DataFrame(a)
+      except:
+        pass
+      # Exibindo a tabela no Streamlit
+      st.table(df)
+      col1, col2, col3 = st.columns(3)
+        
+        # Estilização CSS embutida
+      css_style = """
+            .my-square {
+                background-color:#0275b1;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+            }
+        """
+        
+        # Aplicando o estilo e inserindo os quadrados
+      st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+      with col1:
+            st.markdown(f'<div class="my-square">{status}</div>', unsafe_allow_html=True)
+      with col2:
+            st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
+      with col3:
+            st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
+except:
+  st.warning('Sem Roteiros disponíveis')
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
