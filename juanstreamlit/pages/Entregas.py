@@ -99,7 +99,7 @@ try:
                                             lista.append(numero_nota)
                                             valor = nota['Valor Total']
                                             valor_final += valor
-                                            status = nota['status']['status']
+                                            status = nota['status']
 except:
   pass
 if status == 'Entrega não completa':
