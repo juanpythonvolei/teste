@@ -7,7 +7,7 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"
-selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["file", "product"], default_index=1)
+selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["file", "delivery"], default_index=1)
 css_style = """
           .my-square {
               background-color:#0275b1;
@@ -54,6 +54,30 @@ elif selected ==  "Produtos das entregas":
                           roteiro = dados[f'{item}']
                           lista_total.append(item)
           opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
+          for item in dados:
+                      texto_historico = ''
+                      roteiro = dados[f'{item}']
+                      for elemento in roteiro:
+                              nota = roteiro[f'{elemento}']
+                              data = nota['Data de Emissão']    
+                              if data == opcao_selecionada:
+                                        volumes = nota['Volumes']
+                                        numero_nota = nota['Número da Nota']
+                                        valor = nota['Valor Total']
+                                        cliente = nota['Cliente']
+                                        produtos = nota[]
+                                        historico = f'''\n
+                                        
+                                        Data: {data}\n
+                                        Volumes: {volumes}\n                
+                                        Numero: {numero_nota}\n
+                                        Valor: {valor}\n    
+                                        Cliente: {cliente}
+                                        
+                                        \n
+                                        '''               
+                                        texto_historico += historico
+                    st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
           
     
      
