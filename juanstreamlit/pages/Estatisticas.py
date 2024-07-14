@@ -23,7 +23,7 @@ if selected == "Dados Gerais":
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
-    Lista_valores = []
+    lista_valores = []
     lista_notas = []
     lista_volumes = []
     valor_total = 0
@@ -46,11 +46,11 @@ if selected == "Dados Gerais":
                     texto_nota.append(destino)
                     lista_produtos.append(Produtos)
                     lista_clientes.append(cliente)
-                    Lista_valores.append(valor)
+                    lista_valores.append(valor)
                     lista_notas.append(numero_nota)
                     lista_volumes.append(volumes)
     data = {'Destino': texto_nota,
-            'Valor da nota': Lista_valores,
+            'Valor da nota': lista_valores,
             'Volumes':lista_volumes,
             'Cliente':lista_clientes,
             'Nota':lista_notas,
