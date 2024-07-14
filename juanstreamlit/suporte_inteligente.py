@@ -38,5 +38,5 @@ def ia(pergunta):
         response = chat.send_message(f'{pergunta}:\n\n{texto_nota}\n')
         resposta = response.text
         st.write(f'{resposta}')
-except:
-    st.warning('Sem Roteiros Disponíveis')
+    except:
+        st.warning('Sem Roteiros Disponíveis')
