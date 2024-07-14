@@ -85,9 +85,10 @@ css_style = """
         
         # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-lista= []
-valor_final = 0
+
 try:
+  lista= []
+  valor_final = 0
   for a in dados:
                               
                               roteiro = dados[f'{a}']
