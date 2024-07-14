@@ -13,6 +13,7 @@ from firebase_admin import credentials, firestore,db
 from time import sleep
 import pprint
 from st_circular_progress import CircularProgress
+from streamlit_option_menu import option_menu
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
 st.markdown("""
@@ -228,3 +229,13 @@ if selected == 'Processar Notas':
                             print('não confere')
         st.warning('Processo Concluído')
         st.write(f'''Total de notas:{len(lista_notas)}''')
+elif selected == 'Excluir Conjuntos de Notas':
+    start_date = datetime.date(2000, 1, 1)
+    end_date = datetime.date(2100, 1, 11)
+    lista_filtrada = []
+    current_date = start_date
+    while current_date <= end_date:
+        current_date += datetime.timedelta(days=1)
+        datas.append(current_date)
+    data_excluir  = st.selectbox("Selecione uma data", datas)
+    
