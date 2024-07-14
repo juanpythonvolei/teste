@@ -85,7 +85,7 @@ if st.button('Entrar'):
     requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={key}",data=data)
     requisicao_dic = requisicao.json()
     if requisicao.ok:
-        st.switch_page('pages/Home.py')
+        st.switch_page('pages/Processamento.py')
     else:
         mensagem_erro  = requisicao_dic['error']['message']
         st.write(mensagem_erro)
