@@ -7,7 +7,18 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"
-
+css_style = """
+          .my-square {
+              background-color:#0275b1;
+              border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              color: white;
+          }
+      """
+      
+      # Aplicando o estilo e inserindo os quadrados
 for item in dados:
             texto_historico = ''
             roteiro = dados[f'{item}']
@@ -24,18 +35,8 @@ for item in dados:
                     Valor: {valor}\n    
                     Cliente: {cliente}'''               
                     texto_historico += historico
-            st.markdown(
-        """
-        <style>
-            .square {
-                width: 100px;
-                height: 100px;
-                background-color: #3498db;
-            }
-        </style>
-        <div class="square"></div>
-        """
-    )
+            
+    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 
 
