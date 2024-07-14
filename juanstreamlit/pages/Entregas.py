@@ -105,7 +105,7 @@ try:
                                             total_valor += valor
                                             status = nota['status']
 
-    uso = status['status']
+                              uso = status['status']
                                             
 except:
   pass  
