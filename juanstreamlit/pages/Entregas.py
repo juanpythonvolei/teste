@@ -113,9 +113,9 @@ else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:</div>', unsafe_allow_html=True)
                                               with col2:
-                                                          st.markdown(f'<div class="my-square">Valor: {valor_final}</div>', unsafe_allow_html=True)
+                                                          st.markdown(f'<div class="my-square">Valor: </div>', unsafe_allow_html=True)
                                               with col3:
-                                                          st.markdown(f'<div class="my-square">Situação: {status}</div>', unsafe_allow_html=True)
+                                                          st.markdown(f'<div class="my-square">Situação: </div>', unsafe_allow_html=True)
                                               
                                               
     # Exibe as notas com checkboxes
