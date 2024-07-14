@@ -41,7 +41,10 @@ try:
                           volumes = nota['Volumes']
                           cliente = nota['Cliente']
                           Produtos = nota['Produtos'][0]
-                
+                          if nota['status']:
+                            status = nota['status']
+                          elif: nota['status']['status']
+                            status = nota['status']['status']
                           valor  = nota['Valor Total']
                       valor_total += float(valor)
                       texto_nota.append(destino)
