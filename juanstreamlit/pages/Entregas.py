@@ -91,6 +91,8 @@ st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 try:
   lista = []
+  lista_clientes = []
+  lista_destinos = []
   for a in dados:
                               
                               roteiro = dados[f'{a}']
@@ -100,6 +102,10 @@ try:
                                           if str(data_emit) == str(opcao_selecionada_data):
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
+                                            cliente = nota['Cliente']
+                                            lista_clientes.append(cliente)
+                                            destino = nota['Destino']
+                                            lista_destinos.appdend(destino)
                                             status = nota['status']
 
                               
@@ -118,9 +124,9 @@ else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
                                               with col2:
-                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
+                                                          st.markdown(f'<div class="my-square">Total Destinos: {len(lista_destinos)}</div>', unsafe_allow_html=True)
                                               with col3:
-                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
+                                                          st.markdown(f'<div class="my-square">Total clientes: {len(lista_clientes)}:</div>', unsafe_allow_html=True)
                                              
                                               
     # Exibe as notas com checkboxes
