@@ -33,10 +33,10 @@ try:
                                                   numero_nota = nota['Número da Nota']
                                                   valor = nota['Valor Total']
                                                   cliente = nota['Cliente']
-                                                  if nota['status']['status']:
-                                                          status = nota['status']['status']
-                                                  else:
+                                                  if nota['status']:
                                                           status = nota['status']
+                                                  elif nota['status']['status']:
+                                                          status = nota['status']['status']
                                                   historico = f'''\n
                                                   
           Data: {data}\n
