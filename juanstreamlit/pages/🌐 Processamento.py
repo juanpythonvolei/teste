@@ -240,11 +240,14 @@ elif selected == 'Excluir Conjuntos de Notas':
         data_excluir  = st.selectbox("Selecione uma data", datas)
         excluir = st.button('Excluir Conjunto')
         if excluir:
+            try:
     
-            # Referência ao nó do usuário que você deseja excluir
-            usuario_ref = db.reference(f'bancodedadosroteirooficial/{data_excluir}')
-            
-            # Exclui o usuário
-            usuario_ref.delete()
-            st.warning('Conjunto excluido')
+                # Referência ao nó do usuário que você deseja excluir
+                usuario_ref = db.reference(f'bancodedadosroteirooficial/{data_excluir}')
+                
+                # Exclui o usuário
+                usuario_ref.delete()
+                st.warning('Conjunto excluido')
+            except:
+                st.warning('Conjunto inexistente')
     
