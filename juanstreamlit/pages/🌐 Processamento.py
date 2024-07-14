@@ -230,18 +230,20 @@ if selected == 'Processar Notas':
         st.warning('Processo Concluído')
         st.write(f'''Total de notas:{len(lista_notas)}''')
 elif selected == 'Excluir Conjuntos de Notas':
-    start_date = datetime.date(2000, 1, 1)
-    end_date = datetime.date(2100, 1, 11)
-    lista_filtrada = []
-    current_date = start_date
-    while current_date <= end_date:
-        current_date += datetime.timedelta(days=1)
-        datas.append(current_date)
-    data_excluir  = st.selectbox("Selecione uma data", datas)
-    # Referência ao nó do usuário que você deseja excluir
-    usuario_ref = db.reference(f'bancodedadosroteirooficial/{data_excluir}')
-    
-    # Exclui o usuário
-    usuario_ref.delete()
-    st.warning('Conjunto excluido')
+    excuir = st.button('Excluir Conjunto')
+    if excluir:
+        start_date = datetime.date(2000, 1, 1)
+        end_date = datetime.date(2100, 1, 11)
+        lista_filtrada = []
+        current_date = start_date
+        while current_date <= end_date:
+            current_date += datetime.timedelta(days=1)
+            datas.append(current_date)
+        data_excluir  = st.selectbox("Selecione uma data", datas)
+        # Referência ao nó do usuário que você deseja excluir
+        usuario_ref = db.reference(f'bancodedadosroteirooficial/{data_excluir}')
+        
+        # Exclui o usuário
+        usuario_ref.delete()
+        st.warning('Conjunto excluido')
     
