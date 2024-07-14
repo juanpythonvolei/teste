@@ -24,7 +24,7 @@ for item in dados:
                     Valor: {valor}\n 
                     Cliente: {cliente}'''
                     texto_historico += historico
-            css_style = """
+css_style = """
                                                                         .my-square {
                                                                             background-color:#0275b1;
                                                                             border-radius: 10px;
@@ -37,8 +37,8 @@ for item in dados:
                                                                     
                                                                     # Aplicando o estilo e inserindo os quadrados
 
-            st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-            st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)
 
 
 
