@@ -112,7 +112,7 @@ if seletor == 'rota da nota':
                 st.markdown(final)     
                 st.warning(f'Nota: {numero} volumes: {volumes} valor:{valor} cliente:{Cliente}')
         except:
-            st.waring('Sem Roteiros Disponíveis')
+            st.warning('Sem Roteiros Disponíveis')
 elif seletor == "rota de todas as notas":
         lista_total = []
         destinos_info = []
