@@ -75,19 +75,7 @@ for nota, estado in checkbox_states.items():
 col1, _ = st.columns(3)
         
         # Estilização CSS embutida
-css_style = """
-            .my-square {
-                background-color:#0275b1;
-                border-radius: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: white;
-            }
-        """
-        
-        # Aplicando o estilo e inserindo os quadrados
-st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+
 
 try:
   lista = []
@@ -114,11 +102,37 @@ except:
   pass  
 if  status == 'Entrega não completa':
                                               with col1:
+                                                          css_style = """
+                                                                      .my-square {
+                                                                          background-color:#0275b1;
+                                                                          border-radius: 10px;
+                                                                          display: flex;
+                                                                          justify-content: center;
+                                                                          align-items: center;
+                                                                          color: white;
+                                                                      }
+                                                                  """
+                                                                  
+                                                                  # Aplicando o estilo e inserindo os quadrados
+                                                          st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
                                                           st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
 
               
 else:
                                               with col1:
+                                                          css_style = """
+                                                                      .my-square {
+                                                                          background-color:#0275b1;
+                                                                          border-radius: 10px;
+                                                                          display: flex;
+                                                                          justify-content: center;
+                                                                          align-items: center;
+                                                                          color: white;
+                                                                      }
+                                                                  """
+                                                                  
+                                                                  # Aplicando o estilo e inserindo os quadrados
+                                                          st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
                                               
                                               
