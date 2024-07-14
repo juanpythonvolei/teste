@@ -2,121 +2,125 @@ import streamlit as st
 import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
-dados = roteiro['bancodedadosroteirooficial']
-  # Exibe a seleção da data
-lista_total = [item for item in dados]
-# Carrega os dados do banco de dados
-opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-checkbox_states = {}
 try:
-    lista_alerta = []
-    lista_conferida = []
-    lista_notas = []
-    for item in dados:
-                            
-                            roteiro = dados[f'{item}']
-                            for elemento in roteiro:
-                                        nota = roteiro[f'{elemento}']
-                                        data_emit = nota['Data de Emissão']
-                                        if str(data_emit) == str(opcao_selecionada_data):
-                                          status = nota['status']
-                                          if status == 'Entrega não completa':
-                                            volumes = nota['Volumes']
-                                            numero_nota = nota['Número da Nota']
-                                            lista_notas.append(numero_nota)
-                                            valor = nota['Valor Total']
-                                            cliente = nota['Cliente']
-                                                                  
-                                                                  
-                                                                      # Usa o dicionário para controlar o estado da checkbox
-                                            checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
-                                          else:
+  dados = roteiro['bancodedadosroteirooficial']
   
-                                            st.warning('Entrega Completa')
-except:
-      pass
-  
-  
-      
-      # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
-  
-for nota, estado in checkbox_states.items():
-          if estado:
-              status = 'Feito'
-              lista_conferida.append(status)
-              if len(lista_conferida) == len(lista_notas):
-                          requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
-                          roteiro = requisicao.json()
-                          dados = roteiro['bancodedadosroteirooficial']
-                          for item in dados:
-                                      try:
-                                        roteiro = dados[f'{item}']
-                                        for elemento in roteiro:
-                                            nota = roteiro[f'{elemento}'] 
-                                            data = nota['Data de Emissão']
-                                            if data == opcao_selecionada_data:
-                                              status = nota['status']
-                                              link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
-                                              dados = '{"status": "Entrega realizada"}'
-                                              requests.patch(link, data=dados)
-                                      except:
-                                        pass
-                                               
-                          st.warning('Entrega realizada com Sucesso')
-              else:
-                          pass
-          else:
-              try:
-                          status = 'Feito'
-                          lista_conferida.remove(status)
-              except:
-                          pass
-
-css_style = """
-                                                                      .my-square {
-                                                                          background-color:#0275b1;
-                                                                          border-radius: 10px;
-                                                                          display: flex;
-                                                                          justify-content: center;
-                                                                          align-items: center;
-                                                                          color: white;
-                                                                      }
-                                                                  """
-                                                                  
-                                                                  # Aplicando o estilo e inserindo os quadrados
-
-st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-
-        
-        # Estilização CSS embutida
-
-
-try:
-  lista = []
-  for a in dados:
+    # Exibe a seleção da data
+  lista_total = [item for item in dados]
+  # Carrega os dados do banco de dados
+  opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
+  checkbox_states = {}
+  try:
+      lista_alerta = []
+      lista_conferida = []
+      lista_notas = []
+      for item in dados:
                               
-                              roteiro = dados[f'{a}']
+                              roteiro = dados[f'{item}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
                                           data_emit = nota['Data de Emissão']
                                           if str(data_emit) == str(opcao_selecionada_data):
-                                            numero_nota = nota['Número da Nota']
-                                            lista.append(numero_nota)
                                             status = nota['status']
-
-                              
-                                            
+                                            if status == 'Entrega não completa':
+                                              volumes = nota['Volumes']
+                                              numero_nota = nota['Número da Nota']
+                                              lista_notas.append(numero_nota)
+                                              valor = nota['Valor Total']
+                                              cliente = nota['Cliente']
+                                                                    
+                                                                    
+                                                                        # Usa o dicionário para controlar o estado da checkbox
+                                              checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
+                                            else:
+    
+                                              st.warning('Entrega Completa')
+  except:
+        pass
+    
+    
+        
+        # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
+    
+  for nota, estado in checkbox_states.items():
+            if estado:
+                status = 'Feito'
+                lista_conferida.append(status)
+                if len(lista_conferida) == len(lista_notas):
+                            requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+                            roteiro = requisicao.json()
+                            dados = roteiro['bancodedadosroteirooficial']
+                            for item in dados:
+                                        try:
+                                          roteiro = dados[f'{item}']
+                                          for elemento in roteiro:
+                                              nota = roteiro[f'{elemento}'] 
+                                              data = nota['Data de Emissão']
+                                              if data == opcao_selecionada_data:
+                                                status = nota['status']
+                                                link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
+                                                dados = '{"status": "Entrega realizada"}'
+                                                requests.patch(link, data=dados)
+                                        except:
+                                          pass
+                                                 
+                            st.warning('Entrega realizada com Sucesso')
+                else:
+                            pass
+            else:
+                try:
+                            status = 'Feito'
+                            lista_conferida.remove(status)
+                except:
+                            pass
+  
+  css_style = """
+                                                                        .my-square {
+                                                                            background-color:#0275b1;
+                                                                            border-radius: 10px;
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            color: white;
+                                                                        }
+                                                                    """
+                                                                    
+                                                                    # Aplicando o estilo e inserindo os quadrados
+  
+  st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+  
+          
+          # Estilização CSS embutida
+  
+  
+  try:
+    lista = []
+    for a in dados:
+                                
+                                roteiro = dados[f'{a}']
+                                for elemento in roteiro:
+                                            nota = roteiro[f'{elemento}']
+                                            data_emit = nota['Data de Emissão']
+                                            if str(data_emit) == str(opcao_selecionada_data):
+                                              numero_nota = nota['Número da Nota']
+                                              lista.append(numero_nota)
+                                              status = nota['status']
+  
+                                
+                                              
+  except:
+    pass  
+  if  status == 'Entrega não completa':
+                                       
+                                                            st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
+  
+  
+                
+  else:
+  
+                                                            st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
 except:
-  pass  
-if  status == 'Entrega não completa':
-                                     
-                                                          st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
-
-
-              
-else:
-
-                                                          st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
+  st.warning('Sem Roteiros Disponíveis')
                                              
                                               
                                               
