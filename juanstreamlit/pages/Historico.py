@@ -20,7 +20,7 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
-if selected = 'Historico de Entregas'
+if selected == 'Historico de Entregas'
           for item in dados:
                       texto_historico = ''
                       roteiro = dados[f'{item}']
@@ -43,7 +43,17 @@ if selected = 'Historico de Entregas'
                               '''               
                               texto_historico += historico
                       st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
-elif selected =  "Produtos das entregas":
+elif selected ==  "Produtos das entregas":
+          lista_total = []
+          destinos_info = []
+          requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+          roteiro = requiscao.json()
+          dados = roteiro['bancodedadosroteirooficial']
+          base_url2 = "https://www.google.com/maps/dir/"   
+          for item in dados:
+                          roteiro = dados[f'{item}']
+                          lista_total.append(item)
+          opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
           
     
      
