@@ -7,7 +7,7 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"
-selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["file", "delivery"], default_index=1)
+selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["file", "shop"], default_index=1)
 css_style = """
           .my-square {
               background-color:#0275b1;
