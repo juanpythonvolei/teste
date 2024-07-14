@@ -47,9 +47,9 @@ if selected == 'Processar Notas':
     while current_date <= end_date:
         current_date += datetime.timedelta(days=1)
         datas.append(current_date)
-    opcao_selecionada = st.selectbox("Selecione uma data", datas)
+    opcao_selecionada = st.selectbox("Selecione uma data para processamento", datas)
     
-    uploaded_files = st.file_uploader("Escolha vários arquivos", type=['xml'], accept_multiple_files=True)
+    uploaded_files = st.file_uploader("Escolha as Notas", type=['xml'], accept_multiple_files=True)
     if uploaded_files:
         uso = []
         lista_notas = []
@@ -237,7 +237,7 @@ elif selected == 'Excluir Conjuntos de Notas':
         while current_date <= end_date:
             current_date += datetime.timedelta(days=1)
             datas.append(current_date)
-        data_excluir  = st.selectbox("Selecione uma data", datas)
+        data_excluir  = st.selectbox("Selecione uma data para exclusão", datas)
         excluir = st.button('Excluir Conjunto')
         if excluir:
             try:
