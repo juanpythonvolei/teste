@@ -73,9 +73,9 @@ try:
                                                             produtos = nota['Produtos']
                                                             historico = f'''
                                                             
-                    Data: {data}\n              
-                    Numero: {numero_nota}\n
-                    Produtos: {produtos}\n
+          Data: {data}\n              
+          Numero: {numero_nota}\n
+          Produtos: {produtos}\n
                                                             
                                                             
                                                             '''               
