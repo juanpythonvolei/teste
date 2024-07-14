@@ -14,6 +14,7 @@ for item in dados:
             for elemento in roteiro:
                     nota = roteiro[f'{elemento}']
                     volumes = nota['Volumes']
+                    data = nota['Data de Emissão']    
                     numero_nota = nota['Número da Nota']
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
