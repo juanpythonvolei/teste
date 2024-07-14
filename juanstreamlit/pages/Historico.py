@@ -20,7 +20,7 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
-if selected == 'Historico de Entregas'
+if selected == 'Historico de Entregas':
           for item in dados:
                       texto_historico = ''
                       roteiro = dados[f'{item}']
