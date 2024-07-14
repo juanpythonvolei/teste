@@ -53,15 +53,14 @@ try:
                       lista_valores.append(valor)
                       lista_notas.append(numero_nota)
                       lista_volumes.append(volumes)
-      try:
-        a = {'Destino': texto_nota,
+      
+      a = {'Destino': texto_nota,
                 'Valor da nota': lista_valores,
                 'Volumes':lista_volumes,
                 'Cliente':lista_clientes,
                 'Nota':lista_notas}
-        df = pd.DataFrame(a)
-      except:
-        pass
+      df = pd.DataFrame(a)
+
       # Exibindo a tabela no Streamlit
       st.table(df)
       col1, col2, col3 = st.columns(3)
