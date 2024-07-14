@@ -65,7 +65,7 @@ elif selected ==  "Produtos das entregas":
                                         numero_nota = nota['Número da Nota']
                                         valor = nota['Valor Total']
                                         cliente = nota['Cliente']
-                                        produtos = nota['Produtos'][0]
+                                        produtos = nota['Produtos']
                                         historico = f'''
                                         
           Data: {data}\n              
