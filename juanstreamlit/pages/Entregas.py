@@ -103,7 +103,7 @@ try:
                                             lista_conferencia.append(status)
 except:
   pass  
-if  'Entrega não completa' not in lista_conferencia:
+if  'Entrega não completa' in lista_conferencia:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
                                               with col2:
