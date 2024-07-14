@@ -88,6 +88,7 @@ st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 try:
   lista = []
+  lista_conferencia = []
   for a in dados:
                               
                               roteiro = dados[f'{a}']
@@ -100,9 +101,10 @@ try:
                                             valor = nota['Valor Total']
                                             valor_final += valor
                                             status = nota['status']
+                                            status.append(status)
 except:
   pass  
-if status == 'Entrega não completa':
+if  'Entrega não completa' in lista_conferencia:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
                                               with col2:
