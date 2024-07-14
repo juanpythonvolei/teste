@@ -94,8 +94,6 @@ st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 try:
   lista = []
-  lista_clientes = []
-  lista_destinos = []
   for a in dados:
                               
                               roteiro = dados[f'{a}']
@@ -105,10 +103,6 @@ try:
                                           if str(data_emit) == str(opcao_selecionada_data):
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
-                                            cliente = nota['Cliente']
-                                            lista_clientes.append(cliente)
-                                            destino = nota['Destino']
-                                            lista_destinos.appdend(destino)
                                             status = nota['status']
 
                               
