@@ -36,7 +36,6 @@ if selected == "Dados Gerais":
                     for item in nota:
                         numero_nota = nota['Número da Nota']
                         destino = nota['Destino']
-                        data_De_emissao = nota['Data de Emissão']
                         volumes = nota['Volumes']
                         cliente = nota['Cliente']
                         Produtos = nota['Produtos'][0]
@@ -55,7 +54,6 @@ if selected == "Dados Gerais":
               'Volumes':lista_volumes,
               'Cliente':lista_clientes,
               'Nota':lista_notas,
-              'Data':data_De_emissao,
               'Status':status}
       df = pd.DataFrame(a)
     except:
