@@ -35,7 +35,7 @@ try:
                                                   cliente = nota['Cliente']
                                                   if nota['status']:
                                                           status = nota['status']
-                                                  elif nota['status']['status']:
+                                                  else:
                                                           status = nota['status']['status']
                                                   historico = f'''\n
                                                   
