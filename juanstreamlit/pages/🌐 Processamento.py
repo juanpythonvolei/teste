@@ -71,7 +71,7 @@ if uploaded_files:
                 st.warning('Algo deu errado, tente novamente')
     print(lista_filtrada)
     for documento in lista_filtrada:
-                    st.write("Você carregou a nota:", documento['nfeProc']['NFe']['infNFe']['ide']['nNF'])
+                    st.write(f"Você carregou um total de: {len(lista_filtrada)} notas")
                     try:
                         try:
                                             
