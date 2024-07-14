@@ -82,8 +82,7 @@ try:
             st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
       with col3:
             st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
-except:
-  st.warning('Sem Roteiros disponíveis')
+
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
@@ -207,7 +206,8 @@ elif selected == 'Dados do Tranporte':
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
     except:
         st.warning('O conjunto de dados não tem informações informáveis')
-        
+  except:
+    st.warning('Sem Roteiros disponíveis')      
     
 
     
