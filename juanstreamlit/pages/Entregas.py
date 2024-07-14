@@ -24,7 +24,7 @@ try:
                                           if status == 'Entrega não completa':
                                             volumes = nota['Volumes']
                                             numero_nota = nota['Número da Nota']
-                                            lista_notas.append(numero_nota)
+                                            lista_conferida.append(numero_nota)
                                             valor = nota['Valor Total']
                                             cliente = nota['Cliente']
                                                                   
