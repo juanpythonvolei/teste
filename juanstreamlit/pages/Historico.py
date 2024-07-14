@@ -30,15 +30,15 @@ for item in dados:
                     numero_nota = nota['Número da Nota']
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
-                    historico = f'''
+                    historico = f'''\n
                     
-                     Data: {data}\n
+                    Data: {data}\n
                     Volumes: {volumes}\n                
                     Numero: {numero_nota}\n
                     Valor: {valor}\n    
                     Cliente: {cliente}
                     
-                    
+                    \n
                     '''               
                     texto_historico += historico
             st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
