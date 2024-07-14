@@ -34,11 +34,11 @@ if selected == 'Historico de Entregas':
                                         cliente = nota['Cliente']
                                         historico = f'''\n
                                         
-                    Data: {data}\n
-                    Volumes: {volumes}\n                
-                    Numero: {numero_nota}\n
-                    Valor: {valor}\n    
-                    Cliente: {cliente}
+          Data: {data}\n
+          Volumes: {volumes}\n                
+          Numero: {numero_nota}\n
+          Valor: {valor}\n    
+          Cliente: {cliente}
                                         
                                         \n
                                         '''               
@@ -72,9 +72,9 @@ elif selected ==  "Produtos das entregas":
                                                   produtos = nota['Produtos']
                                                   historico = f'''
                                                   
-                    Data: {data}\n              
-                    Numero: {numero_nota}\n
-                    Produtos: {produtos}\n
+          Data: {data}\n              
+          Numero: {numero_nota}\n
+          Produtos: {produtos}\n
                                                   
                                                   
                                                   '''               
