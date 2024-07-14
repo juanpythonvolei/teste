@@ -72,8 +72,6 @@ if uploaded_files:
     print(lista_filtrada)
     st.warning(f"Você carregou um total de: {len(lista_filtrada)} notas")
     for documento in lista_filtrada:
-                    
-                    try:
                         try:
                                             
                                                 lista_datas.append(nota)
@@ -140,8 +138,7 @@ if uploaded_files:
                                                     'status':'Entrega não completa'
                                                 }
                                             lista_notas.append(dict_nota)
-                    except:
-                        st.warning('Ops...Parece que algo deu errado')
+ 
     address = "Itupeva,sp"
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
