@@ -100,15 +100,16 @@ try:
                                             valor = nota['Valor Total']
                                             valor_final += valor
                                             status = nota['status']
-
-  if status == 'Entrega não completa':
+except:
+  pass  
+if status == 'Entrega não completa':
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
                                               with col2:
                                                           st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
                                               with col3:
                                                           st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
-  else:
+else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:</div>', unsafe_allow_html=True)
                                               with col2:
@@ -116,6 +117,5 @@ try:
                                               with col3:
                                                           st.markdown(f'<div class="my-square">Situação: {status}</div>', unsafe_allow_html=True)
                                               
-except:
-  pass                                                
+                                              
     # Exibe as notas com checkboxes
