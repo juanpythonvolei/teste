@@ -24,9 +24,9 @@ if opcao_selecionada:
                     numero_nota = nota['Número da Nota']
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
-                    historico = f'Data: {data}\n Volumes:{volumes}\n Numero: {numero_nota}\n Valor: {valor}\n Cliente: {cliente}'
+                historico = f'Data: {data}\n Volumes:{volumes}\n Numero: {numero_nota}\n Valor: {valor}\n Cliente: {cliente}'
                 texto_historico += historico
-                css_style = """
+            css_style = """
                                                                         .my-square {
                                                                             background-color:#0275b1;
                                                                             border-radius: 10px;
@@ -39,8 +39,8 @@ if opcao_selecionada:
                                                                     
                                                                     # Aplicando o estilo e inserindo os quadrados
 
-                st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-                st.markdown(f'<div class="my-square">{item}</div>', unsafe_allow_html=True)
+            st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+            st.markdown(f'<div class="my-square">{item}</div>', unsafe_allow_html=True)
 
 
 
