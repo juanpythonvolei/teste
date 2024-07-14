@@ -36,7 +36,7 @@ for item in dados:
                     Valor: {valor}\n    
                     Cliente: {cliente}'''               
                     texto_historico += historico
-            st.markdown(f'<div class="my-square">Total Notas:{texto_historico}</div>', unsafe_allow_html=True)      
+            st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
     
      
 
