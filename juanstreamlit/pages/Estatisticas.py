@@ -83,8 +83,8 @@ if selected == "Dados Gerais":
           st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
     with col3:
           st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
- except:
-   pass
+   except:
+       pass
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
