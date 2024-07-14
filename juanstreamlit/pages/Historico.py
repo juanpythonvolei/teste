@@ -19,6 +19,7 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 for item in dados:
             texto_historico = ''
             roteiro = dados[f'{item}']
@@ -35,8 +36,8 @@ for item in dados:
                     Valor: {valor}\n    
                     Cliente: {cliente}'''               
                     texto_historico += historico
-            
-    st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-
+            st.markdown(f'<div class="my-square">Total Notas:{len(list(set(lista_notas)))}</div>', unsafe_allow_html=True)      
+    
+     
 
 
