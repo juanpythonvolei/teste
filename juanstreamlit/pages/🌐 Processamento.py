@@ -230,7 +230,6 @@ if selected == 'Processar Notas':
         st.warning('Processo Concluído')
         st.write(f'''Total de notas:{len(lista_notas)}''')
 elif selected == 'Excluir Conjuntos de Notas':
-        excuir = st.button('Excluir Conjunto')
         start_date = datetime.date(2000, 1, 1)
         end_date = datetime.date(2100, 1, 11)
         lista_filtrada = []
@@ -239,6 +238,7 @@ elif selected == 'Excluir Conjuntos de Notas':
             current_date += datetime.timedelta(days=1)
             datas.append(current_date)
         data_excluir  = st.selectbox("Selecione uma data", datas)
+        excluir = st.button('Excluir Conjunto')
         if excluir:
     
             # Referência ao nó do usuário que você deseja excluir
