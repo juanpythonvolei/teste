@@ -86,16 +86,19 @@ css_style = """
         # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 lista= []
-for a in dados:
-                            
-                            roteiro = dados[f'{a}']
-                            for elemento in roteiro:
-                                        nota = roteiro[f'{elemento}']
-                                        data_emit = nota['Data de Emissão']
-                                        if data_emit == str(opcao_selecionada_data):
-                                          numero_nota = nota['Número da Nota']
-                                          lista.append(numero_nota)
-                                          status = nota['status']
+try:
+  for a in dados:
+                              
+                              roteiro = dados[f'{a}']
+                              for elemento in roteiro:
+                                          nota = roteiro[f'{elemento}']
+                                          data_emit = nota['Data de Emissão']
+                                          if data_emit == str(opcao_selecionada_data):
+                                            numero_nota = nota['Número da Nota']
+                                            lista.append(numero_nota)
+                                            status = nota['status']
+except:
+  pass
 if status == 'Entrega não completa':
                                             with col1:
                                                         st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
