@@ -72,7 +72,8 @@ for nota, estado in checkbox_states.items():
                           lista_conferida.remove(status)
               except:
                           pass
-col1, _ = st.columns(3)
+try:
+  col1, _ = st.columns(3)
         
         # Estilização CSS embutida
 
