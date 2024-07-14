@@ -43,7 +43,7 @@ try:
           Volumes: {volumes}\n                
           Numero: {numero_nota}\n
           Valor: {valor}\n    
-          Cliente: {cliente}
+          Cliente: {cliente}\n
           Status: {status}
                                                   
                                                   \n
