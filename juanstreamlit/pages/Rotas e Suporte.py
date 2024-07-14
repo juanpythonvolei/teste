@@ -194,7 +194,10 @@ elif seletor == "suporte inteligente":
        texto_ia = st.text_input(label='Digite sua pergunta')
        botao_ia = st.button('ok')
        if botao_ia:
+           try:
               ia(pergunta=texto_ia)
+           except:
+               st.warning('Não foram encotrados Roteiros')
 
         
               
