@@ -94,7 +94,7 @@ try:
   lista_conferencia = []
   for a in dados:
                               
-                              roteiro = dados[f'{a}'][f'{opcao_selecionada_data}']
+                              roteiro = dados[f'{a}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
                                           data_emit = nota['Data de Emissão']
