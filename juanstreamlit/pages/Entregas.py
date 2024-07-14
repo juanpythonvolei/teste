@@ -102,7 +102,7 @@ try:
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
                                             valor = nota['Valor Total']
-                                            status = nota['status']['status']
+                                            status = nota['status']
                                             
 except:
   pass  
