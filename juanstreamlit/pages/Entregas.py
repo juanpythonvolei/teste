@@ -19,7 +19,7 @@ try:
                             for elemento in roteiro:
                                         nota = roteiro[f'{elemento}']
                                         data_emit = nota['Data de Emissão']
-                                        if data_emit == opcao_selecionada_data:
+                                        if str(data_emit) == str(opcao_selecionada_data):
                                           status = nota['status']
                                           if status == 'Entrega não completa':
                                             volumes = nota['Volumes']
@@ -98,7 +98,7 @@ try:
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
                                           data_emit = nota['Data de Emissão']
-                                          if data_emit == str(opcao_selecionada_data):
+                                          if str(data_emit) == str(opcao_selecionada_data):
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
                                             valor = nota['Valor Total']
