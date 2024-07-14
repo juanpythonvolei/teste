@@ -17,10 +17,9 @@ def ia(pergunta):
     chat = model.start_chat(history=[])
     requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
     roteiro = requiscao.json()
-    try:
-        dados = roteiro['bancodedadosroteirooficial']
-        texto_nota = ''
-        for item in dados:
+    dados = roteiro['bancodedadosroteirooficial']
+    texto_nota = ''
+    for item in dados:
             roteiro = dados[f'{item}']
             for elemento in roteiro:
                     nota = roteiro[f'{elemento}']
@@ -34,8 +33,7 @@ def ia(pergunta):
                     valor  = nota['Valor Total']
                     infos = f'Numero nota:{numero_nota}. volumes:{volumes}. cliente:{cliente}. Produtos:{Produtos}. status:{status}. valor:{valor}. destino:{destino}. data de emissão:{data_De_emissao}\n'
                     texto_nota += str(infos)
-        response = chat.send_message(f'{pergunta}:\n\n{texto_nota}\n')
-        resposta = response.text
-        st.write(f'{resposta}')
-    except:
-        st.warning('Sem Roteiros Disponíveis')
+    response = chat.send_message(f'{pergunta}:\n\n{texto_nota}\n')
+    resposta = response.text
+    st.write(f'{resposta}')
+
