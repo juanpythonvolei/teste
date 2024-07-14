@@ -7,7 +7,7 @@ requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireba
 roteiro = requiscao.json()
 dados = roteiro['bancodedadosroteirooficial']
 base_url2 = "https://www.google.com/maps/dir/"
-selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["database", "truck"], default_index=1)
+selected = option_menu("Menu Principal", ["Historico de Entregas", "Produtos das entregas"], icons=["history", "item"], default_index=1)
 css_style = """
           .my-square {
               background-color:#0275b1;
@@ -20,29 +20,31 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
-
-for item in dados:
-            texto_historico = ''
-            roteiro = dados[f'{item}']
-            for elemento in roteiro:
-                    nota = roteiro[f'{elemento}']
-                    volumes = nota['Volumes']
-                    data = nota['Data de Emissão']    
-                    numero_nota = nota['Número da Nota']
-                    valor = nota['Valor Total']
-                    cliente = nota['Cliente']
-                    historico = f'''\n
-                    
-                    Data: {data}\n
-                    Volumes: {volumes}\n                
-                    Numero: {numero_nota}\n
-                    Valor: {valor}\n    
-                    Cliente: {cliente}
-                    
-                    \n
-                    '''               
-                    texto_historico += historico
-            st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
+if selected = 'Historico de Entregas'
+          for item in dados:
+                      texto_historico = ''
+                      roteiro = dados[f'{item}']
+                      for elemento in roteiro:
+                              nota = roteiro[f'{elemento}']
+                              volumes = nota['Volumes']
+                              data = nota['Data de Emissão']    
+                              numero_nota = nota['Número da Nota']
+                              valor = nota['Valor Total']
+                              cliente = nota['Cliente']
+                              historico = f'''\n
+                              
+                              Data: {data}\n
+                              Volumes: {volumes}\n                
+                              Numero: {numero_nota}\n
+                              Valor: {valor}\n    
+                              Cliente: {cliente}
+                              
+                              \n
+                              '''               
+                              texto_historico += historico
+                      st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
+elif selected =  "Produtos das entregas":
+          
     
      
 
