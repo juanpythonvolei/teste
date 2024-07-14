@@ -72,7 +72,7 @@ for nota, estado in checkbox_states.items():
                           lista_conferida.remove(status)
               except:
                           pass
-col1, col2,col3 = st.columns(3)
+
 css_style = """
                                                                       .my-square {
                                                                           background-color:#0275b1;
@@ -85,6 +85,7 @@ css_style = """
                                                                   """
                                                                   
                                                                   # Aplicando o estilo e inserindo os quadrados
+col1, col2,col3 = st.columns(3)
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
         
