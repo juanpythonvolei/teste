@@ -85,7 +85,7 @@ css_style = """
                                                                   """
                                                                   
                                                                   # Aplicando o estilo e inserindo os quadrados
-col1, col2,col3 = st.columns(3)
+
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
         
@@ -110,22 +110,15 @@ try:
 except:
   pass  
 if  status == 'Entrega não completa':
-                                              with col1:
+                                     
                                                           st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
-                                              with col2:
-                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
-                                              with col3:
-                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
+
 
               
 else:
-                                              with col1:
 
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
-                                              with col2:
-                                                          st.markdown(f'<div class="my-square">Total Nota</div>', unsafe_allow_html=True)
-                                              with col3:
-                                                          st.markdown(f'<div class="my-square">Total Nota</div>', unsafe_allow_html=True)
+                                             
                                               
                                               
     # Exibe as notas com checkboxes
