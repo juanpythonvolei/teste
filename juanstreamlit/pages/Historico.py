@@ -22,7 +22,7 @@ for item in dados:
                     Volumes:{volumes}\n
                     Numero: {numero_nota}\n
                     Valor: {valor}\n
-                    Cliente: {cliente}\n'''
+                    Cliente: {cliente}'''
                     texto_historico += historico
             css_style = """
                                                                                     .my-square {
