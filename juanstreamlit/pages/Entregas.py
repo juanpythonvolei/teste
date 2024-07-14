@@ -87,8 +87,7 @@ css_style = """
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 
 try:
-  lista= []
-  valor_final = 0
+  lista = []
   for a in dados:
                               
                               roteiro = dados[f'{a}']
