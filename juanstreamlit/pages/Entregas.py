@@ -103,7 +103,7 @@ try:
                                             lista.append(numero_nota)
                                             valor = nota['Valor Total']
                                             status = nota['status']['status']
-                                            lista_conferencia.append(status)
+                                            lista.append(status)
 except:
   pass  
 if  status == 'Entrega não completa':
