@@ -17,9 +17,7 @@ if opcao_selecionada:
             texto_historico = ''
             roteiro = dados[f'{item}']
             for elemento in roteiro:
-                nota = roteiro[f'{elemento}']
-                data = nota['Data de Emissão']
-                if  data == opcao_selecionada:
+                    nota = roteiro[f'{elemento}']
                     volumes = nota['Volumes']
                     numero_nota = nota['Número da Nota']
                     valor = nota['Valor Total']
@@ -40,7 +38,7 @@ if opcao_selecionada:
                                                                     # Aplicando o estilo e inserindo os quadrados
 
             st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-            st.markdown(f'<div class="my-square">{item}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)
 
 
 
