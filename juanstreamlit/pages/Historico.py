@@ -19,7 +19,7 @@ css_style = """
       """
       
       # Aplicando o estilo e inserindo os quadrados
-st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+
 for item in dados:
             texto_historico = ''
             roteiro = dados[f'{item}']
