@@ -49,14 +49,14 @@ if selected == "Dados Gerais":
                     lista_valores.append(valor)
                     lista_notas.append(numero_nota)
                     lista_volumes.append(volumes)
-    data = {'Destino': texto_nota,
+    a = {'Destino': texto_nota,
             'Valor da nota': lista_valores,
             'Volumes':lista_volumes,
             'Cliente':lista_clientes,
             'Nota':lista_notas,
             'Data':data_De_emissao,
             'Status':status}
-    df = pd.DataFrame(data)
+    df = pd.DataFrame(a)
 
     # Exibindo a tabela no Streamlit
     st.table(df)
