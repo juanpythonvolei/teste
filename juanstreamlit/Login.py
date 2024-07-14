@@ -89,5 +89,5 @@ if st.button('Entrar'):
     else:
         mensagem_erro  = requisicao_dic['error']['message']
         st.write(mensagem_erro)
-elif st.button('Criar conta'):
+elif st.button('pages/🎫 Criar conta'):
     st.switch_page('Criar_Conta.py')
