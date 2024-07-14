@@ -100,7 +100,7 @@ try:
                                             lista.append(numero_nota)
                                             valor = nota['Valor Total']
                                             valor_final += valor
-                                            status = nota['status']
+                                            status = nota['status']['status']
                                             status.append(status)
 except:
   pass  
