@@ -32,7 +32,7 @@ for item in dados:
                     cliente = nota['Cliente']
                     historico = f'''
                     
-                              Data: {data}\n
+                     Data: {data}\n
                     Volumes: {volumes}\n                
                     Numero: {numero_nota}\n
                     Valor: {valor}\n    
