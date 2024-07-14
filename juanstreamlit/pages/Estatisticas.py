@@ -42,13 +42,13 @@ if selected == "Dados Gerais":
                         Produtos = nota['Produtos'][0]
                         status = nota['status']
                         valor  = nota['Valor Total']
-                    valor_total += float(valor)
-                    texto_nota.append(destino)
-                    lista_produtos.append(Produtos)
-                    lista_clientes.append(cliente)
-                    lista_valores.append(valor)
-                    lista_notas.append(numero_nota)
-                    lista_volumes.append(volumes)
+                        valor_total += float(valor)
+                        texto_nota.append(destino)
+                        lista_produtos.append(Produtos)
+                        lista_clientes.append(cliente)
+                        lista_valores.append(valor)
+                        lista_notas.append(numero_nota)
+                        lista_volumes.append(volumes)
     data = {'Destino': texto_nota,
             'Valor da nota': lista_valores,
             'Volumes':lista_volumes,
