@@ -19,25 +19,23 @@ for item in dados:
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
                     historico = f'''Data: {data}\n
-                    Volumes:{volumes}\n                
+                    Volumes: {volumes}\n                
                     Numero: {numero_nota}\n
                     Valor: {valor}\n    
                     Cliente: {cliente}'''               
                     texto_historico += historico
-            css_style = """
-                                                                                    .my-square {
-                                                                                        background-color:#0275b1;
-                                                                                        border-radius: 10px;
-                                                                                        display: flex;
-                                                                                        justify-content: center;
-                                                                                        align-items: center;
-                                                                                        color: white;
-                                                                                    }
-                                                                                """
-                                                                                
-                                                                                # Aplicando o estilo e inserindo os quadrados
-            
-            st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)
+            st.markdown(
+        """
+        <style>
+            .square {
+                width: 100px;
+                height: 100px;
+                background-color: #3498db;
+            }
+        </style>
+        <div class="square"></div>
+        """
+    )
 
 
 
