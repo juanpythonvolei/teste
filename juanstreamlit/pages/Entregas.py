@@ -86,6 +86,7 @@ css_style = """
         # Aplicando o estilo e inserindo os quadrados
 st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
 lista= []
+valor_final = 0
 try:
   for a in dados:
                               
@@ -96,6 +97,8 @@ try:
                                           if data_emit == str(opcao_selecionada_data):
                                             numero_nota = nota['Número da Nota']
                                             lista.append(numero_nota)
+                                            valor = nota['Valor Total']
+                                            valor_final += valor
                                             status = nota['status']
 except:
   pass
@@ -110,9 +113,9 @@ else:
                                             with col1:
                                                         st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
                                             with col2:
-                                                        st.markdown(f'<div class="my-square">Total Destinos</div>', unsafe_allow_html=True)
+                                                        st.markdown(f'<div class="my-square">Valor: {valor_final}</div>', unsafe_allow_html=True)
                                             with col3:
-                                                        st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
+                                                        st.markdown(f'<div class="my-square">Situação: {status}</div>', unsafe_allow_html=True)
                                             
                                               
   # Exibe as notas com checkboxes
