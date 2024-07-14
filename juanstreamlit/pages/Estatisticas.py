@@ -206,7 +206,7 @@ try:
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
     except:
         st.warning('O conjunto de dados não tem informações informáveis')
-  except:
+except:
     st.warning('Sem Roteiros disponíveis')      
     
 
