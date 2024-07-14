@@ -19,10 +19,10 @@ for item in dados:
                     valor = nota['Valor Total']
                     cliente = nota['Cliente']
                     historico = f'''Data: {data}\n
-                                Volumes:{volumes}\n
-                                Numero: {numero_nota}\n
-                                Valor: {valor}\n
-                                Cliente: {cliente}'''
+                    Volumes:{volumes}\n                
+                    Numero: {numero_nota}\n
+                    Valor: {valor}\n    
+                    Cliente: {cliente}'''               
                     texto_historico += historico
             css_style = """
                                                                                     .my-square {
