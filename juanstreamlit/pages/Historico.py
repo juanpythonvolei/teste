@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-
+from streamlit_option_menu import option_menu
 lista_total = []
 destinos_info = []
 requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
