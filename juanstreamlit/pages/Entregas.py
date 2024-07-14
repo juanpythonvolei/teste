@@ -109,10 +109,18 @@ except:
 if  status == 'Entrega não completa':
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
+                                              with col1:
+                                                          st.markdown(f'<div class="my-square">Total Nota: </div>', unsafe_allow_html=True)
+                                              with col1:
+                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
               
 else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
+                                              with col1:
+                                                          st.markdown(f'<div class="my-square">Total Nota:}</div>', unsafe_allow_html=True)
+                                              with col1:
+                                                          st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
                                              
                                               
     # Exibe as notas com checkboxes
