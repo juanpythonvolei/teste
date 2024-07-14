@@ -83,7 +83,7 @@ try:
       with col3:
             st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
 
-elif selected == 'Dados do Tranporte':
+  elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
     lista_duracao = []
