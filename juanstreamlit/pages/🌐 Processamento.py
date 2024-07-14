@@ -238,4 +238,10 @@ elif selected == 'Excluir Conjuntos de Notas':
         current_date += datetime.timedelta(days=1)
         datas.append(current_date)
     data_excluir  = st.selectbox("Selecione uma data", datas)
+    # Referência ao nó do usuário que você deseja excluir
+    usuario_ref = db.reference(f'bancodedadosroteirooficial/{data_excluir}')
+    
+    # Exclui o usuário
+    usuario_ref.delete()
+    st.warning('Conjunto excluido')
     
