@@ -66,13 +66,13 @@ elif selected ==  "Produtos das entregas":
                                         valor = nota['Valor Total']
                                         cliente = nota['Cliente']
                                         produtos = nota['Produtos']
-                                        historico = f'''\n
+                                        historico = f'''
                                         
-                                        Data: {data}\n              
-                                        Numero: {numero_nota}\n
-                                        Produtos: {produtos}\n
+                              Data: {data}\n              
+                              Numero: {numero_nota}\n
+                              Produtos: {produtos}\n
                                         
-                                        \n
+                                        
                                         '''               
                                         texto_historico += historico
                               st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
