@@ -44,7 +44,7 @@ if selected == 'Historico de Entregas':
                                         '''               
                                         texto_historico += historico
                                 st.markdown(f'<div class="my-square">{texto_historico}</div>', unsafe_allow_html=True)      
-                    except:
+                      except:        
                               st.warning('Roteiro não está disponível')
 elif selected ==  "Produtos das entregas":
           lista_total = []
