@@ -5,8 +5,7 @@ from IPython.display import Markdown
 import requests
 import streamlit as st
 import os
-import certifi
-os.environ["SSL_CERT_FILE"] = certifi.where()
+
 
 def ia(pergunta):
     
