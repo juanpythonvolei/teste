@@ -112,7 +112,7 @@ if status == 'Entrega não completa':
                                                         st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
 else:
                                             with col1:
-                                                        st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
+                                                        st.markdown(f'<div class="my-square">Total Notas:</div>', unsafe_allow_html=True)
                                             with col2:
                                                         st.markdown(f'<div class="my-square">Valor: {valor_final}</div>', unsafe_allow_html=True)
                                             with col3:
