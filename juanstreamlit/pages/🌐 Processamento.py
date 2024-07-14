@@ -70,8 +70,9 @@ if uploaded_files:
         except:
                 st.warning('Algo deu errado, tente novamente')
     print(lista_filtrada)
+    st.warning(f"Você carregou um total de: {len(lista_filtrada)} notas")
     for documento in lista_filtrada:
-                    st.write(f"Você carregou um total de: {len(lista_filtrada)} notas")
+                    
                     try:
                         try:
                                             
