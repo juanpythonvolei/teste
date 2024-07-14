@@ -20,7 +20,6 @@ opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
 selected = option_menu("Menu Principal", ["Dados Gerais", "Dados do Tranporte"], icons=["database", "truck"], default_index=1)
 # Adicionando botões em cada coluna
 if selected == "Dados Gerais":
-  try:
     texto_nota = []
     lista_produtos = []
     lista_clientes = []
@@ -83,8 +82,6 @@ if selected == "Dados Gerais":
           st.markdown(f'<div class="my-square">Total Destinos:{len(list(set(texto_nota)))}</div>', unsafe_allow_html=True)
     with col3:
           st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
-   except:
-       pass
 elif selected == 'Dados do Tranporte':
     valor_total = 0
     distancia_total = 0
