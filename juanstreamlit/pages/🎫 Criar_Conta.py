@@ -21,12 +21,6 @@ if botao:
     requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={key}",data=data)
     requisicao_dic = requisicao.json()
     if requisicao.ok:
-                refresh_token = requisicao_dic['refreshToken']
-                local_id = requisicao_dic['localId']
-                id_token = requisicao_dic['idToken']
-                link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/{local_id}.json'
-                data =f'{{"Nome":"{login}","Senha":"{senha}"}}'
-                requisicao_usuario = requests.patch(link,data=data)
                 st.switch_page('pages/🌐 Processamento.py')
 
     else:
