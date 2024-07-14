@@ -113,7 +113,7 @@ if  'Entrega não completa' in lista_conferencia:
                                                           st.markdown(f'<div class="my-square">Total valor</div>', unsafe_allow_html=True)
 else:
                                               with col1:
-                                                          st.markdown(f'<div class="my-square">Total Notas:</div>', unsafe_allow_html=True)
+                                                          st.markdown(f'<div class="my-square">Total Notas:{len(lista_conferida)}</div>', unsafe_allow_html=True)
                                               with col2:
                                                           st.markdown(f'<div class="my-square">Valor: </div>', unsafe_allow_html=True)
                                               with col3:
