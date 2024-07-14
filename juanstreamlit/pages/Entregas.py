@@ -72,7 +72,7 @@ for nota, estado in checkbox_states.items():
                           lista_conferida.remove(status)
               except:
                           pass
-col1 = st.columns(1)
+col1,col2,col3 = st.columns(3)
         
         # Estilização CSS embutida
 css_style = """
@@ -109,17 +109,17 @@ except:
 if  status == 'Entrega não completa':
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
-                                              with col1:
+                                              with col2:
                                                           st.markdown(f'<div class="my-square">Total Nota: </div>', unsafe_allow_html=True)
-                                              with col1:
+                                              with col3:
                                                           st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
               
 else:
                                               with col1:
                                                           st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
-                                              with col1:
+                                              with col2:
                                                           st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
-                                              with col1:
+                                              with col3:
                                                           st.markdown(f'<div class="my-square">Total Nota:</div>', unsafe_allow_html=True)
                                              
                                               
