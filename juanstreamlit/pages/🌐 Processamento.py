@@ -208,14 +208,19 @@ if selected == 'Processar Notas':
         st.warning('Processo Concluído')
         st.write(f'''Total de notas:{len(lista_notas)}''')
 elif selected == 'Excluir Conjuntos de Notas':
-        start_date = datetime.date(2000, 1, 1)
-        end_date = datetime.date(2100, 1, 11)
-        lista_filtrada = []
-        current_date = start_date
-        while current_date <= end_date:
-            current_date += datetime.timedelta(days=1)
-            datas.append(current_date)
-        data_excluir  = st.selectbox("Selecione uma data para exclusão", datas)
+        lista_total = []
+        destinos_info = []
+        requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+        roteiro = requiscao.json()
+        try:
+            dados = roteiro['bancodedadosroteirooficial']
+            base_url2 = "https://www.google.com/maps/dir/"
+        except:
+                st.warning('Sem Roteiros Disponíveis')
+        for item in dados:
+                    roteiro = dados[f'{item}']
+                    lista_total.append(item)
+        data_excluir  = st.selectbox("Selecione uma data para exclusão", lista_total)
         excluir = st.button('Excluir Conjunto')
         if excluir:
             try:
