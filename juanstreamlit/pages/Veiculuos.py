@@ -11,11 +11,9 @@ if seletor == 'Cadastrar Veículos':
     Veículo = st.text_input(label='Digite o nome do Veículo')
     Placa = st.text_input(label='Digite a placa do veículo')
     km = st.text_input(label='Digite a relação km/L do veículo')
-    foto = st.file_uploader('Selecione uma Imagem para o seu Veículo')
     botao = st.button('Cadastrar Veículo')
     dict_veiculo = {'nome':Veículo,
                     'Placa':Placa,
-                    'Km':km,
-                    'Foto':foto}
+                    'Km':km}
     if botao:
         ref.child(Veículo).push().set(dict_veiculo)
