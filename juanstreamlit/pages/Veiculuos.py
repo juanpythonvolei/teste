@@ -25,3 +25,15 @@ if seletor == 'Cadastrar Veículos':
                    'Foto':foto}
     if botao:
         ref.child(Veículo).push().set(dict_veiculo)
+elif seletor == 'Pesquisar Veículos':
+        lista_nomes = []
+        requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+        roteiro = requiscao.json()
+        dados = roteiro['Veículos']
+        for item in dados:
+                            veiculo = dados[f'{item}']
+                            for elemento in veiculo:
+                                   espec = veiculo[f'{elemento}']
+                                   nome = espec['nome']
+                                   lista_nomes.append(nome)
+        opcao = st.select_slider('Selecione um Veículo',lista_nomes)
