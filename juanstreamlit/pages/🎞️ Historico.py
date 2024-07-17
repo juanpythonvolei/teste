@@ -78,7 +78,7 @@ try:
                                                             valor = nota['Valor Total']
                                                             cliente = nota['Cliente']
                                                             produtos = nota['Produtos']
-                                                            Produtos += produtos
+                                                            Produtos += str(produtos)
                                                             historico = f'''
                                                             
           Data: {data}\n              
