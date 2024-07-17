@@ -14,8 +14,31 @@ from time import sleep
 import pprint
 from st_circular_progress import CircularProgress
 from streamlit_option_menu import option_menu
+from pprint import pprint
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
+st.markdown("""
+    <style>
+    .sidebar .sidebar-content {
+        background-color: #FFA421;
+        color: white; /* Cor do texto na barra lateral */
+    }
+    </style>
+""", unsafe_allow_html=True)
+css = """
+<style>
+.centered-image {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+"""
+
+# Insere o CSS no aplicativo
+st.markdown(css, unsafe_allow_html=True)
+
+# Exibe a imagem centralizada
+image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 selected = option_menu("Menu Principal", ["Processar Notas", "Excluir Conjuntos de Notas"], default_index=1)
 if selected == 'Processar Notas':
     start_date = datetime.date(2000, 1, 1)
@@ -34,14 +57,12 @@ if selected == 'Processar Notas':
         quantidade_notas = []
         lista_datas = []
         lista_Destinos = []
-       
+        massa = 0
         destinos_info = []
         for nota in uploaded_files:
             try:
                     xml_data = nota.read()
                     documento = xmltodict.parse(xml_data)
-                    print(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10])
-                    print(opcao_selecionada)
                     if str(documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]) == str(opcao_selecionada):
                         nome = nota.name
                         if documento not in lista_filtrada:
@@ -50,7 +71,6 @@ if selected == 'Processar Notas':
                             continue
             except:
                     st.warning('Algo deu errado, tente novamente')
-        print(lista_filtrada)
         st.warning(f"Você carregou um total de: {len(lista_filtrada)} notas")
         for documento in lista_filtrada:
                             try:
@@ -66,7 +86,9 @@ if selected == 'Processar Notas':
                                                     lista_Destinos.append(destino)
                                                     descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
                                                     valor_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
+                                                    peso =  documento['nfeProc']['NFe']['infNFe']['transp']['Vol']['pesoL']
                                                     item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
+                                                    massa += float(peso)
                                                     lista_produtos.append(item_nota)
         
                                                         
@@ -79,6 +101,7 @@ if selected == 'Processar Notas':
                                                         'Destino': destino,
                                                         'Volumes':len(lista_produtos),
                                                         'Data de Emissão':data_emit,
+                                                        'Massa': peso,
                                                         'status':'Entrega não completa'
                                                     }
                                                     lista_notas.append(dict_nota)
@@ -104,6 +127,8 @@ if selected == 'Processar Notas':
                                                 valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
                                                 destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]}-{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}-{dict_nota_fiscal["dest"]["enderDest"]["UF"]},{dict_nota_fiscal["dest"]["enderDest"]["CEP"]}'
                                                 data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
+                                                peso =  dict_nota_fiscal['transp']['vol']['pesoL']
+                                                massa += float(peso)
                                                 lista_Destinos.append(destino)
         
                                                         
@@ -116,6 +141,7 @@ if selected == 'Processar Notas':
                                                         'Destino': destino,
                                                         'Volumes':len(lista_produtos),
                                                         'Data de Emissão':data_emit,
+                                                        'Massa': peso,
                                                         'status':'Entrega não completa'
                                                     }
                                                 lista_notas.append(dict_nota)
@@ -189,7 +215,6 @@ if selected == 'Processar Notas':
                                                         })
         st.warning('Conectando ao banco de dados')
         lista_pontos = []
-        print(destinos_info)
         destinos_ordenados = sorted(destinos_info, key=lambda x: x['distancia'])
         for destino in destinos_ordenados:        # Criar o DataFrame com todos os dados das notas
                                     local=destino['coordenadas_google']

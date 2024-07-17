@@ -87,6 +87,7 @@ try:
             st.markdown(f'<div class="my-square">Total valor:{valor_total}</div>', unsafe_allow_html=True)
 
   elif selected == 'Dados do Tranporte':
+    Massa_total = 0
     valor_total = 0
     distancia_total = 0
     lista_duracao = []
@@ -120,6 +121,8 @@ try:
                             destino = nota['Destino']
                             valor  = nota['Valor Total']
                             valor_total += float(valor)
+                            massa = nota['Massa']
+                            Massa_total += float(massa)
                             if destino in lista_total:
                                 pass
                             else:
@@ -204,7 +207,7 @@ try:
       with col1:
           st.markdown(f'<div class="my-square">Total Gasto:{((distancia_total)/10)*5.50}</div>', unsafe_allow_html=True)
       with col2:
-          st.markdown(f'<div class="my-square">Total Destinos:{len(destinos_info)}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Massa Total:{Massa_total}</div>', unsafe_allow_html=True)
       with col3:
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
     except:

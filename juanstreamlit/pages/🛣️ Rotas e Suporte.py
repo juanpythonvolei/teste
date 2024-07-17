@@ -15,6 +15,20 @@ from st_circular_progress import CircularProgress
 import webbrowser
 from suporte_inteligente import ia
 from streamlit_option_menu import option_menu
+css = """
+<style>
+.centered-image {
+    display: block;
+    margin: 0 auto;
+}
+</style>
+"""
+
+# Insere o CSS no aplicativo
+st.markdown(css, unsafe_allow_html=True)
+
+# Exibe a imagem centralizada
+image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 seletor  = option_menu("Menu Principal", ["rota da nota", "rota de todas as notas","suporte inteligente"], icons=["truck", "map",'robot'], default_index=1)
 
 
