@@ -207,7 +207,7 @@ try:
       with col1:
           st.markdown(f'<div class="my-square">Total Gasto:{((distancia_total)/10)*5.50}</div>', unsafe_allow_html=True)
       with col2:
-          st.markdown(f'<div class="my-square">Massa Total:{Massa_total}</div>', unsafe_allow_html=True)
+          st.markdown(f'<div class="my-square">Massa:{Massa_total}</div>', unsafe_allow_html=True)
       with col3:
           st.markdown(f'<div class="my-square">Km:{distancia_total}</div>', unsafe_allow_html=True)
     except:
