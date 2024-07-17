@@ -86,7 +86,7 @@ if selected == 'Processar Notas':
                                                     lista_Destinos.append(destino)
                                                     descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
                                                     valor_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
-                                                    peso =  documento['nfeProc']['NFe']['infNFe']['transp']['Vol']['pesoL']
+                                                    peso =  documento['nfeProc']['NFe']['infNFe']['transp']['vol']['pesoL']
                                                     item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
                                                     massa += float(peso)
                                                     lista_produtos.append(item_nota)
