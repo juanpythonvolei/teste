@@ -36,4 +36,4 @@ elif seletor == 'Pesquisar Veículos':
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
-        opcao = st.select_slider('Selecione um Veículo',lista_nomes)
+        opcao = st.selectbox('Selecione um Veículo',lista_nomes)
