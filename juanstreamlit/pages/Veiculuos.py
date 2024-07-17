@@ -6,7 +6,7 @@ import math
 from geopy.distance import geodesic
 from firebase_admin import credentials, firestore,db
 seletor  = option_menu("Menu Principal", ["Cadastrar Veículos", "Pesquisar Veículos"], icons=["truck", "search"], default_index=1)
-ref = db.reference('bancodedadosroteirooficial')
+ref = db.reference('Veículos')
 if seletor == 'Cadastrar Veículos':
     Veículo = st.text_input(label='Digite o nome do Veículo')
     Placa = st.text_input(label='Digite a placa do veículo')
