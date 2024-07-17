@@ -55,6 +55,7 @@ try:
           elif selected ==  "Produtos das entregas":
                     lista_total = []
                     destinos_info = []
+                    
                     requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
                     roteiro = requiscao.json()
                     dados = roteiro['bancodedadosroteirooficial']
@@ -65,6 +66,7 @@ try:
                                               lista_total.append(item)
                               opcao_selecionada = st.selectbox("Selecione uma data", lista_total)
                               for item in dados:
+                                          Produtos = ''        
                                           texto_historico = ''
                                           roteiro = dados[f'{item}']
                                           for elemento in roteiro:
@@ -76,11 +78,12 @@ try:
                                                             valor = nota['Valor Total']
                                                             cliente = nota['Cliente']
                                                             produtos = nota['Produtos']
+                                                            Produtos += produtos
                                                             historico = f'''
                                                             
           Data: {data}\n              
           Numero: {numero_nota}\n
-          Produtos: {produtos}\n
+          Produtos: {Produtos}\n
                                                             
                                                             
                                                             '''               
