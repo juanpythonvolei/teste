@@ -19,4 +19,4 @@ pandas
 streamlit-option-menu
 geopy
 face_recognition
-import face_recognition
+face_recognition
