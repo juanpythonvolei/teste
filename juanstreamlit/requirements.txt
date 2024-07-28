@@ -1,5 +1,6 @@
 cmake == 3.30.1 
 dlib == 19.24.4
+face_recognition
 certifi
 firebase_admin
 folium
@@ -20,6 +21,6 @@ google-generativeai
 pandas
 streamlit-option-menu
 geopy
-face_recognition
+
 
 
