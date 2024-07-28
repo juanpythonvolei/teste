@@ -18,7 +18,7 @@ tkcalendar
 xmltodict
 google-generativeai
 streamlit-option-menu
-
+cmake
 
 
 
