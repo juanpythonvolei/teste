@@ -5,7 +5,6 @@ certifi
 firebase_admin
 folium
 geopy
-googletrans
 ipython
 Kivy
 openpyxl
@@ -18,9 +17,8 @@ streamlit
 tkcalendar
 xmltodict
 google-generativeai
-pandas
 streamlit-option-menu
-geopy
+
 
 
 
