@@ -3,6 +3,8 @@ import firebase_admin
 from firebase_admin import credentials, firestore,db
 import requests
 import os
+import face_recognition as fr
+from PIL import Image
 st.set_page_config(initial_sidebar_state="collapsed",page_title="Roterização e suporte")
 
 
@@ -73,21 +75,21 @@ else:
 
 # Configuração para ocultar a sidebar
 
+usuario_foto = st.camera_input(help='Faça o Login',label='Login',)
+if usuario_foto:
+    with open(f'captured_image.jpg', 'wb') as f:
+                f.write(usuario_foto.getvalue())
+    link = f"./captured_image.jpg"
 
-key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
-# Exibe a imagem centralizada
+    imagem_base = r'C:\Users\juanz\OneDrive\Área de Trabalho\minha foto.jpg'
+    img_base = fr.load_image_file(imagem_base)
+    encode_base = fr.face_encodings(img_base)[0]
 
-login = st.text_input(label='Digite seu E-mail')
+    usuario = fr.load_image_file(link)
+    encode_usuario = fr.face_encodings(usuario)[0]
 
-senha = st.text_input(label='Digite sua senha',type="password")
-if st.button('Entrar'):
-    data = {"email":login,"password":senha,"returnSecureToken":True}
-    requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={key}",data=data)
-    requisicao_dic = requisicao.json()
-    if requisicao.ok:
-        st.switch_page('pages/🌐 Processamento.py')
+    resultado = fr.compare_faces([encode_base], encode_usuario)
+    if resultado[0]:
+           st.switch_page('pages/🌐 Processamento.py')
     else:
-        mensagem_erro  = requisicao_dic['error']['message']
-        st.write(mensagem_erro)
-elif st.button('Criar Conta'):
-    st.switch_page('pages/🎫 Criar_Conta.py')
+           st.warning('Acesso negado')
