@@ -19,4 +19,4 @@ pandas
 streamlit-option-menu
 geopy
 face_recognition
-dlib
+dlib-19.24.99-cp312-cp312-win_amd64
