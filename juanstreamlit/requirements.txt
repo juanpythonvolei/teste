@@ -20,3 +20,4 @@ streamlit-option-menu
 geopy
 face_recognition
 dlib-19.24.99-cp312-cp312-win_amd64
+CMake
