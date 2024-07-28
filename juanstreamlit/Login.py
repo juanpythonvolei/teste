@@ -5,6 +5,7 @@ import requests
 import os
 import face_recognition as fr
 from PIL import Image
+import cmake
 st.set_page_config(initial_sidebar_state="collapsed",page_title="Roterização e suporte")
 
 
