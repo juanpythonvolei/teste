@@ -20,4 +20,4 @@ streamlit-option-menu
 geopy
 face_recognition
 dlib == 19.24.4
-CMake
+CMake == 3.30.1
