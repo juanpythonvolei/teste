@@ -6,12 +6,9 @@ firebase_admin
 folium
 geopy
 ipython
-Kivy
-openpyxl
 pandas
 protobuf
 PyPDF2
-Requests
 st_circular_progress
 streamlit
 tkcalendar
