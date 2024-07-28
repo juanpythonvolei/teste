@@ -1,4 +1,4 @@
-CMake
+CMake == 0.111.11
 certifi
 firebase_admin
 folium
