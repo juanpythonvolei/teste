@@ -18,4 +18,4 @@ google-generativeai
 pandas
 streamlit-option-menu
 geopy
-
+face_recognition
