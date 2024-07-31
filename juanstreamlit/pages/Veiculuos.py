@@ -5,6 +5,7 @@ from streamlit_option_menu import option_menu
 import math
 from geopy.distance import geodesic
 from firebase_admin import credentials, firestore,db
+from streamlit_calendar import calendar
 seletor  = option_menu("Menu Principal", ["Cadastrar Veículos", "Pesquisar Veículos"], icons=["truck", "search"], default_index=1)
 ref = db.reference('Veículos')
 if seletor == 'Cadastrar Veículos':
