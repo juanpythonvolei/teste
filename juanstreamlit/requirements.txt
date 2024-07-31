@@ -1,6 +1,4 @@
-cmake
-dlib 
-face_recognition
+
 certifi
 firebase_admin
 folium
@@ -15,7 +13,7 @@ tkcalendar
 xmltodict
 google-generativeai
 streamlit-option-menu
-cmake
+
 
 
 
