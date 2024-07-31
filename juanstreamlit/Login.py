@@ -80,14 +80,17 @@ key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
 login = st.text_input(label='Digite seu E-mail')
 
 senha = st.text_input(label='Digite sua senha',type="password")
-if st.button('Entrar'):
-    data = {"email":login,"password":senha,"returnSecureToken":True}
-    requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={key}",data=data)
-    requisicao_dic = requisicao.json()
-    if requisicao.ok:
-        st.switch_page('pages/🌐 Processamento.py')
-    else:
-        mensagem_erro  = requisicao_dic['error']['message']
-        st.write(mensagem_erro)
-elif st.button('Criar Conta'):
-    st.switch_page('pages/🎫 Criar_Conta.py')
+col1,col2 = st.colums(3)
+with col1:
+    if st.button('Entrar'):
+        data = {"email":login,"password":senha,"returnSecureToken":True}
+        requisicao = requests.post(f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={key}",data=data)
+        requisicao_dic = requisicao.json()
+        if requisicao.ok:
+            st.switch_page('pages/🌐 Processamento.py')
+        else:
+            mensagem_erro  = requisicao_dic['error']['message']
+            st.write(mensagem_erro)
+with col2:
+    if st.button('Criar Conta'):
+        st.switch_page('pages/🎫 Criar_Conta.py')
