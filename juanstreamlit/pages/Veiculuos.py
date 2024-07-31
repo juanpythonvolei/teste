@@ -6,6 +6,8 @@ import math
 from geopy.distance import geodesic
 from firebase_admin import credentials, firestore,db
 from streamlit_calendar import calendar
+import datetime
+
 calendar_options = {
     "editable": "true",
     "selectable": "true",
@@ -22,7 +24,7 @@ calendar_events = [
 calendar_component = calendar(events=calendar_events, options=calendar_options)
 
 # Exiba o calendário no Streamlit
-st.write(calendar_component)
+selected_date = st.date_input("Selecione uma data", datetime.date.today())
 seletor  = option_menu("Menu Principal", ["Cadastrar Veículos", "Pesquisar Veículos"], icons=["truck", "search"], default_index=1)
 ref = db.reference('Veículos')
 if seletor == 'Cadastrar Veículos':
