@@ -80,7 +80,7 @@ key = 'AIzaSyDKr5U-JLK2SvlndWbdNULNCCJNRYVv4rg'
 login = st.text_input(label='Digite seu E-mail')
 
 senha = st.text_input(label='Digite sua senha',type="password")
-col1,col2 = st.columns(3)
+col1,col2,col3 = st.columns(3)
 with col1:
     if st.button('Entrar'):
         data = {"email":login,"password":senha,"returnSecureToken":True}
