@@ -147,5 +147,5 @@ elif seletor == 'Pesquisar Veículos':
                                        st.image(link) 
                                        placa = espec['Placa']
                                        kilometragem = espec['Km']
-                                       dict = {'Nome':nome,'Placa':placa,'Kilometragem':kilometragem}
+                                       dict = {'Nome':nome,'Placa':placa,'Kilometragem':kilometragem,'Total de Viagens realizadas':len(lista_veiculos),'Distancia Total Percorrida':distancia_total}
                                        st.table(dict)
