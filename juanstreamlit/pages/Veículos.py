@@ -48,6 +48,9 @@ if seletor == 'Cadastrar Veículos':
         ref.child(Veículo).push().set(dict_veiculo)
 elif seletor == 'Pesquisar Veículos':
         lista_nomes = []
+        lista_veiculos = []
+        lista_locais = []
+        destinos_info = []
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['Veículos']
@@ -59,7 +62,18 @@ elif seletor == 'Pesquisar Veículos':
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
-        for item in d
+        for item in dados2:
+                              
+                              roteiro = dados[f'{item}']
+                              for elemento in roteiro:
+                                          nota = roteiro[f'{elemento}']
+                                          y  = nota['Veículo']
+                                          for x in y:
+                                              veiculo = y[f'{x}']
+                                              if veiculo == opcao:
+                                                  lista_veiculos.append(veiculo)
+                                              
+
         for item in dados:
                             veiculo = dados[f'{item}']
                             for elemento in veiculo: 
