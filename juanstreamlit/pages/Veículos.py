@@ -65,4 +65,7 @@ elif seletor == 'Pesquisar Veículos':
                                    if nome == opcao: 
                                        link = espec['Foto']
                                        st.image(link) 
-                
+                                       placa = espec['Placa']
+                                       kilometragem = espec['Km']
+                                       dict = {'Nome':nome,'Placa':placa,'Kilometragem':kilometragem}
+                                       st.table(dict)
