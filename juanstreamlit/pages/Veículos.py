@@ -84,9 +84,14 @@ elif seletor == 'Pesquisar Veículos':
                               roteiro = dados2[f'{item}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
-                                          y = nota['Veículo']
+                                          try:
+                                              y = nota['Veículo']
+                                          except:
+                                              pass
                                           for i in y:
-                                              st.write(y[f'{i}']['Veículo'])  
+                                              veiculo = y[f'{i}']['Veículo']
+                                              if veiculo == opcao:
+                                                  lista_veiculos
                                               
 
         for item in dados:
