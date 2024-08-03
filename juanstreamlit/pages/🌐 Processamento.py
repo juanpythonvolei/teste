@@ -43,7 +43,7 @@ image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702
 selected = option_menu("Menu Principal", ["Processar Notas", "Excluir Conjuntos de Notas"], default_index=1)
 if selected == 'Processar Notas':
     opcao_selecionada = selected_date = st.date_input("Selecione uma data", datetime.date.today())
-    
+    lista_filtrada = []
     uploaded_files = st.file_uploader("Escolha as Notas", type=['xml'], accept_multiple_files=True)
     if uploaded_files:
         uso = []
