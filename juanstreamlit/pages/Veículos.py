@@ -8,23 +8,6 @@ from firebase_admin import credentials, firestore,db
 from streamlit_calendar import calendar
 import datetime
 
-calendar_options = {
-    "editable": "true",
-    "selectable": "true",
-    # ... outras opções ...
-}
-
-# Exemplo de eventos no calendário
-calendar_events = [
-    {"title": "Evento 1", "start": "2023-07-31T08:30:00", "end": "2023-07-31T10:30:00"},
-    # ... outros eventos ...
-]
-
-# Crie o calendário
-
-
-# Exiba o calendário no Streamlit
-selected_date = st.date_input("Selecione uma data", datetime.date.today())
 seletor  = option_menu("Menu Principal", ["Cadastrar Veículos", "Pesquisar Veículos"], icons=["truck", "search"], default_index=1)
 ref = db.reference('Veículos')
 if seletor == 'Cadastrar Veículos':
