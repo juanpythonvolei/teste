@@ -78,7 +78,7 @@ for nota, estado in checkbox_states.items():
                                                 requests.patch(link, data=dados)        
                                                 link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/Veículo.json'
                                                 dados2 = {"Veículo": veiculo}
-                                                requests.patch(link2, data=dados2)   
+                                                requests.post(link2, json=dados2)   
                             st.warning('Entrega realizada com Sucesso')
                                
                             
