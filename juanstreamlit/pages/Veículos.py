@@ -59,6 +59,7 @@ elif seletor == 'Pesquisar Veículos':
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
+        for item in d
         for item in dados:
                             veiculo = dados[f'{item}']
                             for elemento in veiculo: 
