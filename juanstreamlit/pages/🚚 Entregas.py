@@ -25,7 +25,7 @@ for item in dados2:
                                            "title": f"{nome}",
                                            "img":f"{img}",
                                        }
-                                   lista_info.append(info)  
+                                   items.append(info)  
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
