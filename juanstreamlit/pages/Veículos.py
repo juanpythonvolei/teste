@@ -42,7 +42,8 @@ if seletor == 'Cadastrar Veículos':
     dict_veiculo = {'nome':Veículo,
                     'Placa':Placa,
                     'Km':km,
-                   'Foto':foto}
+                   'Foto':foto,
+                   'Distância':'Nenhuma'}
     if botao:
         ref.child(Veículo).push().set(dict_veiculo)
 elif seletor == 'Pesquisar Veículos':
