@@ -3,23 +3,7 @@ import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 
-destinos_info = []
-distancia_total = 0 
-lista_destinos = []
-address = "Itupeva,sp"
-base_url = "https://maps.googleapis.com/maps/api/geocode/json"
-params = {
-                                            "address": address,
-                                            "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
-                                        }
-
-response = requests.get(base_url, params=params)
-data = response.json()
-if data["status"] == "OK":
-                                            location = data["results"][0]["geometry"]["location"]
-                                            lat_inicial = location["lat"]
-                                            lon_inicial = location["lng"]
-                                            origem_atual = (lat_inicial, lon_inicial)      
+     
 dados = roteiro['bancodedadosroteirooficial']
   
     # Exibe a seleção da data
@@ -93,6 +77,23 @@ for nota, estado in checkbox_states.items():
                                           pass
                                                  
                             st.warning('Entrega realizada com Sucesso')
+                            destinos_info = []
+                            distancia_total = 0 
+                            lista_destinos = []
+                            address = "Itupeva,sp"
+                            base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+                            params = {
+                                                                        "address": address,
+                                                                        "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                                                                    }
+                            
+                            response = requests.get(base_url, params=params)
+                            data = response.json()
+                            if data["status"] == "OK":
+                                                                        location = data["results"][0]["geometry"]["location"]
+                                                                        lat_inicial = location["lat"]
+                                                                        lon_inicial = location["lng"]
+                                                                        origem_atual = (lat_inicial, lon_inicial) 
                             for item in lista_destinos:
                               address = f"{item}"
                               base_url = "https://maps.googleapis.com/maps/api/geocode/json"
