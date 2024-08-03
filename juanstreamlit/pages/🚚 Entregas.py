@@ -11,7 +11,7 @@ try:
   requiscao2 = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
   roteiro2 = requiscao.json()
   dados2 = roteiro2['Veículos']
-  for item in dados:                       
+  for item in dados2:                       
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
                                    espec = veiculo[f'{elemento}']
