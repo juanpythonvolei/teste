@@ -29,6 +29,7 @@ if seletor == 'Cadastrar Veículos':
                    'Distância':'Nenhuma'}
     if botao:
         ref.child(Veículo).push().set(dict_veiculo)
+        st.warning(f'Veículo: {Veículo} cadastrado com sucesso')
 elif seletor == 'Pesquisar Veículos':
         
         
