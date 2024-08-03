@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+from streamlit_carousel import carousel
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 
@@ -12,15 +13,23 @@ lista_nomes = []
 lista_destinos = []
 destinos_info = []
 distancia_total = 0
+lista_info
 dados2 = roteiro['Veículos']
-for item in dados2:                       
+for item in dados2:            
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
+                                   img = espec['Foto']
+                                   info =    {
+        "title": f"{nome}",
+        "img":f"{img}",
+    }
+                                   lista_info.append(info)  
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
+carousel(items=lista_info, width=0.5)
 veiculo = st.selectbox('Selecione um Veículo',lista_nomes)
 checkbox_states = {}
 try:
