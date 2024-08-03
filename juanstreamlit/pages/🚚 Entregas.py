@@ -9,6 +9,7 @@ dados = roteiro['bancodedadosroteirooficial']
     # Exibe a seleção da data
 lista_total = [item for item in dados]
 lista_nomes = []
+lista_destinos = []
 dados2 = roteiro['Veículos']
 for item in dados2:                       
                             veiculo = dados2[f'{item}']
@@ -24,7 +25,7 @@ try:
       lista_alerta = []
       lista_conferida = []
       lista_notas = []
-      lista_destinos = []     
+           
       for item in dados:
                               
                               roteiro = dados[f'{item}']
