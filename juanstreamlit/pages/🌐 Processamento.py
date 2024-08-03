@@ -106,7 +106,8 @@ if selected == 'Processar Notas':
                                                         'Volumes':len(lista_produtos),
                                                         'Data de Emissão':data_emit,
                                                         'Massa': peso,
-                                                        'status':'Entrega não completa'
+                                                        'status':'Entrega não completa',
+                                                        'Veículo':'Indefinido'
                                                     }
                                                     lista_notas.append(dict_nota)
                             except:
@@ -150,7 +151,8 @@ if selected == 'Processar Notas':
                                                         'Volumes':len(lista_produtos),
                                                         'Data de Emissão':data_emit,
                                                         'Massa': peso,
-                                                        'status':'Entrega não completa'
+                                                        'status':'Entrega não completa',
+                                                        'Veículo':'Indefinido'
                                                     }
                                                 lista_notas.append(dict_nota)
      
