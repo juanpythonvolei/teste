@@ -42,7 +42,8 @@ try:
                                               lista_notas.append(numero_nota)
                                               valor = nota['Valor Total']
                                               cliente = nota['Cliente']
-                                                                    
+                                              endereco = nota['Destino']
+                                              lista_destinos.append(endereco)                      
                                                                     
                                                                         # Usa o dicionário para controlar o estado da checkbox
                                               checkbox_states[numero_nota] = st.checkbox(f"Cliente: {cliente}. Nota: {numero_nota}. Volumes: {volumes}", key=numero_nota)
@@ -69,8 +70,7 @@ for nota, estado in checkbox_states.items():
                                           for elemento in roteiro:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
-                                              endereco = nota['Destino']
-                                              lista_destinos.append(endereco)
+                                              
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
