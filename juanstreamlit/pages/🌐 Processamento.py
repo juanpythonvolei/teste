@@ -42,13 +42,6 @@ st.markdown(css, unsafe_allow_html=True)
 image = st.image('https://www.logolynx.com/images/logolynx/fe/fe346f78d111e1d702b44186af59b568.jpeg')
 selected = option_menu("Menu Principal", ["Processar Notas", "Excluir Conjuntos de Notas"], default_index=1)
 if selected == 'Processar Notas':
-    start_date = datetime.date(2000, 1, 1)
-    end_date = datetime.date(2100, 1, 11)
-    lista_filtrada = []
-    current_date = start_date
-    while current_date <= end_date:
-        current_date += datetime.timedelta(days=1)
-        datas.append(current_date)
     opcao_selecionada = selected_date = st.date_input("Selecione uma data", datetime.date.today())
     
     uploaded_files = st.file_uploader("Escolha as Notas", type=['xml'], accept_multiple_files=True)
