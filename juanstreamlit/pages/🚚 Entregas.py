@@ -135,12 +135,10 @@ try:
                                   # Atualiza a origem para o próximo destino
                               origem_atual = (lat_final, lon_final)
                               dados2 = roteiro['Veículos']
-                              for item in dados2: 
-                                if item  == Veículo:
-                                  veiculo = dados2[f'{item}']
-                                  link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{item}/{veiculo}.json'
-                                  dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
-                                  response = requests.post(link2, json=dados2)
+                              veiculo = dados2[f'{Veículo}']
+                              link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/Veículos/{veiculo}.json'
+                              dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
+                              response = requests.post(link2, json=dados2)
                                   
                 else:
                             pass
