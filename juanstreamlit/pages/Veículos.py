@@ -152,4 +152,4 @@ elif seletor == 'Pesquisar Veículos':
                                        kilometragem = espec['Km']
                                        dict = {'Nome':nome,'Placa':placa,'Kilometragem':kilometragem,'Total de Viagens realizadas':len(lista_veiculos),'Distancia Total Percorrida':distancia_total}
                                        st.table(dict)
-    st.write(len(lista_veiculos))
+        st.write(len(lista_veiculos))
