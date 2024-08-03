@@ -21,10 +21,10 @@ for item in dados2:
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
                                    img = espec['Foto']
-                                   info =    {
-        "title": f"{nome}",
-        "img":f"{img}",
-    }
+                                   info = {
+                                           "title": f"{nome}",
+                                           "img":f"{img}",
+                                       }
                                    lista_info.append(info)  
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
