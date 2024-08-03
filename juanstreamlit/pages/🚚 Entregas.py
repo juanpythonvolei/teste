@@ -137,9 +137,9 @@ try:
                               dados2 = roteiro['Veículos']
                               for item in dados2: 
                                 if item  == Veículo:
-                                veiculo = dados2[f'{item}']
-                                link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
-                                dados = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
+                                  veiculo = dados2[f'{item}']
+                                  link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
+                                  dados = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
                 else:
                             pass
             else:
