@@ -7,7 +7,7 @@ from geopy.distance import geodesic
 from firebase_admin import credentials, firestore,db
 from streamlit_calendar import calendar
 import datetime
-
+from streamlit_carousel import carousel
 seletor  = option_menu("Menu Principal", ["Cadastrar Veículos", "Pesquisar Veículos"], icons=["truck", "search"], default_index=1)
 ref = db.reference('Veículos')
 if seletor == 'Cadastrar Veículos':
@@ -31,8 +31,6 @@ if seletor == 'Cadastrar Veículos':
         ref.child(Veículo).push().set(dict_veiculo)
         st.warning(f'Veículo: {Veículo} cadastrado com sucesso')
 elif seletor == 'Pesquisar Veículos':
-        
-        
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['Veículos']
@@ -44,6 +42,7 @@ elif seletor == 'Pesquisar Veículos':
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
+    
         if opcao:
             distancia_total = 0   
             lista_notas = []
