@@ -13,20 +13,15 @@ lista_nomes = []
 lista_destinos = []
 destinos_info = []
 distancia_total = 0
-items = []
 dados2 = roteiro['Veículos']
 for item in dados2:            
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
-                                   img = espec['Foto']
-                                   info = f"{img}"
-                                   items.append(info)  
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-imagem_selecionada = st.radio("Selecione uma imagem:", items)
 veiculo = st.selectbox('Selecione um Veículo',lista_nomes)
 checkbox_states = {}
 try:
