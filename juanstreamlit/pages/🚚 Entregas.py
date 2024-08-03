@@ -33,9 +33,9 @@ for item in dados2:
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
-  opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-  Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
-  checkbox_states = {}
+opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
+Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
+checkbox_states = {}
 try:
       lista_alerta = []
       lista_conferida = []
