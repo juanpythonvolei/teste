@@ -8,9 +8,9 @@ try:
     # Exibe a seleção da data
   lista_total = [item for item in dados]
   lista_nomes = []
-  requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
-  roteiro = requiscao.json()
-  dados2 = roteiro['Veículos']
+  requiscao2 = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+  roteiro2 = requiscao.json()
+  dados2 = roteiro2['Veículos']
   for item in dados:                       
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
