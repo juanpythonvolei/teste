@@ -155,7 +155,7 @@ for nota, estado in checkbox_states.items():
                 except:
                             pass
   
-  css_style = """
+css_style = """
                                                                         .my-square {
                                                                             background-color:#0275b1;
                                                                             border-radius: 10px;
