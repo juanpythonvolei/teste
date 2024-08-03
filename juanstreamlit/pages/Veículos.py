@@ -91,7 +91,7 @@ elif seletor == 'Pesquisar Veículos':
                                                   veiculo = y[f'{i}']['Veículo']
                                               except:
                                                   pass
-                                              if veiculo == opcao:
+                                              if str(Oveiculo) == str(opcao):
                                                   lista_veiculos.append(veiculo)
                                                   destino = nota['Destino']
                                                   lista_locais.append(destino)
