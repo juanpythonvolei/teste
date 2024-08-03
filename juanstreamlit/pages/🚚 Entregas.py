@@ -21,17 +21,12 @@ for item in dados2:
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
                                    img = espec['Foto']
-                                   info = {
-                                           "title": f"{nome}",
-                                             "text": "Descrição do primeiro slide",
-                                           "img":f"{img}",
-                                         "link": "Link_para_mais_informações_1"
-                                       }
+                                   info = f"{img}"
                                    items.append(info)  
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-carousel(items=items, width=0.5)
+imagem_selecionada = st.radio("Selecione uma imagem:", imagens)
 veiculo = st.selectbox('Selecione um Veículo',lista_nomes)
 checkbox_states = {}
 try:
