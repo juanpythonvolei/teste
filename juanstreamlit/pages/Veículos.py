@@ -92,6 +92,8 @@ elif seletor == 'Pesquisar Veículos':
                                                   pass
                                               if veiculo == opcao:
                                                   lista_veiculos.append(veiculo)
+                                                  destino = nota['Destino']
+                                                  lista_locais.append(destino)
                                               
 
         for item in dados:
