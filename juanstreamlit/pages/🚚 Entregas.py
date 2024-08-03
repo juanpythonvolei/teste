@@ -138,7 +138,7 @@ try:
                               for item in dados2: 
                                 if item  == Veículo:
                                   veiculo = dados2[f'{item}']
-                                  link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{veiculo}/status.json'
+                                  link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{item}/{veiculo}/status.json'
                                   dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
                                   requests.patch(link, data=dados)
                                   
