@@ -140,7 +140,7 @@ for nota, estado in checkbox_states.items():
                                          nome = espec['nome']
                                          
                                          dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
-                                         link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/Veículos/{item}/{elemento}/{espec}/.json'   
+                                         link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/Veículos/{item}/{elemento}/{espec}/Distância.json'   
                                          response = requests.post(link2, json=dados2)       
                                             
                                   
