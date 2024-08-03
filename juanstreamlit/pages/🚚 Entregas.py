@@ -3,6 +3,7 @@ import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 try:
+  
   dados = roteiro['bancodedadosroteirooficial']
   
     # Exibe a seleção da data
@@ -65,6 +66,7 @@ try:
                                           for elemento in roteiro:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
+                                              Endereco = nota['Destino']
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
