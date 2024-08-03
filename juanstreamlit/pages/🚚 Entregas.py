@@ -4,6 +4,8 @@ requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.fireb
 roteiro = requisicao.json()
 try:
   lista_destinos = []
+  address = "Itupeva,sp"
+  base_url = "https://maps.googleapis.com/maps/api/geocode/json"
   params = {
                                             "address": address,
                                             "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
