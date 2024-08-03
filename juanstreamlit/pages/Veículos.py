@@ -94,8 +94,26 @@ elif seletor == 'Pesquisar Veículos':
                                                   lista_veiculos.append(veiculo)
                                                   destino = nota['Destino']
                                                   lista_locais.append(destino)
+        for item in lista_locais:
                                               
-
+            address = f"{item}"
+            base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+            params = {
+                                                            "address": address,
+                                                            "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                                                        }
+                        
+            response = requests.get(base_url, params=params)
+            data = response.json()
+            if data["status"] == "OK":
+                                                            location = data["results"][0]["geometry"]["location"]
+                                                            lat_final = location["lat"]
+                                                            lon_final = location["lng"]
+                                                            localizacao = f'{lat_final},{lon_final}'
+                                                            if localizacao in destinos_info:
+                                                                pass
+                                                            else:
+                                                                destinos_info.append(localizacao)                                        
         for item in dados:
                             veiculo = dados[f'{item}']
                             for elemento in veiculo: 
