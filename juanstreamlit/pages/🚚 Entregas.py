@@ -134,7 +134,6 @@ for nota, estado in checkbox_states.items():
                           
                                   # Atualiza a origem para o próximo destino
                               origem_atual = (lat_final, lon_final)
-                              dados2 = roteiro['Veículos']
                               for item in dados2:
                                 if item == Veículo:
                                   veiculo = dados2[f'{item}']
