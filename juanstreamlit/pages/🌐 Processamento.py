@@ -91,6 +91,7 @@ if selected == 'Processar Notas':
                                                         item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
                                                         massa += float(peso)
                                                     except:
+                                                            peso = 'Desconsiderável'
                                                             massa = 'Desconsiderável'
                                                     lista_produtos.append(item_nota)
         
@@ -134,6 +135,7 @@ if selected == 'Processar Notas':
                                                     peso =  dict_nota_fiscal['transp']['vol']['pesoL']
                                                     massa += float(peso)
                                                 except:
+                                                    peso = 'Desconsiderável'
                                                     massa = 'Desconsiderável'
                                                 lista_Destinos.append(destino)
         
