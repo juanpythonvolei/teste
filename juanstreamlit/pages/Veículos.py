@@ -51,6 +51,7 @@ elif seletor == 'Pesquisar Veículos':
         lista_veiculos = []
         lista_locais = []
         destinos_info = []
+        distancia_total = 0
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['Veículos']
@@ -128,7 +129,6 @@ elif seletor == 'Pesquisar Veículos':
               if data["status"] == "OK":
                   distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
                   distance_value = float(distance_text.split()[0]) 
-                  lista_viagem.append(distance_text)
                   distancia_total += distance_value 
                   duration = data["rows"][0]["elements"][0]["duration"]["text"]
                   lista_duracao.append(duration)
