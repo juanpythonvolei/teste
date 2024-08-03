@@ -24,6 +24,7 @@ try:
       lista_alerta = []
       lista_conferida = []
       lista_notas = []
+      lista_destinos = []     
       for item in dados:
                               
                               roteiro = dados[f'{item}']
@@ -65,8 +66,8 @@ for nota, estado in checkbox_states.items():
                                           for elemento in roteiro:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
-                                              Endereco = nota['Destino']
-                                              lista_destinos.append(Endereco)
+                                              endereco = nota['Destino']
+                                              lista_destinos.append(endereco)
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
@@ -75,7 +76,7 @@ for nota, estado in checkbox_states.items():
                             st.warning('Entrega realizada com Sucesso')
                             destinos_info = []
                             distancia_total = 0 
-                            lista_destinos = []
+                           
                             address = "Itupeva,sp"
                             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
                             params = {
