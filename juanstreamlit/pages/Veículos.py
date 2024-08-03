@@ -78,7 +78,7 @@ elif seletor == 'Pesquisar Veículos':
                                                 origem_atual = (lat_inicial, lon_inicial)
         requiscao2 = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro2 = requiscao2.json()        
-        dados2 = ['bancodedadosroteirooficial']    
+        dados2 = roteiro2['bancodedadosroteirooficial']    
         for item in dados2:
                               
                               roteiro = dados2[f'{item}']
