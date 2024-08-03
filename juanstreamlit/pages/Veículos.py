@@ -47,15 +47,12 @@ if seletor == 'Cadastrar Veículos':
     if botao:
         ref.child(Veículo).push().set(dict_veiculo)
 elif seletor == 'Pesquisar Veículos':
-        lista_nomes = []
-        lista_veiculos = []
-        lista_locais = []
-        destinos_info = []
-        distancia_total = 0
+        
+        
         requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
         roteiro = requiscao.json()
         dados = roteiro['Veículos']
-        
+        lista_nomes = []
         for item in dados:
                             veiculo = dados[f'{item}']
                             for elemento in veiculo:
@@ -63,6 +60,11 @@ elif seletor == 'Pesquisar Veículos':
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
+        if opcao:
+            distancia_total = 0   
+            lista_veiculos = []
+            lista_locais = []
+            destinos_info = []
         address = "Itupeva,sp"
         base_url = "https://maps.googleapis.com/maps/api/geocode/json"
         params = {
