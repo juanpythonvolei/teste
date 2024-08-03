@@ -77,7 +77,7 @@ for nota, estado in checkbox_states.items():
                                                 dados = '{"status": "Entrega realizada"}'
                                                 requests.patch(link, data=dados)        
                             st.warning('Entrega realizada com Sucesso')
-                            Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)   
+                               
                             
                            
                             
@@ -141,7 +141,7 @@ else:
                                                             st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
 
                                              
-
+Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
 if Veículo:
                             address = "Itupeva,sp"   
                             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
