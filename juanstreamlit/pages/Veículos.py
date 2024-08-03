@@ -63,6 +63,6 @@ elif seletor == 'Pesquisar Veículos':
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
                                    if nome == opcao: 
-                                       link = espec['link']
+                                       link = espec['Foto']
                                        st.image(link) 
                 
