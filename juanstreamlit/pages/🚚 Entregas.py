@@ -61,7 +61,6 @@ for nota, estado in checkbox_states.items():
                             roteiro = requisicao.json()
                             dados = roteiro['bancodedadosroteirooficial']
                             for item in dados:
-                                        try:
                                           roteiro = dados[f'{item}']
                                           for elemento in roteiro:
                                               nota = roteiro[f'{elemento}'] 
@@ -72,10 +71,7 @@ for nota, estado in checkbox_states.items():
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
                                                 dados = '{"status": "Entrega realizada"}'
-                                                requests.patch(link, data=dados)
-                                        except:
-                                          pass
-                                                 
+                                                requests.patch(link, data=dados)        
                             st.warning('Entrega realizada com Sucesso')
                             destinos_info = []
                             distancia_total = 0 
