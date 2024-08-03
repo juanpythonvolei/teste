@@ -5,6 +5,7 @@ roteiro = requisicao.json()
 try:
   destinos_info = []
   distancia_total = 0 
+  lista_destinos = []
   address = "Itupeva,sp"
   base_url = "https://maps.googleapis.com/maps/api/geocode/json"
   params = {
@@ -82,7 +83,7 @@ try:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
                                               Endereco = nota['Destino']
-                                              destinos_info.append(Endereco)
+                                              lista_destinos.append(Endereco)
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
@@ -92,6 +93,25 @@ try:
                                           pass
                                                  
                             st.warning('Entrega realizada com Sucesso')
+                            for item in lista_destinos:
+                              address = f"{item}"
+                              base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+                              params = {
+                                                          "address": address,
+                                                          "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                                                      }
+                      
+                              response = requests.get(base_url, params=params)
+                              data = response.json()
+                              if data["status"] == "OK":
+                                                          location = data["results"][0]["geometry"]["location"]
+                                                          lat_final = location["lat"]
+                                                          lon_final = location["lng"]
+                                                          localizacao = f'{lat_final},{lon_final}'
+                                                          if localizacao in destinos_info:
+                                                              pass
+                                                          else:
+                                                              destinos_info.append(localizacao)
                             for i in range(len(destinos_info)): 
                               destino_info = destinos_info[i]
                               lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
