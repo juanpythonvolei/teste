@@ -3,7 +3,19 @@ import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 try:
-  
+  lista_destinos = []
+  params = {
+                                            "address": address,
+                                            "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
+                                        }
+
+  response = requests.get(base_url, params=params)
+  data = response.json()
+  if data["status"] == "OK":
+                                            location = data["results"][0]["geometry"]["location"]
+                                            lat_inicial = location["lat"]
+                                            lon_inicial = location["lng"]
+                                            origem_atual = (lat_inicial, lon_inicial)      
   dados = roteiro['bancodedadosroteirooficial']
   
     # Exibe a seleção da data
@@ -67,6 +79,7 @@ try:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
                                               Endereco = nota['Destino']
+                                              lista_destinos.append(Endereco)
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
