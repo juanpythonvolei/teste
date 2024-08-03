@@ -78,7 +78,7 @@ elif seletor == 'Pesquisar Veículos':
                                                 origem_atual = (lat_inicial, lon_inicial)
         for item in dados2:
                               
-                              roteiro = dados[f'{item}']
+                              roteiro = dados2[f'{item}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
                                           y  = nota['Veículo']
