@@ -62,6 +62,7 @@ elif seletor == 'Pesquisar Veículos':
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
         if opcao:
             distancia_total = 0   
+            lista_notas = []
             lista_veiculos = []
             lista_locais = []
             destinos_info = []
@@ -87,6 +88,7 @@ elif seletor == 'Pesquisar Veículos':
                               roteiro = dados2[f'{item}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
+                                          lista_notas.append(nota)
                                           y = nota['Veículo']  
                                           for i in y:
                                               try:
@@ -94,9 +96,12 @@ elif seletor == 'Pesquisar Veículos':
                                               except:
                                                   pass
                                               if str(veiculo) == str(opcao):
-                                                  lista_veiculos.append(veiculo)
-                                                  destino = nota['Destino']
-                                                  lista_locais.append(destino)
+                                                  if len(lista_veiculos) <= len(lista_notas):
+                                                      lista_veiculos.append(veiculo)
+                                                      destino = nota['Destino']
+                                                      lista_locais.append(destino)
+                                                  else:
+                                                      pass
         for item in lista_locais:
                                               
             address = f"{item}"
