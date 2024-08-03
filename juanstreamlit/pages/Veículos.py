@@ -113,7 +113,30 @@ elif seletor == 'Pesquisar Veículos':
                                                             if localizacao in destinos_info:
                                                                 pass
                                                             else:
-                                                                destinos_info.append(localizacao)                                        
+                                                                destinos_info.append(localizacao)  
+        for i in range(len(destinos_info)):
+              destino_info = destinos_info[i]
+              lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
+              
+              # Constrói a URL da matriz de distância
+              distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origem_atual[0]},{origem_atual[1]}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+              
+              # Faz a requisição
+              response = requests.get(distance_matrix_url)
+              data = response.json()
+              
+              if data["status"] == "OK":
+                  distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
+                  distance_value = float(distance_text.split()[0]) 
+                  lista_viagem.append(distance_text)
+                  distancia_total += distance_value 
+                  duration = data["rows"][0]["elements"][0]["duration"]["text"]
+                  lista_duracao.append(duration)
+                  
+                  # Agora você pode usar 'distance' e 'duration' conforme necessário
+          
+                  # Atualiza a origem para o próximo destino
+              origem_atual = (lat_final, lon_final)
         for item in dados:
                             veiculo = dados[f'{item}']
                             for elemento in veiculo: 
