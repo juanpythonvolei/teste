@@ -2,20 +2,20 @@ import streamlit as st
 import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
-try:
-  destinos_info = []
-  distancia_total = 0 
-  lista_destinos = []
-  address = "Itupeva,sp"
-  base_url = "https://maps.googleapis.com/maps/api/geocode/json"
-  params = {
+
+destinos_info = []
+distancia_total = 0 
+lista_destinos = []
+address = "Itupeva,sp"
+base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+params = {
                                             "address": address,
                                             "key": 'AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0'  # Substitua pela sua chave de API
                                         }
 
-  response = requests.get(base_url, params=params)
-  data = response.json()
-  if data["status"] == "OK":
+response = requests.get(base_url, params=params)
+data = response.json()
+if data["status"] == "OK":
                                             location = data["results"][0]["geometry"]["location"]
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
@@ -26,7 +26,7 @@ try:
   lista_total = [item for item in dados]
   lista_nomes = []
   dados2 = roteiro['Veículos']
-  for item in dados2:                       
+for item in dados2:                       
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
                                    espec = veiculo[f'{elemento}']
@@ -36,7 +36,7 @@ try:
   opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
   Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
   checkbox_states = {}
-  try:
+try:
       lista_alerta = []
       lista_conferida = []
       lista_notas = []
@@ -61,14 +61,14 @@ try:
                                             else:
     
                                               st.warning('Entrega Completa')
-  except:
+except:
         pass
     
     
         
         # Agora você pode usar o dicionário 'checkbox_states' conforme necessário
     
-  for nota, estado in checkbox_states.items():
+for nota, estado in checkbox_states.items():
             if estado:
                 status = 'Feito'
                 lista_conferida.append(status)
@@ -168,7 +168,7 @@ try:
                                                                     
                                                                     # Aplicando o estilo e inserindo os quadrados
   
-  st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
   
           
           # Estilização CSS embutida
@@ -176,7 +176,7 @@ try:
  
                                      
                                 
-  try:
+try:
     lista = []
     for a in dados:
                                 
@@ -191,19 +191,18 @@ try:
   
                                 
                                               
-  except:
+except:
     pass  
-  if  status == 'Entrega não completa':
+if  status == 'Entrega não completa':
                                        
                                                             st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
   
   
                 
-  else:
+else:
   
                                                             st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
-except:
-  st.warning('Sem Roteiros Disponíveis')
+
                                              
                                               
                                               
