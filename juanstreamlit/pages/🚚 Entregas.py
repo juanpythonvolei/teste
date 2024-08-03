@@ -20,12 +20,12 @@ if data["status"] == "OK":
                                             lat_inicial = location["lat"]
                                             lon_inicial = location["lng"]
                                             origem_atual = (lat_inicial, lon_inicial)      
-  dados = roteiro['bancodedadosroteirooficial']
+dados = roteiro['bancodedadosroteirooficial']
   
     # Exibe a seleção da data
-  lista_total = [item for item in dados]
-  lista_nomes = []
-  dados2 = roteiro['Veículos']
+lista_total = [item for item in dados]
+lista_nomes = []
+dados2 = roteiro['Veículos']
 for item in dados2:                       
                             veiculo = dados2[f'{item}']
                             for elemento in veiculo:
