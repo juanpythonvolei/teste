@@ -10,6 +10,8 @@ dados = roteiro['bancodedadosroteirooficial']
 lista_total = [item for item in dados]
 lista_nomes = []
 lista_destinos = []
+destinos_info = []
+distancia_total = 0
 dados2 = roteiro['Veículos']
 for item in dados2:                       
                             veiculo = dados2[f'{item}']
@@ -75,8 +77,7 @@ for nota, estado in checkbox_states.items():
                                                 dados = '{"status": "Entrega realizada"}'
                                                 requests.patch(link, data=dados)        
                             st.warning('Entrega realizada com Sucesso')
-                            destinos_info = []
-                            distancia_total = 0 
+                            
                            
                             address = "Itupeva,sp"
                             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
@@ -107,10 +108,7 @@ for nota, estado in checkbox_states.items():
                                                           lat_final = location["lat"]
                                                           lon_final = location["lng"]
                                                           localizacao = f'{lat_final},{lon_final}'
-                                                          if localizacao in destinos_info:
-                                                              pass
-                                                          else:
-                                                              destinos_info.append(localizacao)
+                                                          destinos_info.append(localizacao) 
                             for i in range(len(destinos_info)): 
                               destino_info = destinos_info[i]
                               lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
