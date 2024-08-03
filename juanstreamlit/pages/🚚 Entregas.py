@@ -136,7 +136,7 @@ try:
                               origem_atual = (lat_final, lon_final)
                               dados2 = roteiro['Veículos']
                               for item in dados2:
-                                if str(item) == str(Veículo):
+                                if item == Veículo:
                                   veiculo = dados2[f'{item}']
                                   for elemento in veiculo:
                                          espec = veiculo[f'{elemento}']
