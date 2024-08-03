@@ -102,7 +102,7 @@ elif seletor == 'Pesquisar Veículos':
                                                       lista_locais.append(destino)
                                                   else:
                                                       pass
-        for item in lista_locais:
+        for item in list(set(lista_locais)):
                                               
             address = f"{item}"
             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
