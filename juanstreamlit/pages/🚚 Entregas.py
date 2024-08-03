@@ -58,11 +58,11 @@ for nota, estado in checkbox_states.items():
                 status = 'Feito'
                 lista_conferida.append(status)
                 if len(lista_conferida) == len(lista_notas):
-                            requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
-                            roteiro = requisicao.json()
-                            dados = roteiro['bancodedadosroteirooficial']
-                            for item in dados:
-                                          roteiro = dados[f'{item}']
+                            requisicao_1 = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+                            roteiro_1 = requisicao.json()
+                            dados_1 = roteiro_1['bancodedadosroteirooficial']
+                            for item in dados_1:
+                                          roteiro = dados_1[f'{item}']
                                           for elemento in roteiro:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
