@@ -13,7 +13,7 @@ lista_nomes = []
 lista_destinos = []
 destinos_info = []
 distancia_total = 0
-lista_info
+lista_info = []
 dados2 = roteiro['Veículos']
 for item in dados2:            
                             veiculo = dados2[f'{item}']
