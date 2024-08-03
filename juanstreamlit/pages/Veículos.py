@@ -57,3 +57,12 @@ elif seletor == 'Pesquisar Veículos':
                                    nome = espec['nome']
                                    lista_nomes.append(nome)
         opcao = st.selectbox('Selecione um Veículo',lista_nomes)
+        for item in dados:
+                            veiculo = dados[f'{item}']
+                            for elemento in veiculo: 
+                                   espec = veiculo[f'{elemento}']
+                                   nome = espec['nome']
+                                   if nome == opcao: 
+                                       link = espec['link']
+                                       st.image(link) 
+                
