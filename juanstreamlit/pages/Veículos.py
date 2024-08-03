@@ -127,11 +127,13 @@ elif seletor == 'Pesquisar Veículos':
               data = response.json()
               
               if data["status"] == "OK":
-                  distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
-                  distance_value = float(distance_text.split()[0]) 
-                  distancia_total += distance_value 
-                  duration = data["rows"][0]["elements"][0]["duration"]["text"]
-                  
+                  try:
+                      distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
+                      distance_value = float(distance_text.split()[0]) 
+                      distancia_total += distance_value 
+                      duration = data["rows"][0]["elements"][0]["duration"]["text"]
+                  except:
+                      pass
                   # Agora você pode usar 'distance' e 'duration' conforme necessário
           
                   # Atualiza a origem para o próximo destino
