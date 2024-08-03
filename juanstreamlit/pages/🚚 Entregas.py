@@ -23,7 +23,9 @@ for item in dados2:
                                    img = espec['Foto']
                                    info = {
                                            "title": f"{nome}",
+                                             "text": "Descrição do primeiro slide",
                                            "img":f"{img}",
+                                         "link": "Link_para_mais_informações_1"
                                        }
                                    items.append(info)  
                                    lista_nomes.append(nome)
