@@ -21,7 +21,7 @@ for item in dados2:
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-
+veiculo = st.selectbox('Selecione um Veículo',lista_nomes)
 checkbox_states = {}
 try:
       lista_alerta = []
@@ -76,6 +76,9 @@ for nota, estado in checkbox_states.items():
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
                                                 dados = '{"status": "Entrega realizada"}'
                                                 requests.patch(link, data=dados)        
+                                                link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/Veículo.json'
+                                                dados2 = {"Veículo": veiculo}
+                                                requests.patch(link2, data=dados2)   
                             st.warning('Entrega realizada com Sucesso')
                                
                             
