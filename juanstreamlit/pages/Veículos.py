@@ -21,7 +21,7 @@ calendar_events = [
 ]
 
 # Crie o calendário
-calendar_component = calendar(events=calendar_events, options=calendar_options)
+
 
 # Exiba o calendário no Streamlit
 selected_date = st.date_input("Selecione uma data", datetime.date.today())
