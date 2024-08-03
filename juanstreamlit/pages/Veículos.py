@@ -131,7 +131,6 @@ elif seletor == 'Pesquisar Veículos':
                   distance_value = float(distance_text.split()[0]) 
                   distancia_total += distance_value 
                   duration = data["rows"][0]["elements"][0]["duration"]["text"]
-                  lista_duracao.append(duration)
                   
                   # Agora você pode usar 'distance' e 'duration' conforme necessário
           
