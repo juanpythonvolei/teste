@@ -21,7 +21,7 @@ for item in dados2:
                                    lista_nomes.append(nome)
   # Carrega os dados do banco de dados
 opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
+
 checkbox_states = {}
 try:
       lista_alerta = []
@@ -77,9 +77,73 @@ for nota, estado in checkbox_states.items():
                                                 dados = '{"status": "Entrega realizada"}'
                                                 requests.patch(link, data=dados)        
                             st.warning('Entrega realizada com Sucesso')
+                            Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)   
                             
                            
-                            address = "Itupeva,sp"
+                            
+                                            
+                                  
+                else:
+                            pass
+            else:
+                try:
+                            status = 'Feito'
+                            lista_conferida.remove(status)
+                except:
+                            pass
+  
+css_style = """
+                                                                        .my-square {
+                                                                            background-color:#0275b1;
+                                                                            border-radius: 10px;
+                                                                            display: flex;
+                                                                            justify-content: center;
+                                                                            align-items: center;
+                                                                            color: white;
+                                                                        }
+                                                                    """
+                                                                    
+                                                                    # Aplicando o estilo e inserindo os quadrados
+  
+st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
+  
+          
+          # Estilização CSS embutida
+  
+ 
+                                     
+                                
+try:
+    lista = []
+    for a in dados:
+                                
+                                roteiro = dados[f'{a}']
+                                for elemento in roteiro:
+                                            nota = roteiro[f'{elemento}']
+                                            data_emit = nota['Data de Emissão']
+                                            if str(data_emit) == str(opcao_selecionada_data):
+                                              numero_nota = nota['Número da Nota']
+                                              lista.append(numero_nota)
+                                              status = nota['status']
+  
+                                
+                                              
+except:
+    pass  
+if  status == 'Entrega não completa':
+                                       
+                                                            st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
+  
+  
+                
+else:
+  
+                                                            st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
+
+                                             
+
+if Veículo:
+                            address = "Itupeva,sp"   
                             base_url = "https://maps.googleapis.com/maps/api/geocode/json"
                             params = {
                                                                         "address": address,
@@ -141,67 +205,5 @@ for nota, estado in checkbox_states.items():
                                          
                                          dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
                                          link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/Veículos/{item}/{elemento}/{espec}/Distância.json'   
-                                         response = requests.post(link2, json=dados2)       
-                                            
-                                  
-                else:
-                            pass
-            else:
-                try:
-                            status = 'Feito'
-                            lista_conferida.remove(status)
-                except:
-                            pass
-  
-css_style = """
-                                                                        .my-square {
-                                                                            background-color:#0275b1;
-                                                                            border-radius: 10px;
-                                                                            display: flex;
-                                                                            justify-content: center;
-                                                                            align-items: center;
-                                                                            color: white;
-                                                                        }
-                                                                    """
-                                                                    
-                                                                    # Aplicando o estilo e inserindo os quadrados
-  
-st.markdown(f"<style>{css_style}</style>", unsafe_allow_html=True)
-  
-          
-          # Estilização CSS embutida
-  
- 
-                                     
-                                
-try:
-    lista = []
-    for a in dados:
-                                
-                                roteiro = dados[f'{a}']
-                                for elemento in roteiro:
-                                            nota = roteiro[f'{elemento}']
-                                            data_emit = nota['Data de Emissão']
-                                            if str(data_emit) == str(opcao_selecionada_data):
-                                              numero_nota = nota['Número da Nota']
-                                              lista.append(numero_nota)
-                                              status = nota['status']
-  
-                                
-                                              
-except:
-    pass  
-if  status == 'Entrega não completa':
-                                       
-                                                            st.markdown(f'<div class="my-square">Total Nota: {len(lista_conferida)}</div>', unsafe_allow_html=True)
-  
-  
-                
-else:
-  
-                                                            st.markdown(f'<div class="my-square">Total Notas:{len(lista)}</div>', unsafe_allow_html=True)
-
-                                             
-                                              
-                                              
+                                         response = requests.post(link2, json=dados2)                                                    
     # Exibe as notas com checkboxes
