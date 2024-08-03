@@ -3,7 +3,8 @@ import requests
 requisicao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
 roteiro = requisicao.json()
 try:
-  lista_destinos = []
+  destinos_info = []
+  distancia_total = 0 
   address = "Itupeva,sp"
   base_url = "https://maps.googleapis.com/maps/api/geocode/json"
   params = {
@@ -81,7 +82,7 @@ try:
                                               nota = roteiro[f'{elemento}'] 
                                               data = nota['Data de Emissão']
                                               Endereco = nota['Destino']
-                                              lista_destinos.append(Endereco)
+                                              destinos_info.append(Endereco)
                                               if data == opcao_selecionada_data:
                                                 status = nota['status']
                                                 link = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/bancodedadosroteirooficial/{opcao_selecionada_data}/{elemento}/status.json'
@@ -118,7 +119,29 @@ try:
           
           # Estilização CSS embutida
   
-  
+  for i in range(len(destinos_info)):
+              destino_info = destinos_info[i]
+              lat_final, lon_final = map(float, destino_info.split(','))  # Obtém as coordenadas do destino
+              
+              # Constrói a URL da matriz de distância
+              distance_matrix_url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origem_atual[0]},{origem_atual[1]}&destinations={lat_final},{lon_final}&key=AIzaSyCMVv5_0c2dR16BM9r6ppgJ5sHXPD4MEc0"
+              
+              # Faz a requisição
+              response = requests.get(distance_matrix_url)
+              data = response.json()
+              
+              if data["status"] == "OK":
+                  distance_text = data["rows"][0]["elements"][0]["distance"]["text"]
+                  distance_value = float(distance_text.split()[0]) 
+                  lista_viagem.append(distance_text)
+                  distancia_total += distance_value 
+                  duration = data["rows"][0]["elements"][0]["duration"]["text"]
+                  
+                  
+                  # Agora você pode usar 'distance' e 'duration' conforme necessário
+          
+                  # Atualiza a origem para o próximo destino
+              origem_atual = (lat_final, lon_final)
   try:
     lista = []
     for a in dados:
