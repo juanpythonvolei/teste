@@ -84,8 +84,9 @@ elif seletor == 'Pesquisar Veículos':
                               roteiro = dados2[f'{item}']
                               for elemento in roteiro:
                                           nota = roteiro[f'{elemento}']
-                                          y  = nota['Veículo']
-                                          st.write(y)  
+                                          y = nota['Veículo']
+                                          for i in y:
+                                              st.write(y)  
                                               
 
         for item in dados:
