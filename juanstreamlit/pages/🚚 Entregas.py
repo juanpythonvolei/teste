@@ -170,7 +170,7 @@ try:
  
                                      
                                 
-  
+  try:
     lista = []
     for a in dados:
                                 
