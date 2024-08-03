@@ -205,5 +205,5 @@ if Veículo:
                                          
                                          dados2 = {f'Viagem dia': opcao_selecionada_data,'Distância':distancia_total}
                                          link2 = f'https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/Veículos/{item}/{elemento}/{espec}/Distância.json'   
-                                         response = requests.post(link2, json=dados2)                                                    
+                                         response = requests.patch(link2, json=dados2)                                                    
     # Exibe as notas com checkboxes
