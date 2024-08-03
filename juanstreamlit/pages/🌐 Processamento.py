@@ -15,6 +15,7 @@ import pprint
 from st_circular_progress import CircularProgress
 from streamlit_option_menu import option_menu
 from pprint import pprint
+import datetime
 datas = []
 ref = db.reference('bancodedadosroteirooficial')
 st.markdown("""
@@ -48,7 +49,7 @@ if selected == 'Processar Notas':
     while current_date <= end_date:
         current_date += datetime.timedelta(days=1)
         datas.append(current_date)
-    opcao_selecionada = st.selectbox("Selecione uma data para processamento", datas)
+    opcao_selecionada = selected_date = st.date_input("Selecione uma data", datetime.date.today())
     
     uploaded_files = st.file_uploader("Escolha as Notas", type=['xml'], accept_multiple_files=True)
     if uploaded_files:
