@@ -86,9 +86,12 @@ if selected == 'Processar Notas':
                                                     lista_Destinos.append(destino)
                                                     descricao_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['cProd']
                                                     valor_produto = documento['nfeProc']['NFe']['infNFe']['det']['prod']['vProd']
-                                                    peso =  documento['nfeProc']['NFe']['infNFe']['transp']['vol']['pesoL']
-                                                    item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
-                                                    massa += float(peso)
+                                                    try:
+                                                        peso =  documento['nfeProc']['NFe']['infNFe']['transp']['vol']['pesoL']
+                                                        item_nota = f'Item: {descricao_produto}  valor: {valor_produto}'
+                                                        massa += float(peso)
+                                                    except:
+                                                            massa = 'Desconsiderável'
                                                     lista_produtos.append(item_nota)
         
                                                         
@@ -127,8 +130,11 @@ if selected == 'Processar Notas':
                                                 valor_total = dict_nota_fiscal['total']['ICMSTot']['vNF']
                                                 destino = f'{dict_nota_fiscal["dest"]["enderDest"]["xLgr"]},{dict_nota_fiscal["dest"]["enderDest"]["nro"]}-{dict_nota_fiscal["dest"]["enderDest"]["xBairro"]},{dict_nota_fiscal["dest"]["enderDest"]["xMun"]}-{dict_nota_fiscal["dest"]["enderDest"]["UF"]},{dict_nota_fiscal["dest"]["enderDest"]["CEP"]}'
                                                 data_emit = documento['nfeProc']['NFe']['infNFe']['ide']['dhEmi'][:10]
-                                                peso =  dict_nota_fiscal['transp']['vol']['pesoL']
-                                                massa += float(peso)
+                                                try:
+                                                    peso =  dict_nota_fiscal['transp']['vol']['pesoL']
+                                                    massa += float(peso)
+                                                except:
+                                                    massa = 'Desconsiderável'
                                                 lista_Destinos.append(destino)
         
                                                         
