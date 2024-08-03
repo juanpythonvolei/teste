@@ -7,9 +7,19 @@ try:
   
     # Exibe a seleção da data
   lista_total = [item for item in dados]
+  lista_nomes = []
+        requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
+        roteiro = requiscao.json()
+        dados = roteiro['Veículos']
+        for item in dados:
+                            veiculo = dados[f'{item}']
+                            for elemento in veiculo:
+                                   espec = veiculo[f'{elemento}']
+                                   nome = espec['nome']
+                                   lista_nomes.append(nome)
   # Carrega os dados do banco de dados
   opcao_selecionada_data = st.selectbox("Selecione uma data", lista_total)
-  Veículo = st.selectbox()
+  Veículo = st.selectbox('Selecione o Veículo da entrega',lista_nomes)
   checkbox_states = {}
   try:
       lista_alerta = []
