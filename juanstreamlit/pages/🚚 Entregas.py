@@ -10,9 +10,9 @@ try:
   lista_nomes = []
   requiscao = requests.get('https://bancodedadosroteirooficial-default-rtdb.firebaseio.com/.json')
   roteiro = requiscao.json()
-  dados = roteiro['Veículos']
+  dados2 = roteiro['Veículos']
   for item in dados:                       
-                            veiculo = dados[f'{item}']
+                            veiculo = dados2[f'{item}']
                             for elemento in veiculo:
                                    espec = veiculo[f'{elemento}']
                                    nome = espec['nome']
