@@ -142,4 +142,4 @@ elif seletor == 'Pesquisar Veículos':
                                        total_gasto = (5.50*distancia_total)/kilometragem
                                        dict = {'Nome':nome,'Placa':placa,'Kilometragem':kilometragem,'Total de Viagens realizadas':len(lista_veiculos),'Distancia Total Percorrida':distancia_total,'Total de Combustível Gasto':total_gasto}
                                        st.table(dict)
-        st.write(len(lista_veiculos))
+      
